@@ -1,218 +1,77 @@
 extends Node2D
 class_name Enemy
 
-var attack_names = [
-	"QUANTUM",
-	"BLUJACK",
-	"OFF CRACK"
-]
+signal attacker_selected(attack_id: int)
+signal attacker_hovered(attack_id: int)
 
-var attack_name: String = ""
-
-signal movement_signal
-
+@export var attack_id: int = 0
+@export var abbreviation: String = ""
+@export_multiline var description: String = ""
+@export var severity: int = 1
+# Radians per second. Ring 0 is innermost; ring 2 is outermost.
+@export var move_speed: float = 1.0
+@export_range(0, 2) var start_ring: int = 2
 @export var enemy_texture: Texture2D
-@export var orbit_speed: float = 1.0
-@export var orbit_radius: float = 350.0
 @export var orbit_angle: float = 0.0
-@export var inward_step: float = 40.0
-@export var critical_orbit_radius: float = 120.0
-@export var critical_orbit_speed: float = 0.8
-@export var critical_orbit_slot: int = 0
 
+const RING_RADII = [160.0, 280.0, 400.0]
 var center_position := Vector2(800, 450)
-
+var current_ring: int = 2
+var orbit_radius: float = 400.0
 var is_selected: bool = false
-static var selected_enemy = null
-var normal_scale: Vector2
-
-var in_critical_orbit := false
-
-# Normal orbit revolution counter
-var revolution_count: int = 0
-
-# Critical orbit revolution counter
-var critical_revolution_count: int = 0
-
-# How many revolutions are required
-var required_revolutions: int = 1
-
-# Whether this enemy is currently allowed
-# to count normal revolutions.
-var counting_revolutions: bool = false
-
-# Blink duration
-var blink_duration: float = 0.12
+var normal_scale := Vector2.ONE
+var orbit_progress: float = 0.0
+var is_hovered: bool = false
 
 
-func _ready():
-	# Assign unique random attacks.
-	if name == "Enemy":
-		var shuffled_attacks = attack_names.duplicate()
-		shuffled_attacks.shuffle()
-
-		attack_name = shuffled_attacks[0]
-		get_parent().get_node("Enemy2").attack_name = shuffled_attacks[1]
-		get_parent().get_node("Enemy3").attack_name = shuffled_attacks[2]
-
-	$Sprite2D.texture = enemy_texture
+func _ready() -> void:
 	normal_scale = scale
-	await get_tree().process_frame
-	$AttackLabel.text = attack_name
-	
-	# ENEMY
-	if name == "Enemy":
-		required_revolutions = 1
-		counting_revolutions = true
-
-	# ENEMY 2
-	elif name == "Enemy2":
-		required_revolutions = 2
-		counting_revolutions = false
-
-		var previous_enemy = get_parent().get_node("Enemy")
-		previous_enemy.movement_signal.connect(_on_previous_enemy_signal)
-
-	# ENEMY 3
-	elif name == "Enemy3":
-		required_revolutions = 3
-		counting_revolutions = false
-
-		var previous_enemy = get_parent().get_node("Enemy2")
-		previous_enemy.movement_signal.connect(_on_previous_enemy_signal)
+	current_ring = clampi(start_ring, 0, 2)
+	orbit_radius = RING_RADII[current_ring]
+	if enemy_texture:
+		$Sprite2D.texture = enemy_texture
+	$AttackLabel.text = abbreviation
+	$InfoPanel/InfoLabel.text = "%s\n%s\nSeverity: %d" % [abbreviation, description, severity]
+	_update_position()
 
 
-func _on_previous_enemy_signal():
-	# The previous enemy has completed its required action.
-	# We are now allowed to count our revolutions.
-	counting_revolutions = true
+func _process(delta: float) -> void:
+	var travel := move_speed * delta
+	orbit_angle = fposmod(orbit_angle + travel, TAU)
+	# Count a full orbit from the starting angle, independently of other attackers.
+	orbit_progress += absf(travel)
+	while orbit_progress >= TAU:
+		orbit_progress -= TAU
+		current_ring = maxi(0, current_ring - 1)
+		orbit_radius = RING_RADII[current_ring]
+	_update_position()
 
 
-func _process(delta):
-
-	var current_speed = orbit_speed
-
-	# Critical orbit uses its own speed.
-	if in_critical_orbit:
-		current_speed = critical_orbit_speed
-
-	# All enemies continue revolving.
-	orbit_angle += current_speed * delta
-
-	# Completed a full 360° revolution.
-	if orbit_angle >= TAU:
-		orbit_angle -= TAU
-
-		# ==========================================
-		# CRITICAL ORBIT
-		# ==========================================
-		if in_critical_orbit:
-
-			critical_revolution_count += 1
-
-			# Enemy = 1
-			# Enemy2 = 2
-			# Enemy3 = 3
-			if critical_revolution_count >= required_revolutions:
-
-				critical_revolution_count = 0
-
-				# Blink visually.
-				blink()
-
-				# Send signal to the next enemy.
-				movement_signal.emit()
-
-		# ==========================================
-		# NORMAL ORBIT
-		# ==========================================
-		elif counting_revolutions:
-
-			revolution_count += 1
-
-			# Have we completed the required
-			# number of revolutions?
-			if revolution_count >= required_revolutions:
-
-				revolution_count = 0
-				counting_revolutions = false
-
-				# Move one orbit inward.
-				orbit_radius -= inward_step
-
-				# Have we reached the critical orbit?
-				if orbit_radius <= critical_orbit_radius:
-
-					orbit_radius = critical_orbit_radius
-
-					in_critical_orbit = true
-
-					critical_revolution_count = 0
-
-					# IMPORTANT:
-					# Do NOT signal the next enemy yet.
-					# We only signal after completing
-					# the required critical revolutions.
-
-					# Put the planet into its assigned
-					# critical orbit position.
-					orbit_angle = float(critical_orbit_slot) * TAU / 3.0
-
-				else:
-
-					# We are still outside the critical orbit.
-					# Signal the next enemy normally.
-					movement_signal.emit()
-
-	var offset = Vector2(cos(orbit_angle), sin(orbit_angle)) * orbit_radius
-
-	position = center_position + offset
+func _update_position() -> void:
+	position = center_position + Vector2(cos(orbit_angle), sin(orbit_angle)) * orbit_radius
+	# Keep the information panel inside the playfield, including when enlarged.
+	$InfoPanel.position.x = -300.0 if position.x + 300.0 * scale.x > 1592.0 else 70.0
+	$InfoPanel.position.y = clampf(-80.0, (8.0 - position.y) / scale.y, (892.0 - position.y) / scale.y - 104.0)
 
 
-func blink():
-	# Briefly hide the planet.
-	$Sprite2D.visible = false
-
-	await get_tree().create_timer(blink_duration).timeout
-
-	$Sprite2D.visible = true
+func set_selected(value: bool) -> void:
+	is_selected = value
+	scale = normal_scale * (1.5 if value else 1.0)
+	$InfoPanel.visible = is_selected or is_hovered
+	_update_position()
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		attacker_selected.emit(attack_id)
 
-			# No planet is currently selected.
-			if Enemy.selected_enemy == null:
 
-				Enemy.selected_enemy = self
-				is_selected = true
-				scale = normal_scale * 1.5
-				
-				$InfoPanel.visible = true
-				
-				$InfoPanel/InfoLabel.text = "ENEMY: " + name + "\n" + \
-				"ATTACK: " + attack_name + "\n" + \
-				"SPEED: " + str(orbit_speed) + "\n" + \
-				"ORBIT: " + str(orbit_radius)
+func _on_area_2d_mouse_entered() -> void:
+	is_hovered = true
+	$InfoPanel.visible = true
+	attacker_hovered.emit(attack_id)
 
-				# Pause the entire game.
-				get_tree().paused = true
 
-			# The player clicked the already-selected planet.
-			elif Enemy.selected_enemy == self:
-
-				scale = normal_scale
-				is_selected = false
-				Enemy.selected_enemy = null
-				
-				$InfoPanel.visible = false
-
-				# Resume the entire game.
-				get_tree().paused = false
-
-			# Another planet was clicked.
-			else:
-
-				# Do nothing.
-				return
+func _on_area_2d_mouse_exited() -> void:
+	is_hovered = false
+	$InfoPanel.visible = is_selected

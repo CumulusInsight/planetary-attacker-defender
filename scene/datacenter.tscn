@@ -21,3 +21,13 @@ theme_override_fonts/font = ExtResource("2_c484v")
 text = "DATA"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="."]
+offset_left = -95.0
+offset_top = 45.0
+offset_right = 95.0
+offset_bottom = 75.0
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("2_c484v")
+text = "$1,000,000"
+horizontal_alignment = 1

@@ -1,11 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5adkfkpyr0j6"]
+[gd_scene load_steps=6 format=3 uid="uid://c5adkfkpyr0j6"]
 
 [ext_resource type="Script" uid="uid://b1qhqdrs875nb" path="res://script/enemy.gd" id="1_f87vc"]
 [ext_resource type="Texture2D" uid="uid://2eo12t5j6pg7" path="res://images/enemy1.png" id="1_h08p8"]
 [ext_resource type="FontFile" uid="uid://3mplox4haln7" path="res://fonts/routed-gothic-wide.ttf" id="3_8u16h"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f87vc"]
-load_path = "res://.godot/imported/enemy1.png-5fc545898cab701be47bd4f819bf7c60.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u16h"]
 bg_color = Color(1, 0.960784, 0.615686, 1)
@@ -15,7 +12,7 @@ radius = 40.0
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_f87vc")
-enemy_texture = SubResource("CompressedTexture2D_f87vc")
+enemy_texture = ExtResource("1_h08p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 9.53674e-07)
@@ -27,14 +24,16 @@ offset_left = -40.0
 offset_top = -16.0
 offset_right = 40.0
 offset_bottom = 15.0
+mouse_filter = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InfoPanel" type="Panel" parent="."]
 visible = false
+mouse_filter = 2
 offset_left = 70.0
 offset_top = -80.0
-offset_right = 278.0
+offset_right = 300.0
 offset_bottom = 24.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8u16h")
 
@@ -42,22 +41,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8u16h")
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 200.0
+offset_right = 222.0
 offset_bottom = 94.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_8u16h")
 theme_override_font_sizes/font_size = 15
-text = "ENEMY: Enemy
-ATTACK: QUANTUM
-SPEED: 0.70
-ORBIT: 160"
+autowrap_mode = 2
+mouse_filter = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
-process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_f87vc")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
