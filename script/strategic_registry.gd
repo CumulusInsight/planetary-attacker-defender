@@ -18,14 +18,20 @@ func public_rows() -> Array[Dictionary]:
 		var tactical = entry.tactical
 		var active: bool = id == tactical.encounter.active_contact_id
 		var assessment: Dictionary = tactical.encounter.assessment_summary() if active else entry.metadata
+		var severity: int = int(entry.metadata.assessed_severity)
+		if tactical.intelligence != null:
+			var latest: Dictionary = tactical.intelligence.latest(id)
+			if not latest.is_empty():
+				assessment = latest
+				severity = int(latest.severity)
 		var remaining: Variant = null
 		if active and not tactical.encounter.resolved and tactical.encounter_error.is_empty():
 			remaining = tactical.deadline.remaining(tactical.active_contact)
 		var view: Dictionary = tactical.encounter.public_view(id)
 		rows.append({"contact_id": id, "identifier": view.identifier, "center_id": entry.center_id,
 			"assessment": assessment.assessment, "confidence": assessment.get("confidence"),
-			"severity": int(entry.metadata.assessed_severity), "remaining": remaining,
-			"status": view.status})
+			"severity": severity, "remaining": remaining,
+			"kind": "Active encounter" if active else "Passive surveillance", "status": view.status})
 	return rows
 
 func triage(mode: int) -> Array[Dictionary]:

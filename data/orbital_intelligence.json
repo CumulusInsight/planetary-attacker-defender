@@ -1,0 +1,895 @@
+{
+  "traffic": [
+    {
+      "contact_id": 10,
+      "center_id": "DC-01",
+      "assessment": "Suspected hostile",
+      "confidence": 55,
+      "assessed_severity": 3,
+      "path": {
+        "horizontal_radius": 380,
+        "vertical_radius": 205,
+        "orientation": 0.25,
+        "initial_phase": 0.7,
+        "direction": 1,
+        "angular_rate": 0.22
+      }
+    },
+    {
+      "contact_id": 11,
+      "center_id": "DC-01",
+      "assessment": "Suspected hostile",
+      "confidence": 100,
+      "assessed_severity": 2,
+      "path": {
+        "horizontal_radius": 235,
+        "vertical_radius": 330,
+        "orientation": -0.32,
+        "initial_phase": 2.8,
+        "direction": -1,
+        "angular_rate": 0.31
+      }
+    },
+    {
+      "contact_id": 12,
+      "center_id": "DC-01",
+      "assessment": "Assessed nonhostile",
+      "confidence": 65,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 340,
+        "vertical_radius": 140,
+        "orientation": 0.65,
+        "initial_phase": 4.7,
+        "direction": 1,
+        "angular_rate": 0.4
+      }
+    },
+    {
+      "contact_id": 13,
+      "center_id": "DC-02",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 380,
+        "vertical_radius": 205,
+        "orientation": 0.25,
+        "initial_phase": 0.7,
+        "direction": 1,
+        "angular_rate": 0.22
+      }
+    },
+    {
+      "contact_id": 14,
+      "center_id": "DC-02",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 235,
+        "vertical_radius": 330,
+        "orientation": -0.32,
+        "initial_phase": 2.8,
+        "direction": -1,
+        "angular_rate": 0.31
+      }
+    },
+    {
+      "contact_id": 15,
+      "center_id": "DC-02",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 340,
+        "vertical_radius": 140,
+        "orientation": 0.65,
+        "initial_phase": 4.7,
+        "direction": 1,
+        "angular_rate": 0.4
+      }
+    },
+    {
+      "contact_id": 16,
+      "center_id": "DC-03",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 380,
+        "vertical_radius": 205,
+        "orientation": 0.25,
+        "initial_phase": 0.7,
+        "direction": 1,
+        "angular_rate": 0.22
+      }
+    },
+    {
+      "contact_id": 17,
+      "center_id": "DC-03",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 235,
+        "vertical_radius": 330,
+        "orientation": -0.32,
+        "initial_phase": 2.8,
+        "direction": -1,
+        "angular_rate": 0.31
+      }
+    },
+    {
+      "contact_id": 18,
+      "center_id": "DC-03",
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "assessed_severity": 1,
+      "path": {
+        "horizontal_radius": 340,
+        "vertical_radius": 140,
+        "orientation": 0.65,
+        "initial_phase": 4.7,
+        "direction": 1,
+        "angular_rate": 0.4
+      }
+    }
+  ],
+  "reports": [
+    {
+      "report_id": "R-010-1",
+      "contact_id": 10,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 55,
+      "severity": 3,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-010-2",
+      "contact_id": 10,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 55,
+      "severity": 3,
+      "supersedes": "R-010-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-010-3",
+      "contact_id": 10,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 55,
+      "severity": 3,
+      "supersedes": "R-010-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-010-4",
+      "contact_id": 10,
+      "source_type": "Follow-up Analysis",
+      "text": "Repeated directional emissions coincide with approach maneuvers. The assessment remains suspected hostile; attribution is not independently verified.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 85,
+      "severity": 3,
+      "supersedes": "R-010-3",
+      "recommendations": [
+        "Prepare defensive systems (advisory; no encounter assigned)",
+        "Continue surveillance"
+      ]
+    },
+    {
+      "report_id": "R-011-1",
+      "contact_id": 11,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 100,
+      "severity": 2,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-011-2",
+      "contact_id": 11,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 100,
+      "severity": 2,
+      "supersedes": "R-011-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-011-3",
+      "contact_id": 11,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 100,
+      "severity": 2,
+      "supersedes": "R-011-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-011-4",
+      "contact_id": 11,
+      "source_type": "Follow-up Analysis",
+      "text": "A cross-check favors scientific survey telemetry. Earlier hostile interpretation is revised; source ownership remains unverified.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Assessed nonhostile",
+      "confidence": 90,
+      "severity": 1,
+      "supersedes": "R-011-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-012-1",
+      "contact_id": 12,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Assessed nonhostile",
+      "confidence": 65,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-012-2",
+      "contact_id": 12,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Assessed nonhostile",
+      "confidence": 65,
+      "severity": 1,
+      "supersedes": "R-012-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-012-3",
+      "contact_id": 12,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking and correlated emissions now increase concern about hostile intent. The earlier harmless assessment is revised, not erased.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 80,
+      "severity": 3,
+      "supersedes": "R-012-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-012-4",
+      "contact_id": 12,
+      "source_type": "Follow-up Analysis",
+      "text": "Tracking and correlated emissions now increase concern about hostile intent. The earlier harmless assessment is revised, not erased.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Suspected hostile",
+      "confidence": 80,
+      "severity": 3,
+      "supersedes": "R-012-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-012-5",
+      "contact_id": 12,
+      "source_type": "Follow-up Analysis",
+      "text": "An officer now favors routine mapping and expresses complete confidence. This remains an analyst opinion, not independently verified identity.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 45
+      },
+      "assessment": "Assessed nonhostile",
+      "confidence": 100,
+      "severity": 1,
+      "supersedes": "R-012-4",
+      "recommendations": [
+        "Hold fire or defer action (advisory)"
+      ]
+    },
+    {
+      "report_id": "R-013-1",
+      "contact_id": 13,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-013-2",
+      "contact_id": 13,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-013-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-013-3",
+      "contact_id": 13,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-013-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-013-4",
+      "contact_id": 13,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-013-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-014-1",
+      "contact_id": 14,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-014-2",
+      "contact_id": 14,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-014-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-014-3",
+      "contact_id": 14,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-014-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-014-4",
+      "contact_id": 14,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-014-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-015-1",
+      "contact_id": 15,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-015-2",
+      "contact_id": 15,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-015-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-015-3",
+      "contact_id": 15,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-015-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-015-4",
+      "contact_id": 15,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-015-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-016-1",
+      "contact_id": 16,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-016-2",
+      "contact_id": 16,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-016-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-016-3",
+      "contact_id": 16,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-016-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-016-4",
+      "contact_id": 16,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-016-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-017-1",
+      "contact_id": 17,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-017-2",
+      "contact_id": 17,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-017-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-017-3",
+      "contact_id": 17,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-017-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-017-4",
+      "contact_id": 17,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-017-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-018-1",
+      "contact_id": 18,
+      "source_type": "Platform Profile",
+      "text": "Silhouette resembles a common survey platform also used for communications work. Class recognition is tentative.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 0
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-018-2",
+      "contact_id": 18,
+      "source_type": "SIGINT",
+      "text": "A nearby narrow-band transmission may indicate interference equipment. Attribution to this contact remains uncertain.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 8
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-018-1",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ],
+      "suspected_payload": "Possible communications-interference equipment; not confirmed."
+    },
+    {
+      "report_id": "R-018-3",
+      "contact_id": 18,
+      "source_type": "Trajectory Assessment",
+      "text": "Tracking suggests a maneuver unlike the earlier profile; limited observation may also explain the difference.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 16
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-018-2",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-018-4",
+      "contact_id": 18,
+      "source_type": "Follow-up Analysis",
+      "text": "Available evidence is insufficient to establish intent. Continue tracking; absence of evidence is not proof of safety.",
+      "release": {
+        "type": "elapsed",
+        "seconds": 30
+      },
+      "assessment": "Uncertain",
+      "confidence": 55,
+      "severity": 1,
+      "supersedes": "R-018-3",
+      "recommendations": [
+        "Continue surveillance",
+        "Request additional investigation (advisory; no encounter assigned)"
+      ]
+    },
+    {
+      "report_id": "R-001-INV",
+      "contact_id": 1,
+      "source_type": "Follow-up Analysis",
+      "text": "The requested cross-check has arrived. Read the authored follow-up alongside the original intelligence and SIGINT; attribution and intent remain uncertain.",
+      "release": {
+        "type": "investigation"
+      },
+      "assessment": "Assessment revised",
+      "severity": 2,
+      "recommendations": [
+        "Review the available Deploy defense or Hold fire commands; recommendation is advisory."
+      ]
+    },
+    {
+      "report_id": "R-004-INV",
+      "contact_id": 4,
+      "source_type": "Follow-up Analysis",
+      "text": "The requested cross-check has arrived. Read the authored follow-up alongside the original intelligence and SIGINT; attribution and intent remain uncertain.",
+      "release": {
+        "type": "investigation"
+      },
+      "assessment": "Assessment revised",
+      "severity": 2,
+      "recommendations": [
+        "Review the available Deploy defense or Hold fire commands; recommendation is advisory."
+      ]
+    },
+    {
+      "report_id": "R-007-INV",
+      "contact_id": 7,
+      "source_type": "Follow-up Analysis",
+      "text": "The requested cross-check has arrived. Read the authored follow-up alongside the original intelligence and SIGINT; attribution and intent remain uncertain.",
+      "release": {
+        "type": "investigation"
+      },
+      "assessment": "Assessment revised",
+      "severity": 2,
+      "recommendations": [
+        "Review the available Deploy defense or Hold fire commands; recommendation is advisory."
+      ]
+    }
+  ],
+  "private_fixtures": {
+    "10": {
+      "identity": "covert_relay",
+      "hostile": true
+    },
+    "11": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "12": {
+      "identity": "covert_relay",
+      "hostile": true
+    },
+    "13": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "14": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "15": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "16": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "17": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    },
+    "18": {
+      "identity": "peaceful_survey_probe",
+      "hostile": false
+    }
+  }
+}

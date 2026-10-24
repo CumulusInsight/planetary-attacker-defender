@@ -82,3 +82,37 @@ New annotated tag: `planetary-prototype7-command-scoring-v1`, targeting that new
 Normal push of `feature/prototype7-command-mission-scoring` and only the new tag. No main merge/push, force push, history rewrite or old tag changes.
 
 The actual commit SHA and remote verification are pending Git creation. A local post-publication addendum will record them; no amend or extra commit will be made just to include its own SHA.
+
+## Final local publication verification addendum
+
+Verified: 2026-10-24T15:03:33-07:00 - America/Los_Angeles, Pacific Daylight Time.
+
+- Ending branch: `feature/prototype7-command-mission-scoring`.
+- Exact checkpoint commit: `4af29a9c2f73bcd0830b1dfea364138deb02f1f7`.
+- Parent remains accepted Prototype 6 `4dccf04644a213932570923f655ea745407d8cba`.
+- Annotated tag: `planetary-prototype7-command-scoring-v1`; tag object `590661bd4d8857eb98f831aaaa262679873b5208`; local and remote peeled target `4af29a9c2f73bcd0830b1dfea364138deb02f1f7`.
+- Atomic normal push succeeded: new feature branch and new annotated tag; upstream configured. Local HEAD, remote branch and tracking ref match (0 ahead / 0 behind).
+- Remote/local main remain `16dc097421e4f2b1159ab3f5095db408e115b11e`. No merge into main.
+- Prototype 2/3/4/6 annotated objects and target commits are unchanged locally and remotely; Prototype 6 branch remains at its accepted checkpoint.
+- Exact 15-file commit manifest and every committed blob match the reviewed staged contents, including the preserved Prototype 6 report addendum. No screenshots, caches, executables, temporary artifacts, unrelated files or credential patterns were included.
+- Working tree was clean after push and verification. After this permitted local addendum, only this report is modified; no staged/untracked files. No amend or extra commit was made to incorporate post-publication results.
+
+### Verified remote references
+
+```text
+4dccf04644a213932570923f655ea745407d8cba	refs/heads/feature/prototype6-strategic-overview
+4af29a9c2f73bcd0830b1dfea364138deb02f1f7	refs/heads/feature/prototype7-command-mission-scoring
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/heads/main
+0c17496e620fdf2a326a520ee27ed66d15a9d47a	refs/tags/planetary-prototype2-data-driven-attackers-v1
+c9e0bfd93884dfc0c63a9e54655ced2b758db649	refs/tags/planetary-prototype2-data-driven-attackers-v1^{}
+8c9295c1c3bb0d921791b92dc7c799dcdd6f03b4	refs/tags/planetary-prototype3-json-attack-data-v1
+85424c035801bb50f5f894614d53ca2512123dbc	refs/tags/planetary-prototype3-json-attack-data-v1^{}
+26fb021dcc78fd64ab398d7d767a24e0b3ea539a	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1^{}
+8794458b611a426ffc43226ce4f468c8853398d0	refs/tags/planetary-prototype6-strategic-command-v1
+4dccf04644a213932570923f655ea745407d8cba	refs/tags/planetary-prototype6-strategic-command-v1^{}
+590661bd4d8857eb98f831aaaa262679873b5208	refs/tags/planetary-prototype7-command-scoring-v1
+4af29a9c2f73bcd0830b1dfea364138deb02f1f7	refs/tags/planetary-prototype7-command-scoring-v1^{}
+```
+
+All five final rendered regression suites and both startup checks passed as recorded above. No gameplay changes were made in this checkpoint assignment. Stop for owner review; no Prototype 8 work.

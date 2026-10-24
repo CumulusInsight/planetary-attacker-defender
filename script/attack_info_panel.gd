@@ -49,6 +49,9 @@ func show_contact(view: Dictionary, reveal_update: bool = false) -> void:
 		sections.append("OBSERVED AFTERWARD\n" + view.observation)
 	if not view.uncertainty.is_empty():
 		sections.append("STILL UNCERTAIN\n" + view.uncertainty)
+	var sources: Array = view.get("source_reports", [])
+	if not sources.is_empty():
+		sections = _source_sections(sources) + sections
 	reports_label.text = "\n\n".join(sections)
 	investigate_button.disabled = not view.can_investigate
 	deploy_button.disabled = not view.can_deploy
@@ -120,3 +123,23 @@ func set_strategic_managed() -> void:
 
 func show_strategic_pause() -> void:
 	%Urgency.text = "STRATEGIC PAUSE: clocks held"
+
+
+static func _source_sections(reports: Array) -> Array[String]:
+	var latest: Dictionary = reports.back()
+	var confidence := "Not supplied" if latest.get("confidence") == null else "%s%% confidence in assessment" % str(latest.confidence)
+	var result: Array[String] = ["CURRENT PUBLIC ASSESSMENT\n%s | %s\nLatest: %s\nAnalyst opinion, not verified identity." % [latest.assessment, confidence, latest.source_type]]
+	var superseded := {}
+	for report in reports:
+		if not report.get("supersedes", "").is_empty(): superseded[report.supersedes] = true
+	result.append("INTELLIGENCE HISTORY / oldest first; scroll to review")
+	var marks := {"SIGINT": "[S]", "Platform Profile": "[P]", "Trajectory Assessment": "[T]", "Follow-up Analysis": "[F]"}
+	for report in reports:
+		var state := "PRIOR / newer assessment exists" if superseded.has(report.report_id) else "LATEST"
+		var text := "%s %s / %s\n%s\nAssessment: %s\nConfidence: %s (opinion, not fact)" % [marks[report.source_type], report.source_type, state, report.text, report.assessment, "Not supplied" if report.get("confidence") == null else str(report.confidence) + "%"]
+		text += "\nPossible payload: " + report.get("suspected_payload", "Not reported")
+		var options: Array = report.get("recommendations", [])
+		text += "\nADVISORY ONLY: " + ("; ".join(options) if not options.is_empty() else "No recommendation supplied")
+		if not report.get("supersedes", "").is_empty(): text += "\nREVISED: supersedes " + report.supersedes
+		result.append(text)
+	return result

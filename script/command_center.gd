@@ -4,6 +4,10 @@ const Loader = preload("res://script/strategic_data_loader.gd")
 const Registry = preload("res://script/strategic_registry.gd")
 const Tactical = preload("res://scene/game.tscn")
 @export_file("*.json") var strategic_data_path := "res://data/strategic_centers.json"
+@export var orbital_intelligence_enabled := false
+@export_file("*.json") var intelligence_data_path := "res://data/orbital_intelligence.json"
+var intelligence_error := ""
+
 @export_file("*.json") var mission_data_path := "res://data/mission.json"
 const MissionLoader = preload("res://script/mission_data_loader.gd")
 var mission = preload("res://script/mission_ledger.gd").new()
@@ -27,6 +31,7 @@ var queue_rows: Dictionary = {}
 var mode_control: OptionButton
 var pause_control: CheckButton
 var back_button: Button
+var surveillance_notice: Label
 var context_label: Label
 var _refreshing := false
 var _sort_signature := ""
@@ -63,6 +68,8 @@ func _ready() -> void:
 		tactical.set_tactical_visible(false)
 		tactical_centers[definition.center_id] = tactical
 		registry.register(definition.center_id, definition.contacts, tactical)
+	if orbital_intelligence_enabled:
+		_initialize_orbital_intelligence(result.centers)
 	_build_center_cards()
 	_initialize_mission()
 	show_overview()
@@ -109,10 +116,11 @@ func _build_ui() -> void:
 	title.add_theme_font_size_override("font_size", 28)
 	place(overview, title, Rect2(32, 8, 1536, 40))
 	var caption := Label.new()
+	surveillance_notice = caption
 	caption.text = "Public assessments only. Unknown is not hostile. Select a center or contact for tactical focus."
 	place(overview, caption, Rect2(32, 50, 1536, 30))
 	var queue_title := Label.new()
-	queue_title.text = "CONTACT TRIAGE / click a row to inspect"
+	queue_title.text = "CONTACT TRIAGE / click a row; scroll for more contacts"
 	place(overview, queue_title, Rect2(32, 306, 900, 40))
 	sort_control = OptionButton.new()
 	var sorting := sort_control
@@ -137,7 +145,7 @@ func _build_ui() -> void:
 	place(overview, queue, Rect2(32, 358, 1536, 400))
 	queue.item_selected.connect(_on_queue_selected)
 	var note := Label.new()
-	note.text = "Severity = assessed impact, not urgency or proof. Confidence = officer opinion. No combined threat score.\nFixture windows: 5 min default; DC-02 6 min / DC-03 4 min demonstration overrides.\nLearning strategic pause holds all encounter contacts; background traffic continues. Hover holds only the tactical contact."
+	note.text = "Severity = assessed impact, not urgency or proof. Confidence = officer opinion. No combined threat score.\nFixture windows: 5 min default; DC-02 6 min / DC-03 4 min demonstration overrides.\nLearning pause holds encounters and all intelligence delivery; background traffic continues. Hover holds only the tactical contact."
 	note.add_theme_font_size_override("font_size", 16)
 	place(overview, note, Rect2(32, 770, 1536, 70))
 
@@ -301,3 +309,18 @@ func show_scorecard(value: bool) -> void:
 	for id in tactical_centers:
 		tactical_centers[id].set_tactical_visible(id == focused_center and not value)
 	_refresh_mission_ui()
+
+
+func _initialize_orbital_intelligence(definitions: Array) -> void:
+	var result: Dictionary = preload("res://script/intelligence_data_loader.gd").load_data(intelligence_data_path, definitions)
+	intelligence_error = result.error
+	if not intelligence_error.is_empty():
+		push_error(intelligence_error)
+		surveillance_notice.text = "ADDITIONAL SURVEILLANCE UNAVAILABLE / accepted encounters remain available. See Godot output."
+		return
+	for definition in definitions:
+		var traffic: Array = result.data.traffic.filter(func(c): return c.center_id == definition.center_id)
+		var tactical = tactical_centers[definition.center_id]
+		tactical.install_surveillance(traffic, result.data.reports, result.data.private_fixtures)
+		for contact in traffic:
+			registry.contacts[int(contact.contact_id)] = {"center_id": definition.center_id, "metadata": contact.duplicate(true), "tactical": tactical}

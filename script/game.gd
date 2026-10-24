@@ -23,6 +23,10 @@ var data_error: String = ""
 var encounter_error: String = ""
 var encounter = EncounterSession.new()
 
+var _surveillance_paths: Array = []
+var intelligence: RefCounted
+var _intelligence_revision := -1
+
 var selected_attack_id: int = -1
 var hovered_attack_id: int = -1
 var _previous_picking_sort: bool = false
@@ -120,6 +124,13 @@ func _draw() -> void:
 	for radius in Enemy.RING_RADII:
 		draw_arc(Vector2(800, 450), radius, 0.0, TAU, 192, Color(0.25, 0.32, 0.4, 0.65), 1.5, true)
 
+	for trajectory in _surveillance_paths:
+		var points := PackedVector2Array()
+		for step in range(129):
+			var angle := TAU * step / 128.0
+			points.append(Vector2(800,450) + Vector2(trajectory.horizontal_radius * cos(angle), trajectory.vertical_radius * sin(angle)).rotated(trajectory.orientation))
+		draw_polyline(points, Color(0.3,0.46,0.52,0.32), 1.0, true)
+
 
 func _on_attacker_selected(attack_id: int) -> void:
 	var selected_record: Dictionary = {}
@@ -140,7 +151,7 @@ func _on_attacker_selected(attack_id: int) -> void:
 	if not encounter_error.is_empty():
 		$HUD/AttackInfoPanel.show_unavailable()
 	else:
-		$HUD/AttackInfoPanel.show_contact(encounter.public_view(attack_id))
+		$HUD/AttackInfoPanel.show_contact(_public_contact_view(attack_id))
 		_update_clock()
 
 
@@ -154,10 +165,11 @@ func _on_command_requested(action: String) -> void:
 	_sync_deadline()
 	var result: Dictionary = encounter.act(selected_attack_id, action)
 	if result.ok:
+		_advance_intelligence()
 		if encounter.resolved:
 			_set_reading(false)
 			closed_remaining = deadline.remaining(active_contact)
-		$HUD/AttackInfoPanel.show_contact(encounter.public_view(selected_attack_id), true)
+		$HUD/AttackInfoPanel.show_contact(_public_contact_view(selected_attack_id), true)
 		_update_clock()
 
 
@@ -166,11 +178,15 @@ func _on_replay_requested() -> void:
 		_set_reading(false)
 		deadline.restore(active_contact)
 		closed_remaining = -1.0
-		$HUD/AttackInfoPanel.show_contact(encounter.public_view(selected_attack_id))
+		if intelligence != null:
+			intelligence.reset_contact(active_contact)
+			_advance_intelligence()
+		$HUD/AttackInfoPanel.show_contact(_public_contact_view(selected_attack_id))
 		_update_clock()
 
 
 func _process(_delta: float) -> void:
+	_advance_intelligence()
 	_sync_deadline()
 	_update_clock()
 
@@ -181,7 +197,7 @@ func _sync_deadline() -> void:
 	if deadline.remaining(active_contact) <= 0.0 and encounter.expire():
 		closed_remaining = 0.0
 		if selected_attack_id == encounter.active_contact_id:
-			$HUD/AttackInfoPanel.show_contact(encounter.public_view(selected_attack_id), true)
+			$HUD/AttackInfoPanel.show_contact(_public_contact_view(selected_attack_id), true)
 
 
 func _update_clock() -> void:
@@ -226,3 +242,42 @@ func set_tactical_visible(value: bool) -> void:
 		contact.get_node("Area2D").input_pickable = value
 		if not value:
 			contact._on_area_2d_mouse_exited()
+
+
+func install_surveillance(traffic: Array, reports: Array, truth: Dictionary) -> void:
+	for record in traffic:
+		_surveillance_paths.append(record.path.duplicate(true))
+		var contact = preload("res://script/surveillance_contact.gd").new()
+		contact.configure(int(record.contact_id), record.path)
+		$EnemyContainer.add_child(contact)
+		contact.get_node("Area2D").input_pickable = visible
+		contact.attacker_selected.connect(_on_attacker_selected)
+		contact.attacker_hovered.connect(_on_attacker_hovered)
+		attack_records.append({"attack_id": int(record.contact_id)})
+	queue_redraw()
+	intelligence = preload("res://script/intelligence_session.gd").new()
+	intelligence.configure(reports, truth, $EnemyContainer.get_children())
+	_advance_intelligence()
+
+func _advance_intelligence() -> void:
+	if intelligence == null: return
+	var investigated_id: int = encounter.active_contact_id if encounter.investigated else -1
+	var held: bool = strategic_pause or reading
+	intelligence.advance($EnemyContainer.get_children(), investigated_id, held)
+	if intelligence.revision != _intelligence_revision:
+		_intelligence_revision = intelligence.revision
+		if selected_attack_id >= 0:
+			var panel = $HUD/AttackInfoPanel
+			var scroll: int = panel.reports_scroll.scroll_vertical
+			panel.show_contact(_public_contact_view(selected_attack_id))
+			panel.reports_scroll.set_deferred("scroll_vertical", scroll)
+
+func _public_contact_view(id: int) -> Dictionary:
+	var view: Dictionary = encounter.public_view(id)
+	if intelligence != null:
+		view.source_reports = intelligence.history(id)
+		if id != encounter.active_contact_id and not view.source_reports.is_empty():
+			view.title = "Monitored contact"
+			view.status = "Passive surveillance / no encounter"
+			view.intelligence = "See source reports below. Assessment is not verified identity."
+	return view
