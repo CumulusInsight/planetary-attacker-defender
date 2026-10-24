@@ -8,6 +8,8 @@ var data_error: String = ""
 
 var selected_attack_id: int = -1
 var hovered_attack_id: int = -1
+var _previous_picking_sort: bool = false
+var _previous_picking_first_only: bool = false
 
 
 func _enter_tree() -> void:
@@ -29,15 +31,42 @@ func _enter_tree() -> void:
 		attacker.attacker_hovered.connect(_on_attacker_hovered)
 
 
+func _ready() -> void:
+	# One deterministic hover/click target, even where interaction circles overlap.
+	var viewport := get_viewport()
+	_previous_picking_sort = viewport.physics_object_picking_sort
+	_previous_picking_first_only = viewport.physics_object_picking_first_only
+	viewport.physics_object_picking_sort = true
+	viewport.physics_object_picking_first_only = true
+	if not data_error.is_empty():
+		$HUD/AttackInfoPanel.show_unavailable()
+
+
+func _exit_tree() -> void:
+	var viewport := get_viewport()
+	viewport.physics_object_picking_sort = _previous_picking_sort
+	viewport.physics_object_picking_first_only = _previous_picking_first_only
+
+
 func _draw() -> void:
 	for radius in Enemy.RING_RADII:
 		draw_arc(Vector2(800, 450), radius, 0.0, TAU, 192, Color(0.25, 0.32, 0.4, 0.65), 1.5, true)
 
 
 func _on_attacker_selected(attack_id: int) -> void:
+	var selected_record: Dictionary = {}
+	for record in attack_records:
+		if record.attack_id == attack_id:
+			selected_record = record
+			break
+	if selected_record.is_empty():
+		push_error("Cannot display attack information: unknown attack_id %d." % attack_id)
+		$HUD/AttackInfoPanel.show_unavailable()
+		return
 	selected_attack_id = attack_id
 	for attacker in $EnemyContainer.get_children():
 		attacker.set_selected(attacker.attack_id == attack_id)
+	$HUD/AttackInfoPanel.show_attack(selected_record)
 
 
 func _on_attacker_hovered(attack_id: int) -> void:

@@ -30,7 +30,9 @@ func run() -> void:
 	check(attackers.size() == 3, "Exactly three attackers")
 	check(game.attack_records.size() == 3 and game.data_error.is_empty(), "Three JSON records loaded")
 	check(attackers.map(func(a): return a.abbreviation) == ["VM ESC", "ROOTKIT", "FILELESS"], "Correct JSON identities")
+	var expected_speeds = [0.49, 0.63, 0.77]
 	for i in range(3):
+		check(is_equal_approx(attackers[i].move_speed, expected_speeds[i]), "Approved 30 percent speed reduction")
 		for property in ["attack_id", "abbreviation", "description", "severity", "move_speed", "start_ring"]:
 			check(attackers[i].get(property) == game.attack_records[i][property], "External configuration: " + property)
 		check(attackers[i].get_node("AttackLabel").text == game.attack_records[i].abbreviation, "JSON identity displayed")
@@ -57,6 +59,11 @@ func run() -> void:
 		check(not paused, "Selection never pauses scene tree")
 		for other in attackers:
 			check(other.is_selected == (other == target), "Exclusive selection transfers")
+		# Hover intentionally holds one attacker in Prototype 4; selection alone must not.
+		var away := InputEventMouseMotion.new()
+		away.position = Vector2(40, 40)
+		root.push_input(away)
+		await frames()
 		var positions = attackers.map(func(a): return a.position)
 		await create_timer(0.15).timeout
 		for i in range(3):
@@ -66,7 +73,10 @@ func run() -> void:
 	var transitions = [0, 0, 0]
 	var travelled = attackers.map(func(a): return a.orbit_progress)
 	var last_angles = attackers.map(func(a): return a.orbit_angle)
-	var end_time = Time.get_ticks_msec() + 19000
+	var slowest_speed: float = attackers.map(func(a): return a.move_speed).min()
+	# Two complete slowest orbits plus one second; never skip either inward jump.
+	var observation_ms := int(ceil((2.0 * TAU / slowest_speed + 1.0) * 1000.0))
+	var end_time = Time.get_ticks_msec() + observation_ms
 	while Time.get_ticks_msec() < end_time:
 		await process_frame
 		for i in range(3):

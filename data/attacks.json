@@ -4,7 +4,7 @@
     "abbreviation": "VM ESC",
     "description": "Placeholder: virtual machine escape.",
     "severity": 1,
-    "move_speed": 0.7,
+    "move_speed": 0.49,
     "start_ring": 2
   },
   {
@@ -12,7 +12,7 @@
     "abbreviation": "ROOTKIT",
     "description": "Placeholder: concealed system access.",
     "severity": 2,
-    "move_speed": 0.9,
+    "move_speed": 0.63,
     "start_ring": 2
   },
   {
@@ -20,7 +20,7 @@
     "abbreviation": "FILELESS",
     "description": "Placeholder: memory-based activity.",
     "severity": 3,
-    "move_speed": 1.1,
+    "move_speed": 0.77,
     "start_ring": 2
   }
 ]

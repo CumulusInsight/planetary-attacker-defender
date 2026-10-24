@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6amrter6djgw"]
+[gd_scene load_steps=7 format=3 uid="uid://b6amrter6djgw"]
 
 [ext_resource type="PackedScene" uid="uid://f8hqvn82tjlr" path="res://scene/datacenter.tscn" id="1_5kiuu"]
 [ext_resource type="PackedScene" uid="uid://c5adkfkpyr0j6" path="res://scene/enemy.tscn" id="2_dbls1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://script/game.gd" id="4_controller"]
 
 [ext_resource type="Texture2D" path="res://images/enemy2.png" id="5_enemy2"]
+
+[ext_resource type="PackedScene" path="res://scene/attack_info_panel.tscn" id="6_info_panel"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("4_controller")
@@ -28,3 +30,7 @@ orbit_angle = 2.094
 position = Vector2(576, 550)
 enemy_texture = ExtResource("3_33cqm")
 orbit_angle = 4.189
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="AttackInfoPanel" parent="HUD" instance=ExtResource("6_info_panel")]
