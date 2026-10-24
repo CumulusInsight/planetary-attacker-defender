@@ -1,6 +1,6 @@
 # Orbital Defense Command — Game Concept
 
-Status: master design requirements updated after owner review of Prototype 5 on 24 October 2026. Implemented status, approved long-term requirements, and future proposals are distinguished below. Approval of this design direction is not authorization to implement further gameplay. The owner's governing principle is that every intelligence assessment and defensive decision involves uncertainty, even when an analyst expresses complete confidence. Documentation only: no gameplay, data, tests, artwork, settings, or checkpoint changes are authorized. The title and defending organization's name remain provisional.
+Status: master design updated for the owner-authorized Prototype 7 implementation, with reviewed Prototype 6 preserved as its checkpoint. Current implementation, approved requirements and future proposals remain distinct. Prototype 7 is authorized for local implementation/testing only, not commit, merge, tag, push or release. Every intelligence assessment and defensive decision involves uncertainty, even when an analyst expresses complete confidence. The title and defending organization's name remain provisional.
 
 ## 1. Concept and fictional setting
 
@@ -35,21 +35,22 @@ Audience, technical depth, and the balance between education, narrative, and str
 
 **Implemented** means present in the reviewed prototype. **Approved design requirement** means an owner-directed long-term obligation, not code already built or permission to implement it now. **Future proposal/open decision** means a suggested mechanism or delivery step requiring a separate specification and approval.
 
-Prototypes 1-4 remain accepted history. Prototype 4's checkpoint is `16dc097421e4f2b1159ab3f5095db408e115b11e`, tag `planetary-prototype4-stationary-panel-hover-freeze-v1`. The owner considers the latest Prototype 5 improvements satisfactory for this stage; this does not create a new Git checkpoint. Prototype 5 work remains uncommitted on `feature/prototype5-intelligence-defense`.
+Prototypes 1-4 remain accepted history. Prototype 4 is preserved at `16dc097421e4f2b1159ab3f5095db408e115b11e`, tag `planetary-prototype4-stationary-panel-hover-freeze-v1`. The accepted Prototype 5/6 implementation is now checkpointed at `4dccf04644a213932570923f655ea745407d8cba`, annotated tag `planetary-prototype6-strategic-command-v1`. Prototype 7 work is local and uncommitted on `feature/prototype7-command-mission-scoring`; the pre-existing local checkpoint-report addendum remains preserved.
 
-| Area | Implemented through latest Prototype 5 | Approved requirement or future work, not implemented |
+| Area | Implemented baseline and current Prototype 7 addition | Future requirements, not implemented |
 | --- | --- | --- |
-| Tactical environment | One DATA asset with display-only `$1,000,000`, three rings, exactly three moving contacts. | Network of centers, strategic overview and focused tactical navigation (Section 14). |
-| Motion/input | Speeds 0.49/0.63/0.77 radians/second; full revolutions, discrete inward jumps, continuing inner-ring motion; enlarged invisible hit areas and exclusive highlights. | Scalable contact population and navigation policy; no speed or geometry redesign is authorized. |
-| Contact knowledge | Stable C-001/C-002/C-003 identifiers; one unidentified active encounter on C-001; two selectable background contacts. No floating hover-description popups. | Central registry, separate evolving assessments, triage and applicable per-contact deadlines. Unknown never means automatically hostile. |
-| Evidence/decisions | Stationary intelligence, SIGINT and capability estimates; one authored follow-up; deterministic Deploy defense / Hold fire / expiry and replay. H, N and N100 fixtures separate private truth from public reports; N100 remains peaceful despite 100% hostile confidence. | Real intelligence production, assignments and standardized report lifecycle (Section 15). |
-| Time | Configurable 300-second active-simulation decision budget derived from actual angular travel; prominent countdown and ring/orbit/window progress. Expiry differs from explicit hold fire. Replay restores only the active contact's initial progression. | Collection/report/command deadline coordination across centers; no strategic clock or multi-contact timing system exists. |
-| Modes | Learning Mode enables explicit Read reports (pause); Active Challenge disables that reading pause. Hover holds only the hovered object and resumes exactly in either mode. | Optional concept learning through four providers and explicit multi-contact pause policy (Sections 16-17). |
-| Data/resources | Six-field attack JSON validated outside moving objects; separate local authored scenario fixtures and deterministic resolver. Static demonstration staff/workload/analysis ETA. | Real staffing/resource allocation, database-backed concept mapping, provider adapters and certification tracking. No database technology selected. |
+| Environment and navigation | Three data centers, nine stable contacts, reusable strategic/tactical views, selectable registry and deadline/severity triage. Standalone Prototype 5 tactical scene remains available. | Larger networks such as the illustrative 15/45 environment; general multi-encounter-per-center scheduling. |
+| Motion/input | Speeds 0.49/0.63/0.77; full-revolution discrete inward jumps; continuous inner-ring motion; enlarged hit areas and exclusive visible selection. | No movement redesign is approved. |
+| Encounter integrity | Three independent active encounters and six unknown background contacts. H, N and N100 retain hidden truth separately from evidence/assessment/confidence; N100 remains peaceful despite its 100% hostile opinion. | Richer evidence production, verification and independent report histories. Unknown contacts must not become automatic enemies. |
+| Timing/modes | Movement-derived five-minute default; explicit 6/4-minute demonstration overrides in DC-02/DC-03; strategic Learning pause holds all encounter hosts, backgrounds continue; Challenge advances offscreen; hover freezes only the tactical contact. | Learning-provider launch/return policy and larger-network timing specification. |
+| Decisions | One follow-up, deterministic defense/hold-fire/expiry and isolated replay. Expiry is distinct from intentional restraint. | Defense catalogs, damage and financial models, diplomacy or random outcomes. |
+| Command roles and mission | Prototype 7 adds Tactical Officer and Operations Commander presentations, five defender objectives, a configurable 1,000-point event-ledger model, public confirmed-performance displays and an evidence-limited final scorecard. See Sections 19-20. | Strategic Commander, staff delegation and playable attacker controls. |
+| Resources and education | Static demonstration staff/workload/analysis ETA remain visibly labeled. Provider integration is absent. | Real staffing, database-backed concept mappings, learning-provider adapters, mastery/certification tracking. |
 
-The attack abbreviations VM ESC / ROOTKIT / FILELESS remain externally configured records, not verified player-facing identities. Severity metadata is not hostility probability or time urgency. The DATA value is not an operating balance. No scoring, damage calculations, diplomacy, staffing scheduler, strategic threat registry, educational-provider integration or mastery/certification tracking exists.
+The attack abbreviations remain externally configured movement/description records, not verified identities. Assessed severity is not urgency, hostility probability or actual affiliation. DATA's `$1,000,000` remains a display-only placeholder. The new point ledger does not authorize unsupported health, damage, financial or personnel calculations.
 
-Implementation history, in order: [original report](Prototype_5_Completion_Report.md), [demonstration indicators](Prototype_5_Completion_Report_2026-10-24_111602_01.md), [initial orbital deadline](Prototype_5_Completion_Report_2026-10-24_115626_01.md), and [five-minute window and Learning Mode](Prototype_5_Completion_Report_2026-10-24_121306_01.md). Later reports supersede earlier timing/reset descriptions; earlier reports remain historical records. Latest reported regressions passed Prototype 3, Prototype 4 (13,040 checks), and Prototype 5 (992 checks). Those are prior implementation results, not tests rerun for this documentation task.
+Historical reports, retained unchanged: [original Prototype 5](Prototype_5_Completion_Report.md), [demo indicators](Prototype_5_Completion_Report_2026-10-24_111602_01.md), [initial deadline](Prototype_5_Completion_Report_2026-10-24_115626_01.md), [five-minute/reading refinement](Prototype_5_Completion_Report_2026-10-24_121306_01.md), and [Prototype 6](Prototype_6_Completion_Report_2026-10-24_131502_01.md). Earlier uncommitted/timing statements describe their historical stage, not the latest checkpoint. [Prototype 7 completion report](Prototype_7_Completion_Report_2026-10-24_144347_01.md) provides current test evidence and limitations.
+
 
 ## 4. Proposed gameplay loop and command responsibilities
 
@@ -71,7 +72,7 @@ Star Fink can cause harm by deploying a defense against an innocent object. The 
 | --- | --- |
 | Damage to neutral property | A mistaken intervention may interfere with or damage peaceful spacecraft, probes, or cargo. Exact effects and representation need approval. |
 | Diplomatic dispute | A neutral planetary organization may challenge Star Fink's action. No diplomacy meter, faction system, or negotiation rules are specified. |
-| Financial cost | Compensation, disruption, or expended equipment could create fictional costs. No amounts, accounting system, or scoring formula are approved. |
+| Financial cost | Compensation, disruption, or expended equipment could create fictional costs. No financial amounts, accounting system, or financial-cost scoring formula are approved. Prototype 7 scores only the evidence-limited categories in Section 20. |
 | Reputational damage | Other organizations may question Star Fink's judgment. This is a possible narrative consequence, not an implemented reputation statistic. |
 | Reduced defensive readiness | Capacity spent on an innocent contact may be unavailable for a genuine attack. Quantities, replenishment, and timing remain undecided. |
 
@@ -194,12 +195,12 @@ Resolve visual sizes, transparency, pivot/anchor expectations, text baked into a
 
 ## 10. Proposed development increments and test gates
 
-This is the retained incremental roadmap: milestone A is now implemented through Prototype 5; B-F remain proposals. Section 18 adds phased design/integration gates without assigning them automatically to Prototype 6 or renumbering checkpoints. Each needs a small implementation specification and owner approval.
+This is the retained incremental roadmap: A is implemented through Prototype 5; B/C and a three-encounter slice of E are implemented through Prototype 6. Richer D/E/F scope remains future work. Section 18 retains phased requirements without authorizing further implementation or renumbering checkpoints. Each needs a small implementation specification and owner approval.
 
 | Increment | Small proposed deliverable | Test/review gate |
 | --- | --- | --- |
 | A — Implemented Prototype 5: one uncertain encounter | One data center, one unidentified approaching contact, one short intelligence report, one short SIGINT report, uncertain hostility/capability assessments, and Deploy a defense / Investigate further / Hold fire. Predetermine hidden state and outcome branches for hostile and peaceful neutral fixtures. | Player-visible assessment stays separate from truth; all three actions produce the specified deterministic branch; hold fire can be appropriate; a wrongly confident report cannot turn a peaceful fixture hostile. No random probability engine. |
-| B — Three-center command overview | Show Centers A/B/C and their identities/statuses. Initially reuse one active interaction rather than introducing three simultaneous independent threat engines. | Correct asset selection, clear priorities, consistent status, and no accidental duplication of the active encounter. |
+| B — Three-center command overview | Show Centers A/B/C and their identities/statuses. Prototype 6 now retains three deterministic active encounters, one per center, using the same tactical component; broader concurrency remains future work. | Correct asset selection, clear priorities, consistent status, and no accidental duplication of the active encounter. |
 | C — Zoom navigation | Move between overview and a selected center's tactical presentation. | Selection, contact IDs, evidence, orbital progress, and defense commitments survive navigation; returning does not reset time/state. |
 | D — Richer intelligence and SIGINT | Expand beyond Prototype 5's two short reports into investigation/report sequences, including unrelated traffic, uncertain attribution, and misleading clues. | Provenance and timestamps remain inspectable; assessment updates remain fallible; repeated/correlated sources are not independent proof. |
 | E — Independent threats | Activate independent encounters across centers, with mixed harmless traffic and approved response contention. | Investigating, freezing, selecting, or resolving one contact cannot unintentionally stop/reset others; simultaneous events and resource allocation remain deterministic/testable under the chosen time policy. |
@@ -263,9 +264,9 @@ Prototype 5 implements these abstract authored branches, not final defense, dama
 6. N's 100%-confidence variant preserves its peaceful hidden state and possible hold-fire outcome. Reported certainty is never copied into a verified-hostile flag.
 7. H demonstrates that delaying or declining deployment can differ from an effective response, under the agreed fixture script. These outcomes do not establish a universal correct defense from an abbreviation or claim that confidence guarantees effectiveness.
 8. The outcome view describes permitted observable effects and reasons, not an automatic identity/capability reveal. Ground-truth assertions are allowed in tests/debugging only, unless a separate disclosure policy is approved.
-9. Prototype 5 implements the configurable movement-derived deadline and explicit modes in Section 17. Scoring, diplomacy, reputation, financial-loss calculations, damage models, random outcome engines and real intelligence production remain unimplemented. Prototype 3/4 movement/input regressions remain preservation gates.
+9. Prototype 5 implements the configurable movement-derived deadline and explicit modes in Section 17. Prototype 7 adds only the evidence-limited mission points in Section 20. Diplomacy, reputation, financial-loss calculations, damage models, random outcome engines and real intelligence production remain unimplemented. Prototype 3/4 movement/input regressions remain preservation gates.
 
-Current timing, one-follow-up limit and abstract outcomes are implemented as documented in Section 3. Future timing policies, investigation costs, expanded defenses, scoring and diplomacy require new owner approval before implementation. The proposal deliberately demonstrates uncertainty with authored scenarios before attempting a general simulation.
+Current timing, one-follow-up limit and abstract outcomes are implemented as documented in Section 3. Future timing policies, investigation costs, expanded defenses, scoring beyond Prototype 7's explicit ledger, and diplomacy require new owner approval. The proposal deliberately demonstrates uncertainty with authored scenarios before attempting a general simulation.
 
 ## 11. Proposed architecture boundaries
 
@@ -308,7 +309,7 @@ The owner has reviewed the current Prototype 5 interaction satisfactorily. New s
 
 ## 14. Strategic command-center requirements
 
-**Approved long-term design requirements; not implemented.** Orbital Defense Command must support a network of orbital data centers, with an overview of the entire defended environment and a tactical view of one selected center. An illustrative operational scenario is **15 data centers**, about **three unidentified or potentially hostile contacts per center**, roughly **45 contacts under surveillance**. These are capacity examples, not fixed limits or a claim of 45 attackers. Scenarios must support fewer or more centers/contacts, including peaceful traffic and unknown objects with no applicable decision deadline.
+**Approved long-term design requirements; a three-center registry/triage/tactical slice is implemented in Prototype 6.** Orbital Defense Command must ultimately support a network of orbital data centers, with an overview of the entire defended environment and a tactical view of one selected center. An illustrative operational scenario is **15 data centers**, about **three unidentified or potentially hostile contacts per center**, roughly **45 contacts under surveillance**. These are capacity examples, not fixed limits or a claim of 45 attackers. Scenarios must support fewer or more centers/contacts, including peaceful traffic and unknown objects with no applicable decision deadline.
 
 The command system must provide:
 
@@ -444,7 +445,7 @@ For normal Learning Mode, specify how optional instruction remains usable while 
 
 ## 18. Proposed phased requirements and proof-of-concept gates
 
-These are planning proposals, not implementation authorization, Prototype 6 assignments or new checkpoints. Preserve the earlier B-F roadmap and limited-connectivity asset strategy; begin with small reviewable specifications and tests.
+These remain planning proposals except for the explicitly implemented registry/triage slice summarized in Section 3; they do not authorize new gameplay, learning integration or checkpoints. Preserve the earlier B-F roadmap and limited-connectivity asset strategy; begin with small reviewable specifications and tests.
 
 | Phase | Small proposed deliverable | Approval/test gate |
 | --- | --- | --- |
@@ -458,4 +459,83 @@ These are planning proposals, not implementation authorization, Prototype 6 assi
 
 Owner review is required for registry identity/lifecycle and cross-center association rules; triage default sort/ties/alerting; assessed severity scales; staffing roles, capacity, reassignment and report templates; collection/report deadline consequences; multi-contact learning pause scope and return reconciliation; future assessment-mode assistance restrictions; concept namespace ownership and difficulty translation; provider capability/rights discovery; database technology/topology and persistence/security; practice-history retention and optional mastery model; and certification authority/version-review process. The requirement for uncertainty and the prohibition on treating expressed confidence as truth remain settled.
 
-This master update changes documentation only. It does not implement strategic traffic, scheduling, provider integration, database mappings or certification tracking, and does not authorize any gameplay or checkpoint change.
+The strategic and mission slices actually implemented are recorded in Sections 3 and 19-20. The remaining roadmap does not authorize scheduling, provider integration, database mappings, certification tracking or checkpoint changes.
+
+## 19. Command hierarchy and mission objectives (Prototype 7)
+
+**Implemented locally for owner review.** Command level changes responsibility and presentation, not scenario truth, difficulty, angular speed, deadline budget or resolver rules. The role selector has exactly two operational choices; navigation also sets the matching level.
+
+| Tier | Responsibility and implementation status |
+| --- | --- |
+| Tactical Officer | Implemented: focus one data center; select contacts, read local intelligence/SIGINT and countdown, investigate, deploy or deliberately hold fire. A narrow local panel shows objectives, official disposition/timeliness and confirmed point contribution without entering the orbital click area. |
+| Operations Commander | Implemented: network-level monitored/active/resolved/deadline status, confirmed performance, objective progress, three center cards and nine-contact triage. Prioritize by deadline or assessed severity, enter tactical focus and return without resetting simulation. |
+| Strategic Commander | Future design only: coordinate broader missions/networks and high-level policy across a larger environment. No 15-center implementation, staff delegation, personnel management or third playable tier is included in Prototype 7. |
+
+These are single-player command perspectives, not a new account/permission or multiplayer system. Shared Learning strategic pause and Active Challenge policies remain as accepted in Prototype 6. The standalone Prototype 5 scene retains its local reading-control behavior. Opening the detailed mission scorecard does not automatically pause time; Learning pause is an explicit prior action.
+
+`data/mission.json` defines the defender mission and its objective IDs/text separately from scenario truth. The mission binds to the configured active contact at each center; backgrounds do not acquire objectives/deadlines. Primary defender goals are:
+
+1. Protect operational data centers.
+2. Correctly resolve active encounters.
+3. Avoid unnecessary defensive engagements.
+4. Make decisions before applicable deadlines.
+5. Maintain operational effectiveness.
+
+Objective status distinguishes official disposition from proven correctness, and monitored assets from independently verified operational health. Progress toward a goal must not become a hidden-identity oracle. Mission data is validated; missing/invalid data disables scoring clearly while preserving the existing tactical simulation.
+
+## 20. Defender scoring and mission ledger (Prototype 7)
+
+### Configurable weights and applicability
+
+The proposed maximum is **1,000 points**, configured in mission data, not UI code. Points do not represent money, damage or personnel efficiency.
+
+| Category | Maximum | Current public assessment policy |
+| --- | --- | --- |
+| Asset protection | 350 | Unassessed: existing fixtures do not provide complete operational-health/damage verification. Do not label all three centers operational or assign damage merely from a disturbance. |
+| Threat resolution | 250 | Credit reviewed observable effects of official dispositions: observed block or deliberate passage without interference. Observed access disturbance earns zero resolution fraction. Uncertain/unreviewed effects remain unassessed. Expiry earns no timely-resolution credit even if passage looks favorable. |
+| Decision quality | 200 | Unassessed publicly: identity, engagement necessity and epistemic reasoning quality are not independently verified. Effective effects alone do not establish a well-reasoned decision. Actual fixture adjudication stays private. |
+| Resource management | 100 | Unassessed: no validated resource quantities/costs, allocation or personnel-efficiency model exists. No invented expenditure or reward for pressing fewer buttons. |
+| Command effectiveness | 100 | Limited confirmed metric: timely actual disposition versus recorded expiry. Timeliness credit is explicitly not a correctness or successful-defense endorsement. |
+
+For N official participants, an assessable outcome's contribution to a category of weight W is `W * fraction / N`. Threat-resolution fractions are 1 for an observed blocked attempt or deliberate quiet passage, 0 for observed disturbance or expiry, and null/unassessed for uncertain effects. Command-effectiveness fraction is 1 for an actual timely deploy/hold resolution and 0 for expiry. No resolution event means no assessed contribution yet, rather than an earned zero.
+
+At category/network/local level, present **confirmed points**, **assessed capacity**, and **unassessed capacity** separately. Do not rescale a partly assessed mission to 1,000 or treat unavailable categories as earned zero. With all three official dispositions consisting of an observed block and two deliberate quiet passages, confirmed points are 350, assessed capacity 350, and the remaining 650 stays unassessed. A mission involving uncertain intervention effects has less assessed capacity, not fabricated certainty.
+
+The evidence rules match existing player-visible observation text exactly and carry public explanations. Unreviewed observations remain unassessed. Public points depend only on those observable facts and the known disposition, not hidden identity, assessed severity/confidence, fixture key or private result code. Identical public observation/action/uncertainty must produce identical public score output despite different private adjudication.
+
+### Private actual-outcome adjudication and penalties
+
+The trusted resolver emits a resolution event containing the actual deterministic outcome plus the public observation. The ledger privately distinguishes appropriate response to the authored attempt, appropriate restraint, unsuccessful intervention/non-intervention, unintended probe interference and expiration. It never substitutes public severity for actual outcome.
+
+A neutral unnecessary deployment records a **pending private decision-quality penalty** of `decision_quality_weight / N`, represented as lost provisional credit for that participant, not a second deduction from an already-zero contribution. It earns no confirmed threat-resolution/decision-quality bonus simply because intelligence was highly confident. Its public observation remains the existing uncertainty about stopped telemetry and possible unintended interference; the normal scorecard does not declare the object peaceful.
+
+Private outcome-match/provisional-quality values are not independently justified reasoning grades and are never published by a normal UI control, tooltip, notification or final-card toggle. Because engagement necessity is unconfirmed in the current fixtures, the penalty remains withheld/unassessed publicly, even after mission completion. It must not become an identity-revealing score change. A future approved independent-verification policy is required before publishing identity-dependent penalties or correctness grades. No scenario truth or new verification fact is invented to make a full 1,000-point result available.
+
+Intentional hold fire and expiration remain different event decisions. Quiet passage after expiry is a favorable effect without a timely deliberate decision, not a reason to award the same restraint credit. This separates supported performance from a lucky outcome without exposing actual affiliation.
+
+### Event and replay policy
+
+- Append an official event only when the deterministic resolver actually resolves a participant through deploy, hold fire or deadline expiration. Investigation, repeated clicks and navigation create no scored events.
+- Each mission/center/contact slot accepts its **first resolution only** as official. Duplicate or replayed resolutions do not overwrite or add points. Before any official resolution, the accepted explicit replay reset can still restart local state, and its first eventual resolution becomes official; resetting itself earns nothing. After the first result, replays retain all accepted movement/evidence/decision behavior as practice, isolated from the official ledger and other centers.
+- Mission completion means every official participant has one disposition; it does not assert that every decision was correct or every category assessable. The final mission scorecard explains all five categories, objectives and official observable outcomes. Later practice can still run without changing that final score.
+- Current live-encounter counts reflect simulation (including practice) while official disposition counts reflect the immutable ledger. Label both to avoid confusing replay state with a second mission opportunity.
+- Ledger state is in memory for this mission/application session. No save/load, player profile, database, restart-mission score exploit mechanism or new persistence service was added.
+
+The architecture separates mission validation/configuration, deterministic session resolution events, private adjudication/official ledger, explicit public projection, and command/tactical presentation. Moving contact scripts do not score. Future evidence policies must keep actual truth separate from report interpretation and defender-visible confirmation.
+
+## 21. Future attacker missions and scoring architecture
+
+**Design/configuration only; not playable.** A separate `attacker_future` section defines prospective objectives: reconnaissance, disruption, unauthorized control, damage to a designated target, and resource preservation/stealth. These are general future mission types, not the current contacts' hidden objectives, and are not displayed in the defender interface.
+
+| Future attacker category | Proposed maximum |
+| --- | --- |
+| Mission objectives achieved | 400 |
+| Target impact or control | 250 |
+| Stealth and deception | 150 |
+| Resource efficiency | 100 |
+| Operational coordination | 100 |
+| Total | 1,000 |
+
+Keep defender and attacker models, weight sets, role-specific evidence and public projections separate. The event-ledger pattern can be reused with a distinct attacker ledger/adjudicator and explicit mission/role/event namespaces; do not simply pass the defender's private records into an attacker UI or vice versa. Actor-authorized knowledge and observable effects define each projection. Future replay/idempotency and independent verification must be specified per mission/role.
+
+Prototype 7 does not instantiate an attacker ledger, offer attacker command controls, simulate attacker personnel/resources, calculate target damage or implement Strategic Commander. Attacker scoring, broader delegation, new verification evidence, persistence, complete resource/health models, and publication of held quality penalties require separately reviewed scope. Current balancing weights, first-resolution policy and evidence-limited applicability are open for owner playtest review, without weakening the settled uncertainty/privacy principles.

@@ -1,6 +1,8 @@
 extends RefCounted
 ## Decision state and authored resolution, independent of nodes, movement, and UI.
 
+signal resolution_recorded(event: Dictionary)
+
 const Loader = preload("res://script/encounter_data_loader.gd")
 const ACTION_LABELS = {"investigate": "Investigate further", "deploy": "Deploy defense", "hold_fire": "Hold fire", "expired": "Deadline expired (no timely intervention)"}
 
@@ -40,6 +42,7 @@ func act(contact_id: int, action: String) -> Dictionary:
 		_decision = action
 		_outcome = _fixture.outcomes[action].duplicate(true)
 		resolved = true
+		_emit_resolution()
 	return {"ok": true, "error": ""}
 
 
@@ -49,6 +52,7 @@ func expire() -> bool:
 	_decision = "expired"
 	_outcome = _fixture.outcomes.hold_fire.duplicate(true)
 	resolved = true
+	_emit_resolution()
 	return true
 
 
@@ -112,3 +116,10 @@ func assessment_summary() -> Dictionary:
 		return {"assessment": "Assessment unavailable", "confidence": null}
 	var intel: Dictionary = _fixture.reports.intelligence
 	return {"assessment": intel.assessment, "confidence": intel.confidence}
+
+
+func _emit_resolution() -> void:
+	# Trusted internal event. UI must consume only MissionLedger.public_snapshot().
+	resolution_recorded.emit({"contact_id": active_contact_id, "decision": _decision,
+		"actual_result": _outcome.actual_result, "observation": _outcome.observation,
+		"uncertainty": _outcome.uncertainty})

@@ -110,3 +110,37 @@ Explicit manifest reviewed before staging; no broad add-all operation:
 ## Post-publication verification
 
 Pending actual commit/tag creation and remote verification. The local addendum will record exact SHA, annotated tag object/target, branch/tag remote agreement, preserved Prototype 4 reference, tracked-manifest checks and final status. No extra commit or amend will be made solely to capture those after-the-fact results.
+
+## Final local verification addendum
+
+Verified: 2026-10-24T13:41:24-07:00 - America/Los_Angeles, Pacific Daylight Time (UTC-07:00).
+
+- Ending branch: `feature/prototype6-strategic-overview`.
+- Exact checkpoint commit SHA: `4dccf04644a213932570923f655ea745407d8cba`.
+- Parent/starting commit: `16dc097421e4f2b1159ab3f5095db408e115b11e`.
+- Annotated tag: `planetary-prototype6-strategic-command-v1`.
+- Annotated tag object SHA: `8794458b611a426ffc43226ce4f468c8853398d0`.
+- Local and remote tag target: `4dccf04644a213932570923f655ea745407d8cba`.
+- Remote branch `refs/heads/feature/prototype6-strategic-overview`: `4dccf04644a213932570923f655ea745407d8cba`; matches local HEAD and origin tracking ref (0 ahead / 0 behind).
+- Atomic normal push succeeded: one new branch and one new annotated tag. Tracking upstream configured. No main push or merge.
+- Remote/local main remain `16dc097421e4f2b1159ab3f5095db408e115b11e`.
+- Accepted Prototype 4 tag object remains `26fb021dcc78fd64ab398d7d767a24e0b3ea539a`; target remains `16dc097421e4f2b1159ab3f5095db408e115b11e` locally and remotely. Prototype 2/3 tags also retain their original tag objects and target commits.
+- The exact 37-file changed manifest matches the commit. Every intended source/report file is tracked and its committed blob matches the reviewed working copy before this addendum. No generated images, executable updates, cache files, unrelated files or credential markers were included.
+- Working tree was clean immediately after commit/push verification. After writing this addendum, the sole remaining modification is this checkpoint report. Staging area is empty; no untracked files remain. This addendum is local only. The pushed commit contains the prepared report and actual pre-commit test results; no amend or extra commit was made to add its own SHA/post-push results.
+
+### Verified remote references
+
+```text
+4dccf04644a213932570923f655ea745407d8cba	refs/heads/feature/prototype6-strategic-overview
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/heads/main
+0c17496e620fdf2a326a520ee27ed66d15a9d47a	refs/tags/planetary-prototype2-data-driven-attackers-v1
+c9e0bfd93884dfc0c63a9e54655ced2b758db649	refs/tags/planetary-prototype2-data-driven-attackers-v1^{}
+8c9295c1c3bb0d921791b92dc7c799dcdd6f03b4	refs/tags/planetary-prototype3-json-attack-data-v1
+85424c035801bb50f5f894614d53ca2512123dbc	refs/tags/planetary-prototype3-json-attack-data-v1^{}
+26fb021dcc78fd64ab398d7d767a24e0b3ea539a	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1^{}
+8794458b611a426ffc43226ce4f468c8853398d0	refs/tags/planetary-prototype6-strategic-command-v1
+4dccf04644a213932570923f655ea745407d8cba	refs/tags/planetary-prototype6-strategic-command-v1^{}
+```
+
+No gameplay changes were made during this version-control task. Publication is complete; stop without merging into main.

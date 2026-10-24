@@ -1,0 +1,90 @@
+{
+  "mission_id": "ODC-MISSION-001",
+  "title": "Orbital network defense",
+  "maximum_points": 1000,
+  "scope": "configured_active_encounters",
+  "replay_policy": "first_resolution_official_then_practice",
+  "defender_weights": {
+    "asset_protection": 350,
+    "threat_resolution": 250,
+    "decision_quality": 200,
+    "resource_management": 100,
+    "command_effectiveness": 100
+  },
+  "objectives": [
+    {
+      "objective_id": "protect_assets",
+      "text": "Protect operational data centers.",
+      "short_text": "Protect DATA"
+    },
+    {
+      "objective_id": "resolve_encounters",
+      "text": "Correctly resolve active encounters.",
+      "short_text": "Resolve encounters"
+    },
+    {
+      "objective_id": "avoid_unnecessary_engagement",
+      "text": "Avoid unnecessary defensive engagements.",
+      "short_text": "Avoid needless engagement"
+    },
+    {
+      "objective_id": "timely_decisions",
+      "text": "Make decisions before applicable deadlines.",
+      "short_text": "Act before deadlines"
+    },
+    {
+      "objective_id": "operational_effectiveness",
+      "text": "Maintain operational effectiveness.",
+      "short_text": "Maintain effectiveness"
+    }
+  ],
+  "public_evidence_rules": [
+    {
+      "observation": "The abstract response blocked an access-interference attempt observed at DATA. No continuing disruption is observed.",
+      "effect": "blocked_attempt",
+      "resolution_fraction": 1.0,
+      "explanation": "An observed access-interference attempt was blocked; identity and reasoning quality remain unverified."
+    },
+    {
+      "observation": "No response was deployed. A brief access disturbance was observed at DATA.",
+      "effect": "access_disturbance",
+      "resolution_fraction": 0.0,
+      "explanation": "A brief access disturbance was observed. No loss amount or source attribution is inferred."
+    },
+    {
+      "observation": "No response was deployed. The object continued its passage; no interference at DATA was observed.",
+      "effect": "passage_without_interference",
+      "resolution_fraction": 1.0,
+      "explanation": "Deliberate restraint accompanied passage without observed interference; this does not verify identity."
+    },
+    {
+      "observation": "After the abstract response, the object's previously regular telemetry stopped. No attempted interference at DATA was observed. Unintended interference with normal activity is possible.",
+      "effect": "effects_uncertain",
+      "resolution_fraction": null,
+      "explanation": "Telemetry stopped after the response; engagement necessity and unintended effects await independent confirmation."
+    }
+  ],
+  "unassessed_reasons": {
+    "asset_protection": "No complete operational-health or damage evidence is modeled. Monitored centers are not confirmed earned protection points.",
+    "decision_quality": "Identity and engagement necessity are not independently verified. A favorable effect alone does not prove sound reasoning; private adjudication is not published.",
+    "resource_management": "No validated resource costs, inventory, or personnel-efficiency model exists."
+  },
+  "attacker_future": {
+    "implemented": false,
+    "maximum_points": 1000,
+    "weights": {
+      "mission_objectives_achieved": 400,
+      "target_impact_or_control": 250,
+      "stealth_and_deception": 150,
+      "resource_efficiency": 100,
+      "operational_coordination": 100
+    },
+    "objectives": [
+      "Reconnaissance",
+      "Disruption",
+      "Unauthorized control",
+      "Damage to a designated target",
+      "Resource preservation and stealth"
+    ]
+  }
+}

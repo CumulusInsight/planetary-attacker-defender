@@ -4,6 +4,14 @@ const Loader = preload("res://script/strategic_data_loader.gd")
 const Registry = preload("res://script/strategic_registry.gd")
 const Tactical = preload("res://scene/game.tscn")
 @export_file("*.json") var strategic_data_path := "res://data/strategic_centers.json"
+@export_file("*.json") var mission_data_path := "res://data/mission.json"
+const MissionLoader = preload("res://script/mission_data_loader.gd")
+var mission = preload("res://script/mission_ledger.gd").new()
+var mission_error := ""
+var mission_ui: CanvasLayer
+var command_level := "operations"
+var last_center := ""
+var scorecard_open := false
 var registry = Registry.new()
 var tactical_centers: Dictionary = {}
 var center_buttons: Dictionary = {}
@@ -56,6 +64,7 @@ func _ready() -> void:
 		tactical_centers[definition.center_id] = tactical
 		registry.register(definition.center_id, definition.contacts, tactical)
 	_build_center_cards()
+	_initialize_mission()
 	show_overview()
 
 func _build_ui() -> void:
@@ -145,7 +154,7 @@ func _build_center_cards() -> void:
 		var button := Button.new()
 		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		button.add_theme_font_size_override("font_size", 19)
-		place(overview, button, Rect2(32 + index * (width + 16), 96, width, 194))
+		place(overview, button, Rect2(32 + index * (width + 16), 168, width, 134))
 		button.pressed.connect(func(): focus_center(id))
 		center_buttons[id] = button
 
@@ -183,14 +192,18 @@ func refresh() -> void:
 		item.set_text(6, row.status)
 	var location := "Strategic Overview" if focused_center.is_empty() else "Tactical / " + focused_center
 	context_label.text = location + (" | PAUSED: all encounters" if strategic_paused else " | Simulation running")
+	context_label.hide() # Role/pause context is presented by MissionUI.
+	_refresh_mission_ui()
 	_refreshing = false
 
 func focus_center(center_id: String, contact_id: int = -1) -> bool:
 	if not tactical_centers.has(center_id):
 		return false
 	focused_center = center_id
+	last_center = center_id
+	command_level = "tactical"
 	for id in tactical_centers:
-		tactical_centers[id].set_tactical_visible(id == center_id)
+		tactical_centers[id].set_tactical_visible(id == center_id and not scorecard_open)
 	overview.hide()
 	if contact_id >= 0:
 		var entry: Dictionary = registry.contacts.get(contact_id, {})
@@ -203,6 +216,7 @@ func focus_center(center_id: String, contact_id: int = -1) -> bool:
 
 func show_overview() -> void:
 	focused_center = ""
+	command_level = "operations"
 	for tactical in tactical_centers.values():
 		tactical.set_tactical_visible(false)
 	overview.show()
@@ -231,3 +245,59 @@ func set_strategic_pause(enabled: bool) -> void:
 	for tactical in tactical_centers.values():
 		tactical.apply_strategic_pause(strategic_paused)
 	refresh()
+
+
+func _initialize_mission() -> void:
+	mission_ui = load("res://script/mission_ui.gd").new()
+	add_child(mission_ui)
+	mission_ui.level_requested.connect(set_command_level)
+	mission_ui.scorecard_requested.connect(show_scorecard)
+	var result: Dictionary = MissionLoader.load_mission(mission_data_path)
+	mission_error = result.error
+	var participants := {}
+	for id in tactical_centers:
+		participants[id] = tactical_centers[id].encounter.active_contact_id
+	if mission_error.is_empty():
+		mission_error = mission.configure(result.data, participants)
+	if not mission_error.is_empty():
+		push_error(mission_error)
+		return
+	for id in tactical_centers:
+		tactical_centers[id].encounter.resolution_recorded.connect(_record_mission_resolution.bind(id))
+
+
+func _record_mission_resolution(event: Dictionary, center_id: String) -> void:
+	var result: Dictionary = mission.record_resolution(center_id, event)
+	if not result.ok:
+		push_error(result.error)
+
+
+func _refresh_mission_ui() -> void:
+	if mission_ui == null:
+		return
+	var live := {"centers": tactical_centers.size(), "active": 0, "resolved": 0, "deadlines": 0, "local_deadlines": 0}
+	for row in registry.public_rows():
+		if row.remaining != null:
+			live.active += 1
+			live.deadlines += 1
+			if row.center_id == focused_center: live.local_deadlines += 1
+		elif row.status == "Decision recorded" or row.status == "Deadline expired":
+			live.resolved += 1
+	mission_ui.render(mission.public_snapshot(), mission.public_snapshot(focused_center) if not focused_center.is_empty() else {}, live, focused_center, strategic_paused, mission_error)
+
+
+func set_command_level(level: String) -> void:
+	if level == "operations":
+		show_overview()
+	elif level == "tactical" and not tactical_centers.is_empty():
+		focus_center(last_center if tactical_centers.has(last_center) else tactical_centers.keys()[0])
+
+
+func show_scorecard(value: bool) -> void:
+	if mission_ui == null or not mission_error.is_empty():
+		return
+	scorecard_open = value
+	mission_ui.modal.visible = value
+	for id in tactical_centers:
+		tactical_centers[id].set_tactical_visible(id == focused_center and not value)
+	_refresh_mission_ui()
