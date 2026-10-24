@@ -36,6 +36,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# Hover holds this object's state only; do not accumulate time to catch up later.
+	if is_hovered:
+		return
 	var travel := move_speed * delta
 	orbit_angle = fposmod(orbit_angle + travel, TAU)
 	# Count a full orbit from the starting angle, independently of other attackers.
@@ -57,7 +60,7 @@ func _update_position() -> void:
 func set_selected(value: bool) -> void:
 	is_selected = value
 	scale = normal_scale * (1.5 if value else 1.0)
-	$InfoPanel.visible = is_selected or is_hovered
+	$InfoPanel.visible = is_hovered
 	_update_position()
 
 
@@ -68,10 +71,14 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 
 func _on_area_2d_mouse_entered() -> void:
 	is_hovered = true
+	# Keep the current target pickable when another attacker passes behind/over it.
+	# This Area2D has no artwork, so its input priority does not change the visuals.
+	$Area2D.z_index = 1
 	$InfoPanel.visible = true
 	attacker_hovered.emit(attack_id)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	is_hovered = false
-	$InfoPanel.visible = is_selected
+	$Area2D.z_index = 0
+	$InfoPanel.visible = false
