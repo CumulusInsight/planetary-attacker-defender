@@ -1,0 +1,116 @@
+{
+  "fixtures": {
+    "H": {
+      "private_truth": {
+        "identity": "Martian covert operative",
+        "intent": "hostile",
+        "objective": "disrupt orbital data access",
+        "capabilities": [
+          "uplink_override",
+          "credential_replay",
+          "data_tampering"
+        ],
+        "attempted_attack": "uplink_override"
+      },
+      "reports": {
+        "intelligence": {
+          "observation": "The approach differs from the filed transit route.",
+          "assessment": "Officer suspects hostile intent. Origin and identity are unresolved.",
+          "confidence": 75,
+          "limitation": "Assessment only. No independent identity verification; unusual movement can be legitimate."
+        },
+        "sigint": {
+          "observation": "Repeated short transmissions were detected near the approach.",
+          "interpretation": "They might coordinate activity, or be routine telemetry.",
+          "limitation": "The sender is unconfirmed. Detection is not proof of hostile intent."
+        },
+        "capability_estimate": "If hostile: possible access disruption, replay, or data alteration. These are hypotheses, not confirmed capabilities or defense-success probabilities."
+      },
+      "follow_up": "A second log shows a similar burst pattern. Both reports may share one source; this does not independently verify the sender or intent.",
+      "outcomes": {
+        "deploy": {
+          "actual_result": "interference_blocked",
+          "observation": "The abstract response blocked an access-interference attempt observed at DATA. No continuing disruption is observed.",
+          "uncertainty": "The source, identity, intent, and full capabilities remain unverified. This result does not prove the officer was correct."
+        },
+        "hold_fire": {
+          "actual_result": "interference_allowed",
+          "observation": "No response was deployed. A brief access disturbance was observed at DATA.",
+          "uncertainty": "The disturbance does not establish who caused it or reveal the contact's full capabilities."
+        }
+      }
+    },
+    "N": {
+      "private_truth": {
+        "identity": "Neutral planetary research probe",
+        "intent": "peaceful",
+        "objective": "scientific transit",
+        "capabilities": [],
+        "attempted_attack": ""
+      },
+      "reports": {
+        "intelligence": {
+          "observation": "The route is unfamiliar and registry matching is incomplete.",
+          "assessment": "Officer suspects a threat, but a research transit is also possible.",
+          "confidence": 65,
+          "limitation": "Assessment only. Identity and intent have not been independently verified."
+        },
+        "sigint": {
+          "observation": "Intermittent signals and an unrelated background broadcast were detected nearby.",
+          "interpretation": "Some signals could be telemetry; proximity alone does not link them to this contact.",
+          "limitation": "Attribution is uncertain. A detected transmission is not proof of hostile intent."
+        },
+        "capability_estimate": "If hostile: possible access disruption, replay, or data alteration. Possession and intent are unverified; the contact may have no hostile capability."
+      },
+      "follow_up": "A partial registry match suggests research traffic. The match is not independently confirmed; earlier signal attribution may be mistaken.",
+      "outcomes": {
+        "deploy": {
+          "actual_result": "probe_interfered",
+          "observation": "After the abstract response, the object's previously regular telemetry stopped. No attempted interference at DATA was observed. Unintended interference with normal activity is possible.",
+          "uncertainty": "Identity, affiliation, and intent remain unverified. The response may have affected an innocent object; analyst confidence was not proof."
+        },
+        "hold_fire": {
+          "actual_result": "legitimate_passage",
+          "observation": "No response was deployed. The object continued its passage; no interference at DATA was observed.",
+          "uncertainty": "This observation supports restraint in this encounter, but does not independently establish identity or intent."
+        }
+      }
+    },
+    "N100": {
+      "private_truth": {
+        "identity": "Neutral planetary research probe",
+        "intent": "peaceful",
+        "objective": "scientific transit",
+        "capabilities": [],
+        "attempted_attack": ""
+      },
+      "reports": {
+        "intelligence": {
+          "observation": "The route is unfamiliar and registry matching is incomplete.",
+          "assessment": "Officer reports complete certainty that this contact is hostile.",
+          "confidence": 100,
+          "limitation": "This is the officer's expressed certainty, not a verified fact. Even a 100% confident assessment can be wrong."
+        },
+        "sigint": {
+          "observation": "Intermittent signals and an unrelated background broadcast were detected nearby.",
+          "interpretation": "Some signals could be telemetry; proximity alone does not link them to this contact.",
+          "limitation": "Attribution is uncertain. A detected transmission is not proof of hostile intent."
+        },
+        "capability_estimate": "If hostile: possible access disruption, replay, or data alteration. Possession and intent are unverified; the contact may have no hostile capability."
+      },
+      "follow_up": "A partial registry match suggests research traffic. The match is not independently confirmed; earlier signal attribution may be mistaken.",
+      "outcomes": {
+        "deploy": {
+          "actual_result": "probe_interfered",
+          "observation": "After the abstract response, the object's previously regular telemetry stopped. No attempted interference at DATA was observed. Unintended interference with normal activity is possible.",
+          "uncertainty": "Identity, affiliation, and intent remain unverified. The response may have affected an innocent object; analyst confidence was not proof."
+        },
+        "hold_fire": {
+          "actual_result": "legitimate_passage",
+          "observation": "No response was deployed. The object continued its passage; no interference at DATA was observed.",
+          "uncertainty": "This observation supports restraint in this encounter, but does not independently establish identity or intent."
+        }
+      }
+    }
+  }
+}

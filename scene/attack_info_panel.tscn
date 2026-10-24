@@ -5,13 +5,13 @@
 
 [sub_resource type="Theme" id="Theme_panel"]
 default_font = ExtResource("2_font")
-default_font_size = 22
+default_font_size = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
-content_margin_left = 20.0
-content_margin_top = 24.0
-content_margin_right = 20.0
-content_margin_bottom = 24.0
+content_margin_left = 16.0
+content_margin_top = 18.0
+content_margin_right = 16.0
+content_margin_bottom = 18.0
 bg_color = Color(0.055, 0.07, 0.09, 1)
 border_width_left = 1
 border_width_top = 1
@@ -31,52 +31,133 @@ script = ExtResource("1_panel")
 [node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 4
 
 [node name="Heading" type="Label" parent="Content"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.65, 0.72, 0.8, 1)
-theme_override_font_sizes/font_size = 18
-text = "Selected attack"
+theme_override_font_sizes/font_size = 16
+text = "STAR FINK / COMMAND"
 
-[node name="Abbreviation" type="Label" parent="Content"]
+[node name="ClockHeading" type="Label" parent="Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 15
+text = "TIME REMAINING TO ACT"
+
+[node name="Countdown" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 32
+autowrap_mode = 2
+text = "--:--:--"
+
+[node name="Urgency" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 14
+text = "No active deadline"
+autowrap_mode = 2
+
+[node name="Mode" type="OptionButton" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+clip_text = true
+fit_to_longest_item = false
+item_count = 2
+selected = 0
+popup/item_0/text = "Learning Mode"
+popup/item_0/id = 0
+popup/item_1/text = "Active Challenge Mode"
+popup/item_1/id = 1
+
+[node name="Reading" type="CheckButton" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Read reports (pause)"
+disabled = true
+
+[node name="Progress" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
+text = "No encounter progression"
+
+[node name="Contact" type="Label" parent="Content"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(1, 0.960784, 0.615686, 1)
-theme_override_font_sizes/font_size = 28
-text = "Select an attacker"
+theme_override_font_sizes/font_size = 20
+text = "Select a contact"
 autowrap_mode = 2
 
-[node name="AttackId" type="Label" parent="Content"]
+[node name="Identifier" type="Label" parent="Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Status" type="Label" parent="Content"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.65, 0.72, 0.8, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
 
-[node name="DescriptionScroll" type="ScrollContainer" parent="Content"]
+[node name="Resources" type="Label" parent="Content"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 240)
 layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 2
+
+[node name="ReportsScroll" type="ScrollContainer" parent="Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="Description" type="Label" parent="Content/DescriptionScroll"]
+[node name="Reports" type="Label" parent="Content/ReportsScroll"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 autowrap_mode = 2
 
-[node name="Severity" type="Label" parent="Content"]
+[node name="Investigate" type="Button" parent="Content"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-mouse_filter = 2
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "INVESTIGATE FURTHER"
+disabled = true
 
-[node name="FutureChoices" type="Control" parent="Content"]
-custom_minimum_size = Vector2(0, 100)
+[node name="Deploy" type="Button" parent="Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
+text = "DEPLOY DEFENSE"
+disabled = true
+
+[node name="HoldFire" type="Button" parent="Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "HOLD FIRE"
+disabled = true
+
+[node name="Replay" type="Button" parent="Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Replay encounter"
+disabled = true

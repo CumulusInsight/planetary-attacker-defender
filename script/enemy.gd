@@ -5,6 +5,7 @@ signal attacker_selected(attack_id: int)
 signal attacker_hovered(attack_id: int)
 
 @export var attack_id: int = 0
+@export var contact_identifier: String = ""
 @export var abbreviation: String = ""
 @export_multiline var description: String = ""
 @export var severity: int = 1
@@ -20,8 +21,11 @@ var current_ring: int = 2
 var orbit_radius: float = 400.0
 var is_selected: bool = false
 var normal_scale := Vector2.ONE
+var total_orbit_travel: float = 0.0
 var orbit_progress: float = 0.0
 var is_hovered: bool = false
+var learning_paused: bool = false
+var strategic_paused: bool = false
 
 
 func _ready() -> void:
@@ -30,18 +34,21 @@ func _ready() -> void:
 	orbit_radius = RING_RADII[current_ring]
 	if enemy_texture:
 		$Sprite2D.texture = enemy_texture
-	$AttackLabel.text = abbreviation
-	$InfoPanel/InfoLabel.text = "%s\n%s\nSeverity: %d" % [abbreviation, description, severity]
+	$AttackLabel.text = contact_identifier if not contact_identifier.is_empty() else "C-%03d" % attack_id
+	# Reports now live only in the command console. Hover still freezes this object.
+	$InfoPanel.visible = false
+	$InfoPanel/InfoLabel.text = ""
 	_update_position()
 
 
 func _process(delta: float) -> void:
 	# Hover holds this object's state only; do not accumulate time to catch up later.
-	if is_hovered:
+	if is_hovered or learning_paused or strategic_paused:
 		return
 	var travel := move_speed * delta
 	orbit_angle = fposmod(orbit_angle + travel, TAU)
 	# Count a full orbit from the starting angle, independently of other attackers.
+	total_orbit_travel += absf(travel)
 	orbit_progress += absf(travel)
 	while orbit_progress >= TAU:
 		orbit_progress -= TAU
@@ -60,7 +67,7 @@ func _update_position() -> void:
 func set_selected(value: bool) -> void:
 	is_selected = value
 	scale = normal_scale * (1.5 if value else 1.0)
-	$InfoPanel.visible = is_hovered
+	$InfoPanel.visible = false
 	_update_position()
 
 
@@ -74,7 +81,7 @@ func _on_area_2d_mouse_entered() -> void:
 	# Keep the current target pickable when another attacker passes behind/over it.
 	# This Area2D has no artwork, so its input priority does not change the visuals.
 	$Area2D.z_index = 1
-	$InfoPanel.visible = true
+	$InfoPanel.visible = false
 	attacker_hovered.emit(attack_id)
 
 

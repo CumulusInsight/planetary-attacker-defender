@@ -3,6 +3,7 @@ extends SceneTree
 
 const Loader = preload("res://script/attack_data_loader.gd")
 const FIXTURE = "user://prototype4_test_fixture.json"
+const SCENARIO_FIXTURE = "user://prototype4_scenario_fixture.json"
 const EXPECTED_BOUNDS = Rect2(1280, 64, 300, 772)
 
 var failures: int = 0
@@ -43,9 +44,10 @@ func frames(count: int = 4) -> void:
 		await process_frame
 
 
-func spawn_game(path: String = "res://data/attacks.json") -> void:
+func spawn_game(path: String = "res://data/attacks.json", scenario_path: String = "res://data/encounters.json") -> void:
 	game = load("res://scene/game.tscn").instantiate()
 	game.attack_data_path = path
+	game.encounter_data_path = scenario_path
 	test_viewport.add_child(game)
 	pointer_at(Vector2(40, 40))
 	await frames()
@@ -79,11 +81,12 @@ func click_at(point: Vector2, button: MouseButton = MOUSE_BUTTON_LEFT) -> void:
 
 
 func check_record(record: Dictionary) -> void:
-	check(panel.displayed_attack_id == record.attack_id, "Fixed panel ID matches selection")
-	check(panel.abbreviation_label.text == record.abbreviation, "Fixed JSON abbreviation")
-	check(panel.attack_id_label.text == "Attack ID: %d" % record.attack_id, "Fixed JSON ID text")
-	check(panel.description_label.text == record.description, "Fixed JSON description")
-	check(panel.severity_label.text == "Severity: %d" % record.severity, "Fixed JSON severity")
+	var view: Dictionary = game.encounter.public_view(record.attack_id)
+	check(panel.displayed_attack_id == record.attack_id, "Fixed contact ID matches selection")
+	check(panel.contact_label.text == view.title, "Fixed player-facing contact title")
+	check(panel.identifier_label.text == "Contact " + view.identifier, "Fixed stable contact identifier")
+	check(panel.reports_label.text.contains(view.intelligence) and panel.reports_label.text.contains(view.sigint), "Fixed public reports match selected contact")
+	check(panel.status_label.text == view.status, "Fixed contact status")
 	check(panel.get_global_rect().is_equal_approx(EXPECTED_BOUNDS), "Fixed panel has approved bounds")
 
 
@@ -102,13 +105,11 @@ func run() -> void:
 	var attackers = game.get_node("EnemyContainer").get_children()
 	check(attackers.size() == 3, "Exactly three attackers")
 	check(game.selected_attack_id == -1 and panel.displayed_attack_id == -1, "No startup selection")
-	check(panel.abbreviation_label.text == "Select an attacker", "Exact startup prompt")
-	check(panel.description_label.text.is_empty() and panel.severity_label.text.is_empty(), "No invented startup data")
+	check(panel.contact_label.text == "Select a contact", "Exact startup prompt")
+	check(panel.reports_label.text.is_empty() and panel.deploy_button.disabled, "No invented startup data")
 	check(panel.get_global_rect().is_equal_approx(EXPECTED_BOUNDS), "Startup panel bounds")
-	check(panel.get_node("Content/FutureChoices").get_child_count() == 0, "Future choice area is empty")
-	check(panel.get_node("Content/FutureChoices").mouse_filter == Control.MOUSE_FILTER_IGNORE, "Future choice area is inert")
-	for node in panel.find_children("*", "BaseButton"):
-		check(false, "No active defense buttons: " + str(node.name))
+	check(panel.find_children("*", "Button").size() == 6, "Three commands, replay, mode selector and reading toggle")
+	check(panel.investigate_button.disabled and panel.deploy_button.disabled and panel.hold_button.disabled and panel.replay_button.disabled, "Commands disabled before selection")
 	check(not EXPECTED_BOUNDS.intersects(sprite_bounds(game.get_node("DataCenter/Sprite2D"))), "Panel does not overlap DATA artwork")
 	for name in ["Label", "ValueLabel"]:
 		check(not EXPECTED_BOUNDS.intersects(game.get_node("DataCenter/" + name).get_global_rect()), "Panel does not overlap DATA label/value")
@@ -125,11 +126,11 @@ func run() -> void:
 		# Hover a different attacker without replacing the fixed selection.
 		var other = attackers[(index + 1) % attackers.size()]
 		var hover_seen := {"visible": false}
-		var callback := func(_id): hover_seen.visible = other.get_node("InfoPanel").visible
+		var callback := func(_id): hover_seen.visible = not other.get_node("InfoPanel").visible
 		other.attacker_hovered.connect(callback)
 		pointer_at(other.global_position)
 		await frames()
-		check(game.hovered_attack_id == other.attack_id and hover_seen.visible, "Other attacker retains local hover preview")
+		check(game.hovered_attack_id == other.attack_id and hover_seen.visible, "Hover signal remains active without floating preview")
 		check_record(game.attack_records[index])
 		other.attacker_hovered.disconnect(callback)
 		await click_at(Vector2(40, 40))
@@ -167,6 +168,7 @@ func run() -> void:
 	for index in range(attackers.size()):
 		check(transitions[index] == 2 and attackers[index].current_ring == 0, "Both inward jumps completed")
 		check(attackers[index].position.distance_to(initial_positions[index]) > 1, "All attackers moved independently")
+	check(not game.encounter.resolved, "Elapsed orbits do not resolve the encounter or imply hold fire")
 	var angles = attackers.map(func(a): return a.orbit_angle)
 	await click_at(panel.get_global_rect().get_center())
 	for index in range(attackers.size()):
@@ -191,22 +193,27 @@ func fixtures_and_failures() -> void:
 	records[0].attack_id = 42
 	records[1].attack_id = 7
 	records[2].attack_id = 900
-	records[0].description = "Long JSON description for scroll testing. ".repeat(100)
+	records[0].description = "Long authored report for scroll testing. ".repeat(100)
 	write_fixture(JSON.stringify(records))
-	await spawn_game(FIXTURE)
+	var scenario = JSON.parse_string(FileAccess.get_file_as_string("res://data/encounters.json"))
+	scenario.fixtures.H.reports.intelligence.observation = records[0].description
+	var scenario_file := FileAccess.open(SCENARIO_FIXTURE, FileAccess.WRITE)
+	scenario_file.store_string(JSON.stringify(scenario))
+	scenario_file.close()
+	await spawn_game(FIXTURE, SCENARIO_FIXTURE)
 	var target = game.get_node("EnemyContainer/Enemy")
 	await click_at(target.global_position)
 	check_record(records[0])
 	check(game.selected_attack_id == 42, "Lookup by non-sequential ID")
-	var scroll = panel.description_scroll
-	check(panel.description_label.size.y > scroll.size.y, "Long description exceeds bounded scroll area")
+	var scroll = panel.reports_scroll
+	check(panel.reports_label.size.y > scroll.size.y, "Long description exceeds bounded scroll area")
 	check(scroll.get_v_scroll_bar().visible, "Long description has scrollbar")
 	var positions = game.get_node("EnemyContainer").get_children().map(func(a): return a.position)
 	for index in range(4):
 		await click_at(scroll.get_global_rect().get_center(), MOUSE_BUTTON_WHEEL_DOWN)
 	check(scroll.scroll_vertical > 0, "Mouse wheel scrolls description")
 	check(panel.get_global_rect().is_equal_approx(EXPECTED_BOUNDS), "Long description cannot grow panel")
-	check(scroll.size.x <= 260 and scroll.get_h_scroll_bar().visible == false, "Description wraps without horizontal overflow")
+	check(scroll.size.x <= 268 and scroll.get_h_scroll_bar().visible == false, "Description wraps without horizontal overflow")
 	for index in range(3):
 		check(game.get_node("EnemyContainer").get_child(index).position.distance_to(positions[index]) > 1, "All attackers move while scrolling")
 	await capture("long_description")
@@ -217,8 +224,8 @@ func fixtures_and_failures() -> void:
 	# Unknown-ID input must clear stale details without selecting unrelated data.
 	game._on_attacker_selected(9999)
 	await frames()
-	check(panel.displayed_attack_id == -1 and panel.description_label.text.is_empty(), "Unknown ID clears stale data")
-	check(panel.abbreviation_label.text == "Attack information unavailable", "Unknown ID unavailable state")
+	check(panel.displayed_attack_id == -1 and panel.reports_label.text.is_empty(), "Unknown ID clears stale data")
+	check(panel.contact_label.text == "Command unavailable", "Unknown ID unavailable state")
 	check(game.selected_attack_id == 7 and not paused, "Unknown ID preserves existing selection and running simulation")
 	await close_game()
 	for path in ["user://prototype4_missing/attacks.json", FIXTURE]:
@@ -226,13 +233,14 @@ func fixtures_and_failures() -> void:
 			write_fixture("[invalid JSON")
 		await spawn_game(path)
 		check(not game.data_error.is_empty(), "Invalid JSON diagnostic retained")
-		check(panel.abbreviation_label.text == "Attack information unavailable", "Invalid JSON neutral panel")
-		check(panel.displayed_attack_id == -1 and panel.description_label.text.is_empty(), "No stale/substitute record")
+		check(panel.contact_label.text == "Command unavailable", "Invalid JSON neutral panel")
+		check(panel.displayed_attack_id == -1 and panel.reports_label.text.is_empty(), "No stale/substitute record")
 		check(not game.get_node("EnemyContainer").visible, "Invalid attackers hidden")
 		check(game.get_node("EnemyContainer").process_mode == Node.PROCESS_MODE_DISABLED, "Invalid attackers disabled")
 		check(panel.get_global_rect().is_equal_approx(EXPECTED_BOUNDS), "Error state preserves bounds")
 		await close_game()
 	DirAccess.remove_absolute(FIXTURE)
+	DirAccess.remove_absolute(SCENARIO_FIXTURE)
 
 
 func motion_state(attacker: Node2D) -> Array:

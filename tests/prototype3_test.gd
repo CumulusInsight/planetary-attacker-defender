@@ -35,18 +35,19 @@ func run() -> void:
 		check(is_equal_approx(attackers[i].move_speed, expected_speeds[i]), "Approved 30 percent speed reduction")
 		for property in ["attack_id", "abbreviation", "description", "severity", "move_speed", "start_ring"]:
 			check(attackers[i].get(property) == game.attack_records[i][property], "External configuration: " + property)
-		check(attackers[i].get_node("AttackLabel").text == game.attack_records[i].abbreviation, "JSON identity displayed")
+		check(attackers[i].get_node("AttackLabel").text == "C-%03d" % attackers[i].attack_id, "Stable contact identifier displayed")
 		check(attackers[i].current_ring == 2, "Start on outer ring")
 	# Real viewport mouse events, through Area2D picking and connected signals.
 	for target in attackers:
-		target.attacker_hovered.connect(func(id): hover_panels_seen[id] = target.get_node("InfoPanel").visible)
+		target.attacker_hovered.connect(func(id): hover_panels_seen[id] = not target.get_node("InfoPanel").visible)
 		var motion := InputEventMouseMotion.new()
 		motion.position = target.global_position
 		root.push_input(motion)
 		await frames()
 		check(game.hovered_attack_id == target.attack_id, "Hover signal reaches controller")
-		check(hover_panels_seen.get(target.attack_id, false), "Hover panel visible on hover signal")
-		check(target.get_node("InfoPanel/InfoLabel").text.contains(target.description), "External hover description")
+		check(hover_panels_seen.get(target.attack_id, false), "Hover signal does not display a floating popup")
+		check(target.description == game.attack_records[attackers.find(target)].description, "External description still configured independently of presentation")
+		check(target.get_node("InfoPanel/InfoLabel").text.is_empty(), "Legacy hover description is disabled")
 		var click := InputEventMouseButton.new()
 		click.position = target.global_position
 		click.button_index = MOUSE_BUTTON_LEFT
@@ -193,7 +194,8 @@ func validate_controller_errors() -> void:
 	await frames()
 	var alternate = alternate_game.get_node("EnemyContainer/Enemy")
 	check(alternate.attack_id == 42 and alternate.current_ring == 1, "Controller applies alternate JSON identity and ring")
-	check(alternate.get_node("InfoPanel/InfoLabel").text.contains("Changed JSON fixture description"), "Controller applies alternate JSON description")
+	check(alternate.description == "Changed JSON fixture description", "Controller applies alternate JSON description")
+	check(alternate.get_node("AttackLabel").text == "C-042", "Alternate ID retains contact-only presentation")
 	alternate_game.queue_free()
 	await frames()
 	DirAccess.remove_absolute(FIXTURE)

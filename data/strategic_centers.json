@@ -1,0 +1,83 @@
+{
+  "fixture_note": "Deterministic demonstration: default 5 minutes; DC-02 6 minutes and DC-03 4 minutes are explicit fixture overrides.",
+  "centers": [
+    {
+      "center_id": "DC-01",
+      "active_contact_id": 1,
+      "developer_fixture": "H",
+      "decision_window_seconds": 300,
+      "contacts": [
+        {
+          "contact_id": 1,
+          "assessed_severity": 2,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 2,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 3,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "center_id": "DC-02",
+      "active_contact_id": 4,
+      "developer_fixture": "N100",
+      "decision_window_seconds": 360,
+      "contacts": [
+        {
+          "contact_id": 4,
+          "assessed_severity": 3,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 5,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 6,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "center_id": "DC-03",
+      "active_contact_id": 7,
+      "developer_fixture": "N",
+      "decision_window_seconds": 240,
+      "contacts": [
+        {
+          "contact_id": 7,
+          "assessed_severity": 1,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 8,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        },
+        {
+          "contact_id": 9,
+          "assessed_severity": 0,
+          "assessment": "Unknown; no investigation assigned",
+          "confidence": null
+        }
+      ]
+    }
+  ]
+}
