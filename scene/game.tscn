@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6amrter6djgw"]
+
+[ext_resource type="PackedScene" uid="uid://f8hqvn82tjlr" path="res://scene/datacenter.tscn" id="1_5kiuu"]
+[ext_resource type="PackedScene" uid="uid://c5adkfkpyr0j6" path="res://scene/enemy.tscn" id="2_dbls1"]
+[ext_resource type="Texture2D" uid="uid://dnks6jqx45whg" path="res://images/enemy3.png" id="3_33cqm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbls1"]
+load_path = "res://.godot/imported/enemy2.png-6ae89d50ec5b16027c3645ee0eb0e06d.ctex"
+
+[node name="Game" type="Node2D"]
+
+[node name="DataCenter" parent="." instance=ExtResource("1_5kiuu")]
+position = Vector2(800, 450)
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="Enemy" parent="EnemyContainer" instance=ExtResource("2_dbls1")]
+position = Vector2(576, 100)
+orbit_speed = 0.7
+orbit_radius = 160.0
+
+[node name="Enemy2" parent="EnemyContainer" instance=ExtResource("2_dbls1")]
+position = Vector2(850, 324)
+enemy_texture = SubResource("CompressedTexture2D_dbls1")
+orbit_speed = 0.9
+orbit_radius = 280.0
+orbit_angle = 2.094
+
+[node name="Enemy3" parent="EnemyContainer" instance=ExtResource("2_dbls1")]
+position = Vector2(576, 550)
+enemy_texture = ExtResource("3_33cqm")
+orbit_speed = 1.1
+orbit_radius = 400.0
+orbit_angle = 4.189

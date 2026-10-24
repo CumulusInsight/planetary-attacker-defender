@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://f8hqvn82tjlr"]
+
+[ext_resource type="Texture2D" uid="uid://vk5e5clvowml" path="res://images/data.png" id="1_3clv5"]
+[ext_resource type="FontFile" uid="uid://bu8dp2j161lut" path="res://fonts/PixelOperator8-Bold.ttf" id="2_c484v"]
+
+[node name="DataCenter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.52995e-06, -2.14577e-06)
+scale = Vector2(0.0633914, 0.0642055)
+texture = ExtResource("1_3clv5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c484v")
+text = "DATA"
+horizontal_alignment = 1
+vertical_alignment = 1
