@@ -1,0 +1,26 @@
+[
+  {
+    "attack_id": 1,
+    "abbreviation": "VM ESC",
+    "description": "Placeholder: virtual machine escape.",
+    "severity": 1,
+    "move_speed": 0.7,
+    "start_ring": 2
+  },
+  {
+    "attack_id": 2,
+    "abbreviation": "ROOTKIT",
+    "description": "Placeholder: concealed system access.",
+    "severity": 2,
+    "move_speed": 0.9,
+    "start_ring": 2
+  },
+  {
+    "attack_id": 3,
+    "abbreviation": "FILELESS",
+    "description": "Placeholder: memory-based activity.",
+    "severity": 3,
+    "move_speed": 1.1,
+    "start_ring": 2
+  }
+]

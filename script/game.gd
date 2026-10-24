@@ -1,23 +1,30 @@
 extends Node2D
 
-# Prototype 2 sample data only. Ring indices run from 0 (inner) to 2 (outer).
-const SAMPLE_ATTACKERS = [
-	{"attack_id": 1, "abbreviation": "VM ESC", "description": "Placeholder: virtual machine escape.", "severity": 1, "move_speed": 0.7, "start_ring": 2},
-	{"attack_id": 2, "abbreviation": "ROOTKIT", "description": "Placeholder: concealed system access.", "severity": 2, "move_speed": 0.9, "start_ring": 2},
-	{"attack_id": 3, "abbreviation": "FILELESS", "description": "Placeholder: memory-based activity.", "severity": 3, "move_speed": 1.1, "start_ring": 2},
-]
+const AttackDataLoader = preload("res://script/attack_data_loader.gd")
+
+@export_file("*.json") var attack_data_path: String = "res://data/attacks.json"
+var attack_records: Array = []
+var data_error: String = ""
 
 var selected_attack_id: int = -1
 var hovered_attack_id: int = -1
 
 
 func _enter_tree() -> void:
-	# Configure existing scene instances before their _ready callbacks run.
+	# Load atomically before child _ready callbacks; never display substitute identities.
 	var attackers := $EnemyContainer.get_children()
+	var result := AttackDataLoader.load_attacks(attack_data_path, attackers.size())
+	data_error = result.error
+	if not data_error.is_empty():
+		$EnemyContainer.hide()
+		$EnemyContainer.process_mode = Node.PROCESS_MODE_DISABLED
+		push_error(data_error)
+		return
+	attack_records = result.records
 	for index in range(attackers.size()):
 		var attacker = attackers[index]
-		for property in SAMPLE_ATTACKERS[index]:
-			attacker.set(property, SAMPLE_ATTACKERS[index][property])
+		for property in attack_records[index]:
+			attacker.set(property, attack_records[index][property])
 		attacker.attacker_selected.connect(_on_attacker_selected)
 		attacker.attacker_hovered.connect(_on_attacker_hovered)
 
