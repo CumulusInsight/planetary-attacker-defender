@@ -1,0 +1,2903 @@
+{
+  "schema_version": 1,
+  "source_sha256": "22867011a01db80a8766e7320d58aece09373f783a06700a97197c254eb6a871",
+  "attacks": [
+    {
+      "ID": 1,
+      "attack_name": "VM ESC",
+      "definition": "(Virtual Machine Escape) Breaks VM isolation.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 1
+    },
+    {
+      "ID": 2,
+      "attack_name": "ROOTKIT",
+      "definition": "Hides malicious processes.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 2
+    },
+    {
+      "ID": 3,
+      "attack_name": "FILELESS",
+      "definition": "Malware operating only in memory.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 3
+    },
+    {
+      "ID": 4,
+      "attack_name": "REF DDoS",
+      "definition": "(Reflected Distributed Denial-of-Service) Spoofed requests.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 4
+    },
+    {
+      "ID": 5,
+      "attack_name": "CRED RPLAY",
+      "definition": "(Credential Replay) Reuses stolen credentials.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 5
+    },
+    {
+      "ID": 6,
+      "attack_name": "CLOUD",
+      "definition": "(Cloud Misconfiguration) Exposed buckets.",
+      "difficulty": "EASY",
+      "severity": "Critical",
+      "priority_rank": 6
+    },
+    {
+      "ID": 7,
+      "attack_name": "WEP",
+      "definition": "(Wired Equivalent Privacy Cracking) Breaks WEP.",
+      "difficulty": "EASY",
+      "severity": "Very High",
+      "priority_rank": 7
+    },
+    {
+      "ID": 8,
+      "attack_name": "OFF CRACK",
+      "definition": "(Offline Cracking) Hashes offline.",
+      "difficulty": "EASY",
+      "severity": "Very High",
+      "priority_rank": 8
+    },
+    {
+      "ID": 9,
+      "attack_name": "SPYWARE",
+      "definition": "Software that secretly monitors activity.",
+      "difficulty": "EASY",
+      "severity": "Very High",
+      "priority_rank": 9
+    },
+    {
+      "ID": 10,
+      "attack_name": "SIDECLD",
+      "definition": "(Side-Channel Cloud) Shared resources.",
+      "difficulty": "EASY",
+      "severity": "Very High",
+      "priority_rank": 10
+    },
+    {
+      "ID": 11,
+      "attack_name": "PadORCL",
+      "definition": "(Padding Oracle) Decryption errors.",
+      "difficulty": "EASY",
+      "severity": "High",
+      "priority_rank": 11
+    },
+    {
+      "ID": 12,
+      "attack_name": "CHOSENTXT",
+      "definition": "(Chosen-Plaintext) Encrypts chosen.",
+      "difficulty": "EASY",
+      "severity": "High",
+      "priority_rank": 12
+    },
+    {
+      "ID": 13,
+      "attack_name": "WIRELESS",
+      "definition": "(Wireless Jamming) Disrupts signals.",
+      "difficulty": "EASY",
+      "severity": "High",
+      "priority_rank": 13
+    },
+    {
+      "ID": 14,
+      "attack_name": "BLUSNARF",
+      "definition": "(Bluetooth Bluesnarfing) Steals via Bluetooth.",
+      "difficulty": "EASY",
+      "severity": "High",
+      "priority_rank": 14
+    },
+    {
+      "ID": 15,
+      "attack_name": "VISHING",
+      "definition": "(Voice Phishing) Phone-based phishing.",
+      "difficulty": "EASY",
+      "severity": "Moderate-High",
+      "priority_rank": 15
+    },
+    {
+      "ID": 16,
+      "attack_name": "PRETEXT",
+      "definition": "(Pretexting) Fabricating stories to steal information.",
+      "difficulty": "EASY",
+      "severity": "Moderate-High",
+      "priority_rank": 16
+    },
+    {
+      "ID": 17,
+      "attack_name": "FORGERY",
+      "definition": "Faking authentication requests.",
+      "difficulty": "EASY",
+      "severity": "Moderate-High",
+      "priority_rank": 17
+    },
+    {
+      "ID": 18,
+      "attack_name": "BRAND",
+      "definition": "(Brand Impersonation) Fakes brands.",
+      "difficulty": "EASY",
+      "severity": "Moderate",
+      "priority_rank": 18
+    },
+    {
+      "ID": 19,
+      "attack_name": "DUMPSTER",
+      "definition": "(Dumpster Diving) Searching trash for sensitive information.",
+      "difficulty": "EASY",
+      "severity": "Moderate",
+      "priority_rank": 19
+    },
+    {
+      "ID": 20,
+      "attack_name": "SHOULDER",
+      "definition": "(Shoulder Surfing) Observing someone entering credentials.",
+      "difficulty": "EASY",
+      "severity": "Moderate",
+      "priority_rank": 20
+    },
+    {
+      "ID": 21,
+      "attack_name": "ENVIRO",
+      "definition": "(Environmental Attack) Manipulates conditions.",
+      "difficulty": "EASY",
+      "severity": "Moderate",
+      "priority_rank": 21
+    },
+    {
+      "ID": 22,
+      "attack_name": "BLOATWARE",
+      "definition": "Unnecessary pre-installed software.",
+      "difficulty": "EASY",
+      "severity": "Low",
+      "priority_rank": 22
+    },
+    {
+      "ID": 23,
+      "attack_name": "QUANTUM",
+      "definition": "(Quantum Attack) Breaks crypto.",
+      "difficulty": "EASY",
+      "severity": "Low",
+      "priority_rank": 23
+    },
+    {
+      "ID": 24,
+      "attack_name": "BLUJACK",
+      "definition": "(Bluejacking) Unsolicited messages.",
+      "difficulty": "EASY",
+      "severity": "Lower",
+      "priority_rank": 24
+    },
+    {
+      "ID": 25,
+      "attack_name": "ADWARE",
+      "definition": "(Advertising-Supported Software) Displays unwanted advertisements.",
+      "difficulty": "EASY",
+      "severity": "Lower",
+      "priority_rank": 25
+    },
+    {
+      "ID": 26,
+      "attack_name": "CMD INJECT",
+      "definition": "(Command Injection) Executing system commands.",
+      "difficulty": "MEDIUM",
+      "severity": "Critical",
+      "priority_rank": 1
+    },
+    {
+      "ID": 27,
+      "attack_name": "SQL INJECT",
+      "definition": "(SQL Injection) Injects malicious SQL queries.",
+      "difficulty": "MEDIUM",
+      "severity": "Critical",
+      "priority_rank": 2
+    },
+    {
+      "ID": 28,
+      "attack_name": "MEM INJECT",
+      "definition": "(Memory Injection) Injects code.",
+      "difficulty": "MEDIUM",
+      "severity": "Critical",
+      "priority_rank": 3
+    },
+    {
+      "ID": 29,
+      "attack_name": "LOGICBOMB",
+      "definition": "Malware triggered by an event.",
+      "difficulty": "MEDIUM",
+      "severity": "Critical",
+      "priority_rank": 4
+    },
+    {
+      "ID": 30,
+      "attack_name": "INSIDER",
+      "definition": "(Insider Threat) Malicious insider.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 5
+    },
+    {
+      "ID": 31,
+      "attack_name": "SESS HIJAC",
+      "definition": "(Session Hijacking) Steals session cookies.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 6
+    },
+    {
+      "ID": 32,
+      "attack_name": "ON-PATH",
+      "definition": "Intercepts communication traffic.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 7
+    },
+    {
+      "ID": 33,
+      "attack_name": "DNS POISON",
+      "definition": "(Domain Name System Cache Poisoning) Corrupts DNS cache.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 8
+    },
+    {
+      "ID": 34,
+      "attack_name": "ARP POISON",
+      "definition": "(Address Resolution Protocol Poisoning) Spoofs MAC addresses on a network.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 9
+    },
+    {
+      "ID": 35,
+      "attack_name": "AMPLI DDoS",
+      "definition": "(Amplification DDoS) Amplified reflection attack.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 10
+    },
+    {
+      "ID": 36,
+      "attack_name": "SERVLESS",
+      "definition": "(Serverless Attack) Function vulnerabilities.",
+      "difficulty": "MEDIUM",
+      "severity": "Very High",
+      "priority_rank": 11
+    },
+    {
+      "ID": 37,
+      "attack_name": "WPA",
+      "definition": "(Wi-Fi Protected Access Attack) WPA exploits.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 12
+    },
+    {
+      "ID": 38,
+      "attack_name": "SIDECHAN",
+      "definition": "(Side-Channel Attack) Implementation leaks.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 13
+    },
+    {
+      "ID": 39,
+      "attack_name": "RACE",
+      "definition": "(Race Condition) Timing issues.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 14
+    },
+    {
+      "ID": 40,
+      "attack_name": "CRED STUFF",
+      "definition": "(Credential Stuffing) Breached creds.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 15
+    },
+    {
+      "ID": 41,
+      "attack_name": "PASS SPRAY",
+      "definition": "(Password Spraying) Common passwords across accounts.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 16
+    },
+    {
+      "ID": 42,
+      "attack_name": "DOWNGRADE",
+      "definition": "(Downgrade Attack) Weaker encryption.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 17
+    },
+    {
+      "ID": 43,
+      "attack_name": "ROGUE",
+      "definition": "(Rogue Access Point) Unauthorized AP.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 18
+    },
+    {
+      "ID": 44,
+      "attack_name": "KEYLOG",
+      "definition": "(Keylogger) Records keystrokes.",
+      "difficulty": "MEDIUM",
+      "severity": "High",
+      "priority_rank": 19
+    },
+    {
+      "ID": 45,
+      "attack_name": "DoS",
+      "definition": "(Denial-of-Service) Overwhelms a system with traffic.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 20
+    },
+    {
+      "ID": 46,
+      "attack_name": "BRUTE",
+      "definition": "(Brute Force) Password guessing.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 21
+    },
+    {
+      "ID": 47,
+      "attack_name": "REPLAY",
+      "definition": "(Replay Attack) Reuses data.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 22
+    },
+    {
+      "ID": 48,
+      "attack_name": "IoT REP",
+      "definition": "(Internet of Things Replay) Replays commands.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 23
+    },
+    {
+      "ID": 49,
+      "attack_name": "CSRF",
+      "definition": "(Cross-Site Request Forgery) Forces users to execute unwanted actions.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 24
+    },
+    {
+      "ID": 50,
+      "attack_name": "RFID",
+      "definition": "(Radio Frequency Identification Cloning) Copies tags.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate-High",
+      "priority_rank": 25
+    },
+    {
+      "ID": 51,
+      "attack_name": "DICT",
+      "definition": "(Dictionary Attack) Word lists.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 26
+    },
+    {
+      "ID": 52,
+      "attack_name": "RAINBOW",
+      "definition": "(Rainbow Table) Hash reversals.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 27
+    },
+    {
+      "ID": 53,
+      "attack_name": "DEF PASS",
+      "definition": "(Default Password) Unchanged defaults.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 28
+    },
+    {
+      "ID": 54,
+      "attack_name": "BIRTHDAY",
+      "definition": "(Birthday Attack) Hash collisions.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 29
+    },
+    {
+      "ID": 55,
+      "attack_name": "QUIPRO",
+      "definition": "(Quid Pro Quo) Offering help in exchange for information.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 30
+    },
+    {
+      "ID": 56,
+      "attack_name": "PIGGYBACK",
+      "definition": "(Piggybacking) Unauthorized access with permission.",
+      "difficulty": "MEDIUM",
+      "severity": "Moderate",
+      "priority_rank": 31
+    },
+    {
+      "ID": 57,
+      "attack_name": "LCKPICK",
+      "definition": "(Lock Picking) Bypasses locks.",
+      "difficulty": "MEDIUM",
+      "severity": "Low",
+      "priority_rank": 32
+    },
+    {
+      "ID": 58,
+      "attack_name": "HOAX",
+      "definition": "False threats.",
+      "difficulty": "MEDIUM",
+      "severity": "Low",
+      "priority_rank": 33
+    },
+    {
+      "ID": 59,
+      "attack_name": "RANSOM",
+      "definition": "(Ransomware) Encrypts files and demands payment.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 1
+    },
+    {
+      "ID": 60,
+      "attack_name": "SUP CHAIN",
+      "definition": "(Supply Chain Attack) Vendor compromises.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 2
+    },
+    {
+      "ID": 61,
+      "attack_name": "ZERO",
+      "definition": "(Zero-Day Exploit) Unknown vulnerability.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 3
+    },
+    {
+      "ID": 62,
+      "attack_name": "OT",
+      "definition": "(Operational Technology Attack) Industrial systems.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 4
+    },
+    {
+      "ID": 63,
+      "attack_name": "MALICE",
+      "definition": "(Malicious Update) Bad software updates.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 5
+    },
+    {
+      "ID": 64,
+      "attack_name": "WORM",
+      "definition": "Malware spreading through networks.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 6
+    },
+    {
+      "ID": 65,
+      "attack_name": "CONBREAK",
+      "definition": "(Container Breakout) Escapes containers.",
+      "difficulty": "HARD",
+      "severity": "Critical",
+      "priority_rank": 7
+    },
+    {
+      "ID": 66,
+      "attack_name": "BEC",
+      "definition": "(Business Email Compromise) Impersonating executives for fraud.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 8
+    },
+    {
+      "ID": 67,
+      "attack_name": "WHALING",
+      "definition": "Phishing executives.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 9
+    },
+    {
+      "ID": 68,
+      "attack_name": "RAT",
+      "definition": "(Remote Access Trojan) Malware disguised as legitimate software.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 10
+    },
+    {
+      "ID": 69,
+      "attack_name": "BOTNET",
+      "definition": "Network of infected devices used for attacks.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 11
+    },
+    {
+      "ID": 70,
+      "attack_name": "PRIV ESC",
+      "definition": "(Privilege Escalation) Gaining higher privileges.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 12
+    },
+    {
+      "ID": 71,
+      "attack_name": "PASS HASH",
+      "definition": "(Pass-the-Hash) Uses hashes.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 13
+    },
+    {
+      "ID": 72,
+      "attack_name": "KUBER",
+      "definition": "(Kubernetes Attack) Cluster misconfigurations.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 14
+    },
+    {
+      "ID": 73,
+      "attack_name": "IoT DDoS",
+      "definition": "(Internet of Things Distributed Denial of Service) Compromised IoT.",
+      "difficulty": "HARD",
+      "severity": "Very High",
+      "priority_rank": 15
+    },
+    {
+      "ID": 74,
+      "attack_name": "SPEAR",
+      "definition": "(Spear Phishing) Targeted phishing at individuals.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 16
+    },
+    {
+      "ID": 75,
+      "attack_name": "WATERING",
+      "definition": "(Watering Hole) Infecting frequently visited sites.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 17
+    },
+    {
+      "ID": 76,
+      "attack_name": "TROJAN",
+      "definition": "(Trojan Horse) Malware disguised as legitimate software.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 18
+    },
+    {
+      "ID": 77,
+      "attack_name": "VIRUS",
+      "definition": "Self-replicating malware attached to files.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 19
+    },
+    {
+      "ID": 78,
+      "attack_name": "DDoS",
+      "definition": "Distributed Denial-of-Service attack.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 20
+    },
+    {
+      "ID": 79,
+      "attack_name": "MitM",
+      "definition": "(Man-in-the-Middle) Intercepts communication between parties.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 21
+    },
+    {
+      "ID": 80,
+      "attack_name": "BUF OVRFLW",
+      "definition": "(Buffer Overflow) Overwriting memory buffers.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 22
+    },
+    {
+      "ID": 81,
+      "attack_name": "MitB",
+      "definition": "(Man-in-the-Browser) Browser sessions.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 23
+    },
+    {
+      "ID": 82,
+      "attack_name": "DNS ATTACK",
+      "definition": "(Domain Name System) Various DNS-based exploits.",
+      "difficulty": "HARD",
+      "severity": "High",
+      "priority_rank": 24
+    },
+    {
+      "ID": 83,
+      "attack_name": "PHISHING",
+      "definition": "Deceptive emails tricking users into revealing information.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 25
+    },
+    {
+      "ID": 84,
+      "attack_name": "SMISHING",
+      "definition": "SMS phishing.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 26
+    },
+    {
+      "ID": 85,
+      "attack_name": "ETWIN",
+      "definition": "(Evil Twin) Rogue Wi-Fi.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 27
+    },
+    {
+      "ID": 86,
+      "attack_name": "KARMA",
+      "definition": "(Karma Attack) Impersonates networks.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 28
+    },
+    {
+      "ID": 87,
+      "attack_name": "XSS",
+      "definition": "(Cross-Site Scripting) Injects scripts into websites.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 29
+    },
+    {
+      "ID": 88,
+      "attack_name": "DIR TRAV",
+      "definition": "(Directory Traversal) Accessing restricted directories.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 30
+    },
+    {
+      "ID": 89,
+      "attack_name": "DeAUTH",
+      "definition": "(Deauthentication) Forces disconnects.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 31
+    },
+    {
+      "ID": 90,
+      "attack_name": "PACK SNIFF",
+      "definition": "(Packet Sniffing) Captures network traffic.",
+      "difficulty": "HARD",
+      "severity": "Moderate-High",
+      "priority_rank": 32
+    },
+    {
+      "ID": 91,
+      "attack_name": "IMPERSON",
+      "definition": "(Impersonating) Pretending to be trusted.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 33
+    },
+    {
+      "ID": 92,
+      "attack_name": "BAITING",
+      "definition": "Leaving infected media to lure victims.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 34
+    },
+    {
+      "ID": 93,
+      "attack_name": "TAILGATE",
+      "definition": "(Tailgating) Following someone into secure areas.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 35
+    },
+    {
+      "ID": 94,
+      "attack_name": "TYPOS",
+      "definition": "(Typosquatting) Using similar domain names to deceive users.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 36
+    },
+    {
+      "ID": 95,
+      "attack_name": "COLLISION",
+      "definition": "(Collision Attack) Same hash inputs.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 37
+    },
+    {
+      "ID": 96,
+      "attack_name": "PHYSBRUF",
+      "definition": "(Physical Brute Force) Forces entry.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 38
+    },
+    {
+      "ID": 97,
+      "attack_name": "WARDRIV",
+      "definition": "(Wardriving) Maps networks.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 39
+    },
+    {
+      "ID": 98,
+      "attack_name": "MISINFO",
+      "definition": "(Misinformation) Spreading false information.",
+      "difficulty": "HARD",
+      "severity": "Moderate",
+      "priority_rank": 40
+    },
+    {
+      "ID": 99,
+      "attack_name": "KNOWTXT",
+      "definition": "(Known-Plaintext) Uses known text.",
+      "difficulty": "HARD",
+      "severity": "Low",
+      "priority_rank": 41
+    },
+    {
+      "ID": 100,
+      "attack_name": "CIPHERTXT",
+      "definition": "(Ciphertext-Only) Analyzes encrypted.",
+      "difficulty": "HARD",
+      "severity": "Low",
+      "priority_rank": 42
+    }
+  ],
+  "defenses": [
+    {
+      "ID": 1,
+      "defense_name": "Hypervisor Hardening",
+      "definition": "Secures the software that manages virtual machines to prevent attacks."
+    },
+    {
+      "ID": 2,
+      "defense_name": "Integrity Monitoring",
+      "definition": "Checks files or systems for unauthorized changes."
+    },
+    {
+      "ID": 3,
+      "defense_name": "Secure Boot",
+      "definition": "Helps prevent unauthorized software from starting with a device."
+    },
+    {
+      "ID": 4,
+      "defense_name": "Memory Scanning",
+      "definition": "Checks a device's memory for suspicious or harmful activity."
+    },
+    {
+      "ID": 5,
+      "defense_name": "Behavior Analytics",
+      "definition": "Studies activity patterns to identify unusual or suspicious behavior."
+    },
+    {
+      "ID": 6,
+      "defense_name": "Source Verification",
+      "definition": "Checks whether a message really comes from the claimed sender."
+    },
+    {
+      "ID": 7,
+      "defense_name": "Time-based Tokens",
+      "definition": "Uses codes that change after a short period of time."
+    },
+    {
+      "ID": 8,
+      "defense_name": "Nonces",
+      "definition": "Uses a unique value once to help prevent old messages from being reused."
+    },
+    {
+      "ID": 9,
+      "defense_name": "Audits",
+      "definition": "Reviews systems and activity to find problems or security weaknesses."
+    },
+    {
+      "ID": 10,
+      "defense_name": "Encryption",
+      "definition": "Converts information into a protected form that unauthorized people cannot easily read."
+    },
+    {
+      "ID": 11,
+      "defense_name": "Upgrade to WPA3",
+      "definition": "Uses the newer Wi-Fi security standard for stronger protection."
+    },
+    {
+      "ID": 12,
+      "defense_name": "Strong Hashing",
+      "definition": "Uses secure hashing methods to protect stored passwords and sensitive data."
+    },
+    {
+      "ID": 13,
+      "defense_name": "Anti Spyware",
+      "definition": "Detects and removes software that secretly monitors activity."
+    },
+    {
+      "ID": 14,
+      "defense_name": "Privacy Settings",
+      "definition": "Controls who can access your information and what others can see."
+    },
+    {
+      "ID": 15,
+      "defense_name": "Dedicated Instances",
+      "definition": "Gives an application or customer its own separate computing environment."
+    },
+    {
+      "ID": 16,
+      "defense_name": "AEAD",
+      "definition": "Authenticated Encryption with Associated Data - Encrypts data while also checking that it has not been changed."
+    },
+    {
+      "ID": 17,
+      "defense_name": "Secure Change",
+      "definition": "Uses safe, verified methods when making system or account changes."
+    },
+    {
+      "ID": 18,
+      "defense_name": "Frequency Hopping",
+      "definition": "Quickly changes communication frequencies to make interception more difficult."
+    },
+    {
+      "ID": 19,
+      "defense_name": "Backups",
+      "definition": "Keeps extra copies of important data so it can be restored if lost or damaged."
+    },
+    {
+      "ID": 20,
+      "defense_name": "Disable Discoverability",
+      "definition": "Hides a device so nearby devices cannot easily find it."
+    },
+    {
+      "ID": 21,
+      "defense_name": "Call Verification",
+      "definition": "Confirms the identity of someone making a suspicious phone call."
+    },
+    {
+      "ID": 22,
+      "defense_name": "Secure Channels",
+      "definition": "Protects information while it travels between devices or systems."
+    },
+    {
+      "ID": 23,
+      "defense_name": "Challenge Response",
+      "definition": "Asks for a response that helps confirm a user's identity."
+    },
+    {
+      "ID": 24,
+      "defense_name": "Privacy Policies",
+      "definition": "Explains how an organization collects, uses, and protects personal information."
+    },
+    {
+      "ID": 25,
+      "defense_name": "Validation",
+      "definition": "Checks that input follows the expected format before accepting it."
+    },
+    {
+      "ID": 26,
+      "defense_name": "Auth Checks",
+      "definition": "Checks whether a user is properly authenticated before allowing access."
+    },
+    {
+      "ID": 27,
+      "defense_name": "Monitoring",
+      "definition": "Watches systems and activity for signs of problems or threats."
+    },
+    {
+      "ID": 28,
+      "defense_name": "Education",
+      "definition": "Teaches people how to recognize and avoid security threats."
+    },
+    {
+      "ID": 29,
+      "defense_name": "Shredding",
+      "definition": "Destroys sensitive documents so others cannot read them."
+    },
+    {
+      "ID": 30,
+      "defense_name": "Locked Dumpsters",
+      "definition": "Secures trash containers to prevent attackers from finding discarded information."
+    },
+    {
+      "ID": 31,
+      "defense_name": "Privacy Screens",
+      "definition": "Helps prevent people nearby from seeing your screen."
+    },
+    {
+      "ID": 32,
+      "defense_name": "Biometrics",
+      "definition": "Uses unique body features, such as fingerprints or faces, to verify identity."
+    },
+    {
+      "ID": 33,
+      "defense_name": "Sensors",
+      "definition": "Devices that detect changes or events and can trigger security actions or alerts."
+    },
+    {
+      "ID": 34,
+      "defense_name": "Redundancy",
+      "definition": "Keeps backup systems or components available so services can continue if one fails."
+    },
+    {
+      "ID": 35,
+      "defense_name": "Removal Tools",
+      "definition": "Finds and removes unwanted or harmful software from a device."
+    },
+    {
+      "ID": 36,
+      "defense_name": "Clean Installs",
+      "definition": "Reinstalls software or systems from a trusted, clean source."
+    },
+    {
+      "ID": 37,
+      "defense_name": "Post-Quantum Algorithm",
+      "definition": "Uses encryption designed to resist attacks from future quantum computers."
+    },
+    {
+      "ID": 38,
+      "defense_name": "Turn off Bluetooth",
+      "definition": "Disables Bluetooth when it is not needed to reduce unwanted connections."
+    },
+    {
+      "ID": 39,
+      "defense_name": "Ad Blockers",
+      "definition": "Blocks unwanted or potentially harmful advertisements."
+    },
+    {
+      "ID": 40,
+      "defense_name": "Reputable Sources",
+      "definition": "Uses trusted websites, people, or organizations when getting information or software."
+    },
+    {
+      "ID": 41,
+      "defense_name": "Escaping",
+      "definition": "Changes special characters so they are treated as data instead of commands."
+    },
+    {
+      "ID": 42,
+      "defense_name": "Whitelisting",
+      "definition": "Allows only approved programs, users or actions."
+    },
+    {
+      "ID": 43,
+      "defense_name": "Prepared Statements",
+      "definition": "Separates database commands from user input to help prevent harmful queries."
+    },
+    {
+      "ID": 44,
+      "defense_name": "WAF",
+      "definition": "Web Application Firewall — filters harmful web requests before they reach an application."
+    },
+    {
+      "ID": 45,
+      "defense_name": "DEP",
+      "definition": "Data Execution Prevention - Helps prevent attackers from running harmful code in protected areas of memory."
+    },
+    {
+      "ID": 46,
+      "defense_name": "Secure Coding",
+      "definition": "Uses safer programming practices to reduce security weaknesses."
+    },
+    {
+      "ID": 47,
+      "defense_name": "Code Reviews",
+      "definition": "Checks code for mistakes and potentially harmful behavior."
+    },
+    {
+      "ID": 48,
+      "defense_name": "Access Controls",
+      "definition": "Limits who can access systems, files or information and what they can do."
+    },
+    {
+      "ID": 49,
+      "defense_name": "UBA",
+      "definition": "User Behavior Analytics - Monitors user behavior to identify unusual or suspicious activity."
+    },
+    {
+      "ID": 50,
+      "defense_name": "Least Privilege",
+      "definition": "Gives users and programs only the access they actually need."
+    },
+    {
+      "ID": 51,
+      "defense_name": "Secure Cookies",
+      "definition": "Uses protected browser cookies to help keep session information safe."
+    },
+    {
+      "ID": 52,
+      "defense_name": "Timeouts",
+      "definition": "Ends inactive sessions after a set amount of time."
+    },
+    {
+      "ID": 53,
+      "defense_name": "Mutual Authentication",
+      "definition": "Requires both sides of a connection to prove their identities."
+    },
+    {
+      "ID": 54,
+      "defense_name": "DNS Security Extensions",
+      "definition": "Adds security checks to the Domain Name System so responses can be verified as authentic."
+    },
+    {
+      "ID": 55,
+      "defense_name": "Secure Resolvers",
+      "definition": "Uses trusted DNS resolvers to safely look up website addresses."
+    },
+    {
+      "ID": 56,
+      "defense_name": "ARP Inspection",
+      "definition": "Checks the Address Resolution Protocol messages to help block false network address information."
+    },
+    {
+      "ID": 57,
+      "defense_name": "Static Tables",
+      "definition": "Uses fixed network address information instead of automatically learning it."
+    },
+    {
+      "ID": 58,
+      "defense_name": "BCP 38",
+      "definition": "Best Current Practice 38 - helps prevent networks from sending traffic with fake source addresses."
+    },
+    {
+      "ID": 59,
+      "defense_name": "Firewall Rules",
+      "definition": "Sets rules that determine which network traffic is allowed or blocked."
+    },
+    {
+      "ID": 60,
+      "defense_name": "IAM",
+      "definition": "Identity and Access Management - Manages who can access systems and what they are allowed to do."
+    },
+    {
+      "ID": 61,
+      "defense_name": "WPA3",
+      "definition": "Wi-Fi Protected Access 3 - A modern Wi-Fi security standard that provides stronger wireless protection."
+    },
+    {
+      "ID": 62,
+      "defense_name": "Firmware Patches",
+      "definition": "Updates device software to fix security weaknesses and bugs."
+    },
+    {
+      "ID": 63,
+      "defense_name": "Constant Time",
+      "definition": "Makes sensitive operations take the same amount of time to reduce timing attacks."
+    },
+    {
+      "ID": 64,
+      "defense_name": "HSM",
+      "definition": "Hardware Security Module - A secure device that protects and manages encryption keys."
+    },
+    {
+      "ID": 65,
+      "defense_name": "Mutex",
+      "definition": "Prevents multiple processes from changing the same resource at the same time."
+    },
+    {
+      "ID": 66,
+      "defense_name": "Atomic Ops",
+      "definition": "Makes an operation complete fully or not happen at all, preventing partial changes."
+    },
+    {
+      "ID": 67,
+      "defense_name": "Breach Monitoring",
+      "definition": "Watches for signs that accounts or information may have appeared in a data breach."
+    },
+    {
+      "ID": 68,
+      "defense_name": "Unique Passwords",
+      "definition": "Uses a different password for each account to limit damage if one is exposed."
+    },
+    {
+      "ID": 69,
+      "defense_name": "Failed Login Monitoring",
+      "definition": "Watches for repeated failed login attempts that may indicate suspicious activity."
+    },
+    {
+      "ID": 70,
+      "defense_name": "MFA",
+      "definition": "Multi-Factor Authentication — requires more than one way to verify a user's identity."
+    },
+    {
+      "ID": 71,
+      "defense_name": "Disable Legacy",
+      "definition": "Turns off outdated features or systems that may have security weaknesses."
+    },
+    {
+      "ID": 72,
+      "defense_name": "HSTS",
+      "definition": "HTTP Strict Transport Security - Forces websites to use secure HTTPS connections instead of unsafe HTTP."
+    },
+    {
+      "ID": 73,
+      "defense_name": "WIPS",
+      "definition": "Wireless Intrusion Prevention System - Detects and helps block unauthorized wireless devices or connections."
+    },
+    {
+      "ID": 74,
+      "defense_name": "MAC Filtering",
+      "definition": "Allows or blocks network devices based on their MAC addresses."
+    },
+    {
+      "ID": 75,
+      "defense_name": "Virtual Keyboards",
+      "definition": "Lets users enter information on a screen instead of using a physical keyboard."
+    },
+    {
+      "ID": 76,
+      "defense_name": "Anti Malware",
+      "definition": "Detects and removes malicious software from a device."
+    },
+    {
+      "ID": 77,
+      "defense_name": "Rate Limiting",
+      "definition": "Limits how many requests can be made within a certain amount of time."
+    },
+    {
+      "ID": 78,
+      "defense_name": "Load Balancers",
+      "definition": "Distributes network traffic across multiple systems to keep services available."
+    },
+    {
+      "ID": 79,
+      "defense_name": "Lockouts",
+      "definition": "Temporarily blocks an account after too many failed attempts."
+    },
+    {
+      "ID": 80,
+      "defense_name": "CAPTCHA",
+      "definition": "A test that helps determine whether a user is a person rather than an automated program."
+    },
+    {
+      "ID": 81,
+      "defense_name": "Sequence Numbers",
+      "definition": "Uses ordered numbers to detect missing, repeated, or replayed messages."
+    },
+    {
+      "ID": 82,
+      "defense_name": "OTP",
+      "definition": "One-Time Password - Uses a one-time code that becomes invalid after it is used."
+    },
+    {
+      "ID": 83,
+      "defense_name": "Timestamps",
+      "definition": "Records when an event or action happened to help detect suspicious activity."
+    },
+    {
+      "ID": 84,
+      "defense_name": "Tokens",
+      "definition": "Uses temporary values to identify or authorize a user or request."
+    },
+    {
+      "ID": 85,
+      "defense_name": "Same-site Cookies",
+      "definition": "Limits when cookies can be sent with requests from other websites."
+    },
+    {
+      "ID": 86,
+      "defense_name": "Encrypted RFID",
+      "definition": "Protects RFID data by encrypting it so unauthorized users cannot easily read it."
+    },
+    {
+      "ID": 87,
+      "defense_name": "Shielding",
+      "definition": "Blocks or reduces unwanted signals that could interfere with or expose communications."
+    },
+    {
+      "ID": 88,
+      "defense_name": "Complex Passwords",
+      "definition": "Uses passwords that are harder for attackers to guess."
+    },
+    {
+      "ID": 89,
+      "defense_name": "Salting",
+      "definition": "Adds a unique random value to a password before it is securely stored."
+    },
+    {
+      "ID": 90,
+      "defense_name": "Salted Hashes",
+      "definition": "Stores passwords using a hash combined with a unique random salt."
+    },
+    {
+      "ID": 91,
+      "defense_name": "Key Stretching",
+      "definition": "Makes password hashing slower to make large numbers of guesses harder."
+    },
+    {
+      "ID": 92,
+      "defense_name": "Mandatory Changes",
+      "definition": "Requires users to change their passwords or credentials when needed."
+    },
+    {
+      "ID": 93,
+      "defense_name": "Hardening",
+      "definition": "Removes unnecessary features and settings to make a system more secure."
+    },
+    {
+      "ID": 94,
+      "defense_name": "SHA-3",
+      "definition": "Secure Hash Algorithm 3 - A secure hashing method used to create a unique digital fingerprint of data."
+    },
+    {
+      "ID": 95,
+      "defense_name": "Longer Output",
+      "definition": "Produces a longer security value, making guessing or cracking more difficult."
+    },
+    {
+      "ID": 96,
+      "defense_name": "Verification",
+      "definition": "Checks that information, people, or actions are genuine and correct."
+    },
+    {
+      "ID": 97,
+      "defense_name": "Social Engineering Training",
+      "definition": "Teaches people to recognize tricks used to manipulate them."
+    },
+    {
+      "ID": 98,
+      "defense_name": "Escort Policies",
+      "definition": "Requires visitors to be accompanied in restricted areas."
+    },
+    {
+      "ID": 99,
+      "defense_name": "High-Security Locks",
+      "definition": "Uses stronger locks designed to resist unauthorized entry."
+    },
+    {
+      "ID": 100,
+      "defense_name": "Electronic Security",
+      "definition": "Uses electronic security systems to control or monitor access."
+    },
+    {
+      "ID": 101,
+      "defense_name": "Verify Sources",
+      "definition": "Checks that information comes from a trustworthy and reliable source."
+    },
+    {
+      "ID": 102,
+      "defense_name": "IR Plans",
+      "definition": "Incident Response Plans - Provides steps for responding to and recovering from security incidents."
+    },
+    {
+      "ID": 103,
+      "defense_name": "Gateways",
+      "definition": "Controls and checks traffic entering or leaving a network."
+    },
+    {
+      "ID": 104,
+      "defense_name": "Patching",
+      "definition": "Updates software to fix security weaknesses and bugs."
+    },
+    {
+      "ID": 105,
+      "defense_name": "Assessments",
+      "definition": "Checks systems and practices to find security weaknesses."
+    },
+    {
+      "ID": 106,
+      "defense_name": "Signing",
+      "definition": "Uses a digital signature to prove who created or approved data."
+    },
+    {
+      "ID": 107,
+      "defense_name": "Heuristics",
+      "definition": "Uses patterns and clues to identify possible threats."
+    },
+    {
+      "ID": 108,
+      "defense_name": "Threat Intel",
+      "definition": "Uses information about known threats to help detect and prevent attacks."
+    },
+    {
+      "ID": 109,
+      "defense_name": "Air-Gapping",
+      "definition": "Completely separates a system from other networks to prevent network-based attacks."
+    },
+    {
+      "ID": 110,
+      "defense_name": "SCADA Firewalls",
+      "definition": "Supervisory Control and Data Acquisition Firewalls - Protects industrial control systems by filtering their network traffic."
+    },
+    {
+      "ID": 111,
+      "defense_name": "Segmentation",
+      "definition": "Separates a network into sections to help stop threats from spreading."
+    },
+    {
+      "ID": 112,
+      "defense_name": "Firewalls",
+      "definition": "Blocks unauthorized network traffic from reaching protected systems."
+    },
+    {
+      "ID": 113,
+      "defense_name": "IPS",
+      "definition": "Intrusion Prevention System - Detects and automatically blocks suspicious network activity."
+    },
+    {
+      "ID": 114,
+      "defense_name": "SELinux",
+      "definition": "Security-Enhanced Linux - Uses strict security rules to control what applications and users can access."
+    },
+    {
+      "ID": 115,
+      "defense_name": "Namespaces",
+      "definition": "Separates processes and resources so applications cannot easily interfere with each other."
+    },
+    {
+      "ID": 116,
+      "defense_name": "DMARC",
+      "definition": "Domain-based Message Authentication, Reporting and Conformance — helps verify that emails really come from the claimed domain."
+    },
+    {
+      "ID": 117,
+      "defense_name": "Financial Controls",
+      "definition": "Rules and checks that help prevent unauthorized financial activity."
+    },
+    {
+      "ID": 118,
+      "defense_name": "Executive Training",
+      "definition": "Trains executives to recognize and avoid targeted cyber threats."
+    },
+    {
+      "ID": 119,
+      "defense_name": "Verification Protocols",
+      "definition": "Steps used to confirm that information, people or actions are legitimate."
+    },
+    {
+      "ID": 120,
+      "defense_name": "Restricted Data Access",
+      "definition": "Limits sensitive information to only authorized users."
+    },
+    {
+      "ID": 121,
+      "defense_name": "Firewall Ports",
+      "definition": "Controls which network ports are allowed to accept connections."
+    },
+    {
+      "ID": 122,
+      "defense_name": "Anomaly Detection",
+      "definition": "Detects activity that is unusual compared with normal behavior."
+    },
+    {
+      "ID": 123,
+      "defense_name": "Isolation",
+      "definition": "Separates a device, system or process to prevent a problem from spreading."
+    },
+    {
+      "ID": 124,
+      "defense_name": "Sinkholing",
+      "definition": "Redirects suspicious network traffic to a controlled system for investigation."
+    },
+    {
+      "ID": 125,
+      "defense_name": "Disable NTLM",
+      "definition": "(New Technology Local Area Network Manager) Turns off an older authentication system that has known security weaknesses."
+    },
+    {
+      "ID": 126,
+      "defense_name": "Kerberos",
+      "definition": "Uses trusted tickets to securely verify users and services on a network."
+    },
+    {
+      "ID": 127,
+      "defense_name": "RBAC",
+      "definition": "Role-Based Access Control — gives users access based on their assigned role."
+    },
+    {
+      "ID": 128,
+      "defense_name": "Pod Policies",
+      "definition": "Sets security rules for containers running inside a Kubernetes environment."
+    },
+    {
+      "ID": 129,
+      "defense_name": "Updates",
+      "definition": "Keeps software and systems current to fix bugs and security weaknesses."
+    },
+    {
+      "ID": 130,
+      "defense_name": "Sender Verification",
+      "definition": "Checks whether a message really comes from the claimed sender."
+    },
+    {
+      "ID": 131,
+      "defense_name": "Threat Protection",
+      "definition": "Detects and blocks known or suspected cyber threats."
+    },
+    {
+      "ID": 132,
+      "defense_name": "Simulated Exercises",
+      "definition": "Practice activities that imitate real security incidents."
+    },
+    {
+      "ID": 133,
+      "defense_name": "Web Filtering",
+      "definition": "Blocks access to harmful or suspicious websites."
+    },
+    {
+      "ID": 134,
+      "defense_name": "EDR",
+      "definition": "Endpoint Detection and Response — watches devices for suspicious activity."
+    },
+    {
+      "ID": 135,
+      "defense_name": "Scanning",
+      "definition": "Checks systems or files for vulnerabilities, threats or suspicious activity."
+    },
+    {
+      "ID": 136,
+      "defense_name": "Allowlisting",
+      "definition": "Allows only approved programs, devices or activities to run or connect."
+    },
+    {
+      "ID": 137,
+      "defense_name": "Behavior Detection",
+      "definition": "Looks for unusual behavior that may indicate a security threat."
+    },
+    {
+      "ID": 138,
+      "defense_name": "Antivirus",
+      "definition": "Detects and removes harmful software from a device."
+    },
+    {
+      "ID": 139,
+      "defense_name": "Safe Browsing",
+      "definition": "Uses careful browsing habits to avoid unsafe websites and online threats."
+    },
+    {
+      "ID": 140,
+      "defense_name": "Scrubbing",
+      "definition": "Cleans harmful or unwanted traffic before it reaches a protected system."
+    },
+    {
+      "ID": 141,
+      "defense_name": "Traffic Analysis",
+      "definition": "Examines network traffic to find unusual or suspicious patterns."
+    },
+    {
+      "ID": 142,
+      "defense_name": "ISP Help",
+      "definition": "Works with an Internet Service Provider to identify and handle network threats."
+    },
+    {
+      "ID": 143,
+      "defense_name": "TLS",
+      "definition": "Transport Layer Security — protects data sent between systems over a network."
+    },
+    {
+      "ID": 144,
+      "defense_name": "Certificate Pinning",
+      "definition": "Makes an application trust only specific security certificates."
+    },
+    {
+      "ID": 145,
+      "defense_name": "VPNs",
+      "definition": "Virtual Private Networks — create a protected connection for sending data over a network."
+    },
+    {
+      "ID": 146,
+      "defense_name": "ASLR",
+      "definition": "Address Space Layout Randomization — changes memory locations to make attacks harder."
+    },
+    {
+      "ID": 147,
+      "defense_name": "Canaries",
+      "definition": "Places special values in memory to help detect certain attacks before they cause damage."
+    },
+    {
+      "ID": 148,
+      "defense_name": "Extensions",
+      "definition": "Adds security features or capabilities to software or browsers."
+    },
+    {
+      "ID": 149,
+      "defense_name": "Secure DNS",
+      "definition": "Protects the Domain Name System's lookups from being changed or intercepted."
+    },
+    {
+      "ID": 150,
+      "defense_name": "Email Filtering",
+      "definition": "Filters suspicious or harmful emails before they reach users."
+    },
+    {
+      "ID": 151,
+      "defense_name": "User Training",
+      "definition": "Teaches users how to recognize and avoid cyber threats."
+    },
+    {
+      "ID": 152,
+      "defense_name": "Avoid Text Links",
+      "definition": "Avoids links in text messages that could lead to scams or harmful websites."
+    },
+    {
+      "ID": 153,
+      "defense_name": "Mobile Security Apps",
+      "definition": "Apps that help protect mobile devices from security threats."
+    },
+    {
+      "ID": 154,
+      "defense_name": "SMS Filter",
+      "definition": "Filters suspicious or harmful text messages."
+    },
+    {
+      "ID": 155,
+      "defense_name": "Certificate Authority",
+      "definition": "A trusted organization that issues digital certificates to verify identities."
+    },
+    {
+      "ID": 156,
+      "defense_name": "Rogue Detection",
+      "definition": "Finds unauthorized devices, systems or wireless connections."
+    },
+    {
+      "ID": 157,
+      "defense_name": "No Auto-Connect",
+      "definition": "Prevents devices from automatically joining unknown networks or devices."
+    },
+    {
+      "ID": 158,
+      "defense_name": "Encoding",
+      "definition": "Converts data into a safe format so it can be handled correctly."
+    },
+    {
+      "ID": 159,
+      "defense_name": "CSP",
+      "definition": "Content Security Policy — controls which resources a web page is allowed to load."
+    },
+    {
+      "ID": 160,
+      "defense_name": "Sanitization",
+      "definition": "Removes or changes unsafe parts of user-provided data."
+    },
+    {
+      "ID": 161,
+      "defense_name": "Path Normalization",
+      "definition": "Cleans file paths into a standard format before they are processed."
+    },
+    {
+      "ID": 162,
+      "defense_name": "Chroot",
+      "definition": "Restricts a program to a limited part of the file system."
+    },
+    {
+      "ID": 163,
+      "defense_name": "802.11w",
+      "definition": "Protects certain Wi-Fi management messages from being attacked or forged."
+    },
+    {
+      "ID": 164,
+      "defense_name": "IDS",
+      "definition": "Intrusion Detection System - Detects suspicious activity on a system or network and raises an alert."
+    },
+    {
+      "ID": 165,
+      "defense_name": "VLANs",
+      "definition": "Virtual Local Area Networks — separates network devices into logical groups."
+    },
+    {
+      "ID": 166,
+      "defense_name": "Identity Verification",
+      "definition": "Confirms that a person is really who they claim to be."
+    },
+    {
+      "ID": 167,
+      "defense_name": "Training",
+      "definition": "Teaches people how to recognize and prevent security threats."
+    },
+    {
+      "ID": 168,
+      "defense_name": "USB Blocking",
+      "definition": "Prevents unauthorized USB devices from being used."
+    },
+    {
+      "ID": 169,
+      "defense_name": "Policies",
+      "definition": "Rules that explain how people should safely use systems and information."
+    },
+    {
+      "ID": 170,
+      "defense_name": "Mantraps",
+      "definition": "Secure entry areas that allow only one person through at a time."
+    },
+    {
+      "ID": 171,
+      "defense_name": "Badge System",
+      "definition": "Uses security badges to control access to restricted areas."
+    },
+    {
+      "ID": 172,
+      "defense_name": "Guards",
+      "definition": "Security personnel who monitor and protect people, property or facilities."
+    },
+    {
+      "ID": 173,
+      "defense_name": "Domain Monitoring",
+      "definition": "Watches for suspicious or deceptive domain names."
+    },
+    {
+      "ID": 174,
+      "defense_name": "Typo Alerts",
+      "definition": "Warns users when a website address may contain a suspicious typo."
+    },
+    {
+      "ID": 175,
+      "defense_name": "HMAC",
+      "definition": "Hash-based Message Authentication Code - Uses a secret key and hashing to verify that data is authentic and unchanged."
+    },
+    {
+      "ID": 176,
+      "defense_name": "Secure Algorithms",
+      "definition": "Uses trusted methods designed to protect information from attacks."
+    },
+    {
+      "ID": 177,
+      "defense_name": "Reinforced Doors",
+      "definition": "Uses stronger doors designed to resist forced entry."
+    },
+    {
+      "ID": 178,
+      "defense_name": "Alarms",
+      "definition": "Alerts people when suspicious activity or unauthorized entry is detected."
+    },
+    {
+      "ID": 179,
+      "defense_name": "Hide SSID",
+      "definition": "(Service Set Identifier) Hides a Wi-Fi network's name from the normal list of nearby networks."
+    },
+    {
+      "ID": 180,
+      "defense_name": "Fact-Checking",
+      "definition": "Checks information against reliable sources before accepting it as true."
+    },
+    {
+      "ID": 181,
+      "defense_name": "Content Moderation",
+      "definition": "Reviews and removes harmful, unsafe or inappropriate content."
+    },
+    {
+      "ID": 182,
+      "defense_name": "AES",
+      "definition": "Advanced Encryption Standard - A widely used encryption method that protects data from unauthorized access."
+    },
+    {
+      "ID": 183,
+      "defense_name": "Key Management",
+      "definition": "Securely creates, stores, uses and replaces encryption keys."
+    },
+    {
+      "ID": 184,
+      "defense_name": "Strong Standards",
+      "definition": "Follows trusted security standards to improve protection."
+    },
+    {
+      "ID": 185,
+      "defense_name": "Rotation",
+      "definition": "Regularly replaces passwords, keys or other security credentials."
+    }
+  ],
+  "attack_defenses": [
+    {
+      "ID": 1,
+      "attack_id": 1,
+      "defense_id": 1
+    },
+    {
+      "ID": 2,
+      "attack_id": 2,
+      "defense_id": 2
+    },
+    {
+      "ID": 3,
+      "attack_id": 2,
+      "defense_id": 3
+    },
+    {
+      "ID": 4,
+      "attack_id": 3,
+      "defense_id": 4
+    },
+    {
+      "ID": 5,
+      "attack_id": 3,
+      "defense_id": 5
+    },
+    {
+      "ID": 6,
+      "attack_id": 4,
+      "defense_id": 6
+    },
+    {
+      "ID": 7,
+      "attack_id": 5,
+      "defense_id": 7
+    },
+    {
+      "ID": 8,
+      "attack_id": 5,
+      "defense_id": 8
+    },
+    {
+      "ID": 9,
+      "attack_id": 6,
+      "defense_id": 9
+    },
+    {
+      "ID": 10,
+      "attack_id": 6,
+      "defense_id": 10
+    },
+    {
+      "ID": 11,
+      "attack_id": 7,
+      "defense_id": 11
+    },
+    {
+      "ID": 12,
+      "attack_id": 8,
+      "defense_id": 12
+    },
+    {
+      "ID": 13,
+      "attack_id": 9,
+      "defense_id": 13
+    },
+    {
+      "ID": 14,
+      "attack_id": 9,
+      "defense_id": 14
+    },
+    {
+      "ID": 15,
+      "attack_id": 10,
+      "defense_id": 15
+    },
+    {
+      "ID": 16,
+      "attack_id": 11,
+      "defense_id": 16
+    },
+    {
+      "ID": 17,
+      "attack_id": 12,
+      "defense_id": 17
+    },
+    {
+      "ID": 18,
+      "attack_id": 13,
+      "defense_id": 18
+    },
+    {
+      "ID": 19,
+      "attack_id": 13,
+      "defense_id": 19
+    },
+    {
+      "ID": 20,
+      "attack_id": 14,
+      "defense_id": 20
+    },
+    {
+      "ID": 21,
+      "attack_id": 15,
+      "defense_id": 21
+    },
+    {
+      "ID": 22,
+      "attack_id": 15,
+      "defense_id": 22
+    },
+    {
+      "ID": 23,
+      "attack_id": 16,
+      "defense_id": 23
+    },
+    {
+      "ID": 24,
+      "attack_id": 16,
+      "defense_id": 24
+    },
+    {
+      "ID": 25,
+      "attack_id": 17,
+      "defense_id": 25
+    },
+    {
+      "ID": 26,
+      "attack_id": 17,
+      "defense_id": 26
+    },
+    {
+      "ID": 27,
+      "attack_id": 18,
+      "defense_id": 27
+    },
+    {
+      "ID": 28,
+      "attack_id": 18,
+      "defense_id": 28
+    },
+    {
+      "ID": 29,
+      "attack_id": 19,
+      "defense_id": 29
+    },
+    {
+      "ID": 30,
+      "attack_id": 19,
+      "defense_id": 30
+    },
+    {
+      "ID": 31,
+      "attack_id": 20,
+      "defense_id": 31
+    },
+    {
+      "ID": 32,
+      "attack_id": 20,
+      "defense_id": 32
+    },
+    {
+      "ID": 33,
+      "attack_id": 21,
+      "defense_id": 33
+    },
+    {
+      "ID": 34,
+      "attack_id": 21,
+      "defense_id": 34
+    },
+    {
+      "ID": 35,
+      "attack_id": 22,
+      "defense_id": 35
+    },
+    {
+      "ID": 36,
+      "attack_id": 22,
+      "defense_id": 36
+    },
+    {
+      "ID": 37,
+      "attack_id": 23,
+      "defense_id": 37
+    },
+    {
+      "ID": 38,
+      "attack_id": 24,
+      "defense_id": 38
+    },
+    {
+      "ID": 39,
+      "attack_id": 25,
+      "defense_id": 39
+    },
+    {
+      "ID": 40,
+      "attack_id": 25,
+      "defense_id": 40
+    },
+    {
+      "ID": 41,
+      "attack_id": 26,
+      "defense_id": 41
+    },
+    {
+      "ID": 42,
+      "attack_id": 26,
+      "defense_id": 42
+    },
+    {
+      "ID": 43,
+      "attack_id": 27,
+      "defense_id": 43
+    },
+    {
+      "ID": 44,
+      "attack_id": 27,
+      "defense_id": 44
+    },
+    {
+      "ID": 45,
+      "attack_id": 28,
+      "defense_id": 45
+    },
+    {
+      "ID": 46,
+      "attack_id": 28,
+      "defense_id": 46
+    },
+    {
+      "ID": 47,
+      "attack_id": 29,
+      "defense_id": 47
+    },
+    {
+      "ID": 48,
+      "attack_id": 29,
+      "defense_id": 48
+    },
+    {
+      "ID": 49,
+      "attack_id": 30,
+      "defense_id": 49
+    },
+    {
+      "ID": 50,
+      "attack_id": 30,
+      "defense_id": 50
+    },
+    {
+      "ID": 51,
+      "attack_id": 31,
+      "defense_id": 51
+    },
+    {
+      "ID": 52,
+      "attack_id": 31,
+      "defense_id": 52
+    },
+    {
+      "ID": 53,
+      "attack_id": 32,
+      "defense_id": 10
+    },
+    {
+      "ID": 54,
+      "attack_id": 32,
+      "defense_id": 53
+    },
+    {
+      "ID": 55,
+      "attack_id": 33,
+      "defense_id": 54
+    },
+    {
+      "ID": 56,
+      "attack_id": 33,
+      "defense_id": 55
+    },
+    {
+      "ID": 57,
+      "attack_id": 34,
+      "defense_id": 56
+    },
+    {
+      "ID": 58,
+      "attack_id": 34,
+      "defense_id": 57
+    },
+    {
+      "ID": 59,
+      "attack_id": 35,
+      "defense_id": 58
+    },
+    {
+      "ID": 60,
+      "attack_id": 35,
+      "defense_id": 59
+    },
+    {
+      "ID": 61,
+      "attack_id": 36,
+      "defense_id": 25
+    },
+    {
+      "ID": 62,
+      "attack_id": 36,
+      "defense_id": 60
+    },
+    {
+      "ID": 63,
+      "attack_id": 37,
+      "defense_id": 61
+    },
+    {
+      "ID": 64,
+      "attack_id": 37,
+      "defense_id": 62
+    },
+    {
+      "ID": 65,
+      "attack_id": 38,
+      "defense_id": 63
+    },
+    {
+      "ID": 66,
+      "attack_id": 38,
+      "defense_id": 64
+    },
+    {
+      "ID": 67,
+      "attack_id": 39,
+      "defense_id": 65
+    },
+    {
+      "ID": 68,
+      "attack_id": 39,
+      "defense_id": 66
+    },
+    {
+      "ID": 69,
+      "attack_id": 40,
+      "defense_id": 67
+    },
+    {
+      "ID": 70,
+      "attack_id": 40,
+      "defense_id": 68
+    },
+    {
+      "ID": 71,
+      "attack_id": 41,
+      "defense_id": 69
+    },
+    {
+      "ID": 72,
+      "attack_id": 41,
+      "defense_id": 70
+    },
+    {
+      "ID": 73,
+      "attack_id": 42,
+      "defense_id": 71
+    },
+    {
+      "ID": 74,
+      "attack_id": 42,
+      "defense_id": 72
+    },
+    {
+      "ID": 75,
+      "attack_id": 43,
+      "defense_id": 73
+    },
+    {
+      "ID": 76,
+      "attack_id": 43,
+      "defense_id": 74
+    },
+    {
+      "ID": 77,
+      "attack_id": 44,
+      "defense_id": 75
+    },
+    {
+      "ID": 78,
+      "attack_id": 44,
+      "defense_id": 76
+    },
+    {
+      "ID": 79,
+      "attack_id": 45,
+      "defense_id": 77
+    },
+    {
+      "ID": 80,
+      "attack_id": 45,
+      "defense_id": 78
+    },
+    {
+      "ID": 81,
+      "attack_id": 46,
+      "defense_id": 79
+    },
+    {
+      "ID": 82,
+      "attack_id": 46,
+      "defense_id": 80
+    },
+    {
+      "ID": 83,
+      "attack_id": 47,
+      "defense_id": 81
+    },
+    {
+      "ID": 84,
+      "attack_id": 47,
+      "defense_id": 82
+    },
+    {
+      "ID": 85,
+      "attack_id": 48,
+      "defense_id": 8
+    },
+    {
+      "ID": 86,
+      "attack_id": 48,
+      "defense_id": 83
+    },
+    {
+      "ID": 87,
+      "attack_id": 49,
+      "defense_id": 84
+    },
+    {
+      "ID": 88,
+      "attack_id": 49,
+      "defense_id": 85
+    },
+    {
+      "ID": 89,
+      "attack_id": 50,
+      "defense_id": 86
+    },
+    {
+      "ID": 90,
+      "attack_id": 50,
+      "defense_id": 87
+    },
+    {
+      "ID": 91,
+      "attack_id": 51,
+      "defense_id": 88
+    },
+    {
+      "ID": 92,
+      "attack_id": 51,
+      "defense_id": 89
+    },
+    {
+      "ID": 93,
+      "attack_id": 52,
+      "defense_id": 90
+    },
+    {
+      "ID": 94,
+      "attack_id": 52,
+      "defense_id": 91
+    },
+    {
+      "ID": 95,
+      "attack_id": 53,
+      "defense_id": 92
+    },
+    {
+      "ID": 96,
+      "attack_id": 53,
+      "defense_id": 93
+    },
+    {
+      "ID": 97,
+      "attack_id": 54,
+      "defense_id": 94
+    },
+    {
+      "ID": 98,
+      "attack_id": 54,
+      "defense_id": 95
+    },
+    {
+      "ID": 99,
+      "attack_id": 55,
+      "defense_id": 96
+    },
+    {
+      "ID": 100,
+      "attack_id": 55,
+      "defense_id": 97
+    },
+    {
+      "ID": 101,
+      "attack_id": 56,
+      "defense_id": 27
+    },
+    {
+      "ID": 102,
+      "attack_id": 56,
+      "defense_id": 98
+    },
+    {
+      "ID": 103,
+      "attack_id": 57,
+      "defense_id": 99
+    },
+    {
+      "ID": 104,
+      "attack_id": 57,
+      "defense_id": 100
+    },
+    {
+      "ID": 105,
+      "attack_id": 58,
+      "defense_id": 101
+    },
+    {
+      "ID": 106,
+      "attack_id": 58,
+      "defense_id": 102
+    },
+    {
+      "ID": 107,
+      "attack_id": 59,
+      "defense_id": 19
+    },
+    {
+      "ID": 108,
+      "attack_id": 59,
+      "defense_id": 103
+    },
+    {
+      "ID": 109,
+      "attack_id": 59,
+      "defense_id": 104
+    },
+    {
+      "ID": 110,
+      "attack_id": 60,
+      "defense_id": 105
+    },
+    {
+      "ID": 111,
+      "attack_id": 60,
+      "defense_id": 106
+    },
+    {
+      "ID": 112,
+      "attack_id": 61,
+      "defense_id": 107
+    },
+    {
+      "ID": 113,
+      "attack_id": 61,
+      "defense_id": 108
+    },
+    {
+      "ID": 114,
+      "attack_id": 62,
+      "defense_id": 109
+    },
+    {
+      "ID": 115,
+      "attack_id": 62,
+      "defense_id": 110
+    },
+    {
+      "ID": 116,
+      "attack_id": 63,
+      "defense_id": 96
+    },
+    {
+      "ID": 117,
+      "attack_id": 63,
+      "defense_id": 106
+    },
+    {
+      "ID": 118,
+      "attack_id": 64,
+      "defense_id": 111
+    },
+    {
+      "ID": 119,
+      "attack_id": 64,
+      "defense_id": 112
+    },
+    {
+      "ID": 120,
+      "attack_id": 64,
+      "defense_id": 113
+    },
+    {
+      "ID": 121,
+      "attack_id": 65,
+      "defense_id": 114
+    },
+    {
+      "ID": 122,
+      "attack_id": 65,
+      "defense_id": 115
+    },
+    {
+      "ID": 123,
+      "attack_id": 66,
+      "defense_id": 96
+    },
+    {
+      "ID": 124,
+      "attack_id": 66,
+      "defense_id": 116
+    },
+    {
+      "ID": 125,
+      "attack_id": 66,
+      "defense_id": 117
+    },
+    {
+      "ID": 126,
+      "attack_id": 67,
+      "defense_id": 118
+    },
+    {
+      "ID": 127,
+      "attack_id": 67,
+      "defense_id": 119
+    },
+    {
+      "ID": 128,
+      "attack_id": 67,
+      "defense_id": 120
+    },
+    {
+      "ID": 129,
+      "attack_id": 68,
+      "defense_id": 70
+    },
+    {
+      "ID": 130,
+      "attack_id": 68,
+      "defense_id": 121
+    },
+    {
+      "ID": 131,
+      "attack_id": 68,
+      "defense_id": 122
+    },
+    {
+      "ID": 132,
+      "attack_id": 69,
+      "defense_id": 27
+    },
+    {
+      "ID": 133,
+      "attack_id": 69,
+      "defense_id": 123
+    },
+    {
+      "ID": 134,
+      "attack_id": 69,
+      "defense_id": 124
+    },
+    {
+      "ID": 135,
+      "attack_id": 70,
+      "defense_id": 9
+    },
+    {
+      "ID": 136,
+      "attack_id": 70,
+      "defense_id": 50
+    },
+    {
+      "ID": 137,
+      "attack_id": 71,
+      "defense_id": 125
+    },
+    {
+      "ID": 138,
+      "attack_id": 71,
+      "defense_id": 126
+    },
+    {
+      "ID": 139,
+      "attack_id": 72,
+      "defense_id": 127
+    },
+    {
+      "ID": 140,
+      "attack_id": 72,
+      "defense_id": 128
+    },
+    {
+      "ID": 141,
+      "attack_id": 73,
+      "defense_id": 111
+    },
+    {
+      "ID": 142,
+      "attack_id": 73,
+      "defense_id": 129
+    },
+    {
+      "ID": 143,
+      "attack_id": 74,
+      "defense_id": 130
+    },
+    {
+      "ID": 144,
+      "attack_id": 74,
+      "defense_id": 131
+    },
+    {
+      "ID": 145,
+      "attack_id": 74,
+      "defense_id": 132
+    },
+    {
+      "ID": 146,
+      "attack_id": 75,
+      "defense_id": 133
+    },
+    {
+      "ID": 147,
+      "attack_id": 75,
+      "defense_id": 134
+    },
+    {
+      "ID": 148,
+      "attack_id": 75,
+      "defense_id": 135
+    },
+    {
+      "ID": 149,
+      "attack_id": 76,
+      "defense_id": 28
+    },
+    {
+      "ID": 150,
+      "attack_id": 76,
+      "defense_id": 136
+    },
+    {
+      "ID": 151,
+      "attack_id": 76,
+      "defense_id": 137
+    },
+    {
+      "ID": 152,
+      "attack_id": 77,
+      "defense_id": 129
+    },
+    {
+      "ID": 153,
+      "attack_id": 77,
+      "defense_id": 138
+    },
+    {
+      "ID": 154,
+      "attack_id": 77,
+      "defense_id": 139
+    },
+    {
+      "ID": 155,
+      "attack_id": 78,
+      "defense_id": 140
+    },
+    {
+      "ID": 156,
+      "attack_id": 78,
+      "defense_id": 141
+    },
+    {
+      "ID": 157,
+      "attack_id": 78,
+      "defense_id": 142
+    },
+    {
+      "ID": 158,
+      "attack_id": 79,
+      "defense_id": 143
+    },
+    {
+      "ID": 159,
+      "attack_id": 79,
+      "defense_id": 144
+    },
+    {
+      "ID": 160,
+      "attack_id": 79,
+      "defense_id": 145
+    },
+    {
+      "ID": 161,
+      "attack_id": 80,
+      "defense_id": 46
+    },
+    {
+      "ID": 162,
+      "attack_id": 80,
+      "defense_id": 146
+    },
+    {
+      "ID": 163,
+      "attack_id": 80,
+      "defense_id": 147
+    },
+    {
+      "ID": 164,
+      "attack_id": 81,
+      "defense_id": 123
+    },
+    {
+      "ID": 165,
+      "attack_id": 81,
+      "defense_id": 148
+    },
+    {
+      "ID": 166,
+      "attack_id": 82,
+      "defense_id": 27
+    },
+    {
+      "ID": 167,
+      "attack_id": 82,
+      "defense_id": 149
+    },
+    {
+      "ID": 168,
+      "attack_id": 83,
+      "defense_id": 70
+    },
+    {
+      "ID": 169,
+      "attack_id": 83,
+      "defense_id": 150
+    },
+    {
+      "ID": 170,
+      "attack_id": 83,
+      "defense_id": 151
+    },
+    {
+      "ID": 171,
+      "attack_id": 84,
+      "defense_id": 152
+    },
+    {
+      "ID": 172,
+      "attack_id": 84,
+      "defense_id": 153
+    },
+    {
+      "ID": 173,
+      "attack_id": 84,
+      "defense_id": 154
+    },
+    {
+      "ID": 174,
+      "attack_id": 85,
+      "defense_id": 155
+    },
+    {
+      "ID": 175,
+      "attack_id": 85,
+      "defense_id": 156
+    },
+    {
+      "ID": 176,
+      "attack_id": 86,
+      "defense_id": 145
+    },
+    {
+      "ID": 177,
+      "attack_id": 86,
+      "defense_id": 157
+    },
+    {
+      "ID": 178,
+      "attack_id": 87,
+      "defense_id": 158
+    },
+    {
+      "ID": 179,
+      "attack_id": 87,
+      "defense_id": 159
+    },
+    {
+      "ID": 180,
+      "attack_id": 87,
+      "defense_id": 160
+    },
+    {
+      "ID": 181,
+      "attack_id": 88,
+      "defense_id": 161
+    },
+    {
+      "ID": 182,
+      "attack_id": 88,
+      "defense_id": 162
+    },
+    {
+      "ID": 183,
+      "attack_id": 89,
+      "defense_id": 163
+    },
+    {
+      "ID": 184,
+      "attack_id": 89,
+      "defense_id": 164
+    },
+    {
+      "ID": 185,
+      "attack_id": 90,
+      "defense_id": 10
+    },
+    {
+      "ID": 186,
+      "attack_id": 90,
+      "defense_id": 165
+    },
+    {
+      "ID": 187,
+      "attack_id": 91,
+      "defense_id": 127
+    },
+    {
+      "ID": 188,
+      "attack_id": 91,
+      "defense_id": 166
+    },
+    {
+      "ID": 189,
+      "attack_id": 91,
+      "defense_id": 167
+    },
+    {
+      "ID": 190,
+      "attack_id": 92,
+      "defense_id": 135
+    },
+    {
+      "ID": 191,
+      "attack_id": 92,
+      "defense_id": 168
+    },
+    {
+      "ID": 192,
+      "attack_id": 92,
+      "defense_id": 169
+    },
+    {
+      "ID": 193,
+      "attack_id": 93,
+      "defense_id": 170
+    },
+    {
+      "ID": 194,
+      "attack_id": 93,
+      "defense_id": 171
+    },
+    {
+      "ID": 195,
+      "attack_id": 93,
+      "defense_id": 172
+    },
+    {
+      "ID": 196,
+      "attack_id": 94,
+      "defense_id": 28
+    },
+    {
+      "ID": 197,
+      "attack_id": 94,
+      "defense_id": 173
+    },
+    {
+      "ID": 198,
+      "attack_id": 94,
+      "defense_id": 174
+    },
+    {
+      "ID": 199,
+      "attack_id": 95,
+      "defense_id": 175
+    },
+    {
+      "ID": 200,
+      "attack_id": 95,
+      "defense_id": 176
+    },
+    {
+      "ID": 201,
+      "attack_id": 96,
+      "defense_id": 177
+    },
+    {
+      "ID": 202,
+      "attack_id": 96,
+      "defense_id": 178
+    },
+    {
+      "ID": 203,
+      "attack_id": 97,
+      "defense_id": 10
+    },
+    {
+      "ID": 204,
+      "attack_id": 97,
+      "defense_id": 179
+    },
+    {
+      "ID": 205,
+      "attack_id": 98,
+      "defense_id": 167
+    },
+    {
+      "ID": 206,
+      "attack_id": 98,
+      "defense_id": 180
+    },
+    {
+      "ID": 207,
+      "attack_id": 98,
+      "defense_id": 181
+    },
+    {
+      "ID": 208,
+      "attack_id": 99,
+      "defense_id": 182
+    },
+    {
+      "ID": 209,
+      "attack_id": 99,
+      "defense_id": 183
+    },
+    {
+      "ID": 210,
+      "attack_id": 100,
+      "defense_id": 184
+    },
+    {
+      "ID": 211,
+      "attack_id": 100,
+      "defense_id": 185
+    }
+  ],
+  "source_schema": {
+    "attacks": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "ID",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "attack_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "definition",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "difficulty",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "severity",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "priority_rank",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "defenses": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "ID",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "defense_name",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "definition",
+          "type": "TEXT",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "attack_defenses": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "ID",
+          "type": "INTEGER",
+          "notnull": 0,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "attack_id",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "defense_id",
+          "type": "INTEGER",
+          "notnull": 1,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    }
+  }
+}

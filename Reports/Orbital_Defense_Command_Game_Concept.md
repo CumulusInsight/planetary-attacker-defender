@@ -1,6 +1,6 @@
 # Orbital Defense Command â€” Game Concept
 
-Status: master design updated for owner-authorized Prototype 8 local implementation and testing. Accepted Prototype 7 is preserved at `4af29a9c2f73bcd0830b1dfea364138deb02f1f7`, tag `planetary-prototype7-command-scoring-v1`. Prototype 8 is uncommitted work on `feature/prototype8-orbital-intelligence`, awaiting owner review; no publication is authorized. Current implementation, approved requirements and future proposals remain distinct. Every intelligence assessment and defensive decision involves uncertainty, even when an analyst expresses complete confidence. The title and defending organization's name remain provisional.
+Status: master design updated for owner-authorized Prototype 9 local implementation/testing. Accepted Prototype 8 remains at `a532946cfc2a22a503263eaf07cd2825590615c2`, tag `planetary-prototype8-orbital-intelligence-v1`. Prototype 9 is uncommitted on `feature/prototype9-contact-escalation`, awaiting owner review. No publication or Prototype 10 is authorized. Intelligence remains fallible; implemented requirements and future proposals remain distinct. Star Fink and the game title remain provisional.
 
 ## 1. Concept and fictional setting
 
@@ -35,17 +35,17 @@ Audience, technical depth, and the balance between education, narrative, and str
 
 **Implemented** means present in the reviewed prototype. **Approved design requirement** means an owner-directed long-term obligation, not code already built or permission to implement it now. **Future proposal/open decision** means a suggested mechanism or delivery step requiring a separate specification and approval.
 
-Prototypes 1-4 remain accepted history. Prototype 4 is preserved at `16dc097421e4f2b1159ab3f5095db408e115b11e`, tag `planetary-prototype4-stationary-panel-hover-freeze-v1`. The accepted Prototype 5/6 implementation is now checkpointed at `4dccf04644a213932570923f655ea745407d8cba`, annotated tag `planetary-prototype6-strategic-command-v1`. Prototype 7 was subsequently accepted and published at `4af29a9c2f73bcd0830b1dfea364138deb02f1f7`, tag `planetary-prototype7-command-scoring-v1`. Its local post-publication report addendum remains preserved. Prototype 8 adds the surveillance/intelligence layer described in Section 22 without replacing this baseline.
+Prototypes 1-4 remain accepted history. Prototype 4 is preserved at `16dc097421e4f2b1159ab3f5095db408e115b11e`, tag `planetary-prototype4-stationary-panel-hover-freeze-v1`. The accepted Prototype 5/6 implementation is now checkpointed at `4dccf04644a213932570923f655ea745407d8cba`, annotated tag `planetary-prototype6-strategic-command-v1`. Prototype 7 was subsequently accepted and published at `4af29a9c2f73bcd0830b1dfea364138deb02f1f7`, tag `planetary-prototype7-command-scoring-v1`. Prototype 8 was accepted and published at `a532946cfc2a22a503263eaf07cd2825590615c2`, tag `planetary-prototype8-orbital-intelligence-v1`; its local checkpoint-report addendum remains preserved. Prototype 9 adds Section 23 operational escalation without replacing these accepted systems.
 
-| Area | Implemented baseline and current Prototype 8 addition | Future requirements, not implemented |
+| Area | Implemented baseline and current Prototype 9 addition | Future requirements, not implemented |
 | --- | --- | --- |
 | Environment and navigation | Three data centers, eighteen stable contacts in the Prototype 8 main scene (nine original circular contacts plus nine elliptical surveillance contacts), reusable strategic/tactical views, selectable registry and deadline/severity triage with scrolling. Standalone Prototype 5 tactical scene remains available. | Larger networks such as the illustrative 15/45 environment; general multi-encounter-per-center scheduling. |
 | Motion/input | Speeds 0.49/0.63/0.77; full-revolution discrete inward jumps; continuous inner-ring motion; enlarged hit areas and exclusive visible selection. | No movement redesign is approved. |
-| Encounter integrity | Three independent active encounters and fifteen background contacts (six original plus nine elliptical); new traffic never gains fabricated deadlines or scoring participation. H, N and N100 retain hidden truth separately from evidence/assessment/confidence; N100 remains peaceful despite its 100% hostile opinion. | Richer evidence production, verification and independent report histories. Unknown contacts must not become automatic enemies. |
+| Encounter integrity | Three independent active encounters and fifteen background contacts (six original plus nine elliptical); the nine elliptical contacts now have explicit player-driven operational states, without fabricated deadlines or official mission scoring participation. H, N and N100 retain hidden truth separately from evidence/assessment/confidence; N100 remains peaceful despite its 100% hostile opinion. | Richer evidence production, verification and independent report histories. Unknown contacts must not become automatic enemies. |
 | Timing/modes | Movement-derived five-minute default; explicit 6/4-minute demonstration overrides in DC-02/DC-03; strategic Learning pause holds all encounter hosts, backgrounds continue; Challenge advances offscreen; hover freezes only the tactical contact. | Learning-provider launch/return policy and larger-network timing specification. |
 | Decisions | One follow-up, deterministic defense/hold-fire/expiry and isolated replay. Expiry is distinct from intentional restraint. | Defense catalogs, damage and financial models, diplomacy or random outcomes. |
 | Command roles and mission | Prototype 7 adds Tactical Officer and Operations Commander presentations, five defender objectives, a configurable 1,000-point event-ledger model, public confirmed-performance displays and an evidence-limited final scorecard. See Sections 19-20. | Strategic Commander, staff delegation and playable attacker controls. |
-| Resources and education | Static demonstration staff/workload/analysis ETA remain visibly labeled. Provider integration is absent. | Real staffing, database-backed concept mappings, learning-provider adapters, mastery/certification tracking. |
+| Operations and resources | Prototype 9 adds explicit watchlist/investigation/escalation/disposition, two-slot FIFO investigation scheduling, authored follow-ups and separate operational statistics. Static staffing demonstration remains distinct. Provider integration is absent. | Real staffing, database-backed concept mappings, learning-provider adapters, mastery/certification tracking. |
 
 The attack abbreviations remain externally configured movement/description records, not verified identities. Assessed severity is not urgency, hostility probability or actual affiliation. DATA's `$1,000,000` remains a display-only placeholder. The new point ledger does not authorize unsupported health, damage, financial or personnel calculations.
 
@@ -543,7 +543,7 @@ Prototype 7 does not instantiate an attacker ledger, offer attacker command cont
 
 ## 22. Prototype 8 ? elliptical surveillance and fallible source reports
 
-**Implemented locally for owner review; not a new accepted checkpoint.** The normal entry is `scene/orbital_command.tscn`, a thin inherited instance of `scene/command_center.tscn` enabling the optional orbital-intelligence configuration. The same controller and reusable tactical scene serve all centers. The baseline command-center scene remains runnable with its accepted nine contacts so unchanged Prototype 6/7 regression assertions continue to exercise that baseline. The standalone Prototype 5 tactical scene remains unchanged in scope. Prototype 8's integration suite exercises the actual eighteen-contact main scene rather than weakening older population assertions.
+**Accepted Prototype 8 baseline**, checkpoint `a532946cfc2a22a503263eaf07cd2825590615c2`. Its entry is `scene/orbital_command.tscn`, a thin inherited instance of `scene/command_center.tscn` enabling the optional orbital-intelligence configuration. The same controller and reusable tactical scene serve all centers. The baseline command-center scene remains runnable with its accepted nine contacts so unchanged Prototype 6/7 regression assertions continue to exercise that baseline. The standalone Prototype 5 tactical scene remains unchanged in scope. Prototype 8's integration suite exercises the actual eighteen-contact main scene rather than weakening older population assertions.
 
 ### Surveillance traffic and geometry
 
@@ -582,3 +582,161 @@ Replay restores the active encounter's movement/deadline and its own source hist
 Future original art may replace generic contact glyphs, source markers and assessment text accents after review. Request neutral traffic silhouettes, source badges and selection/unread-report treatments that communicate knowledge state without encoding actual allegiance. Sizes/formats and license ownership remain review decisions; final artwork is not required by this prototype.
 
 Open questions: whether passive surveillance should eventually support requested investigations, how authored report provenance/corroboration should be modeled, whether new report notifications need a dedicated unread badge, how longer histories should be filtered, whether changing modes should ever pause background trajectories, and when independent verification could permit more scoring categories. These remain proposals, not further implementation authorization.
+
+
+## 23. Prototype 9 - contact escalation and command accountability
+
+**Implemented locally for owner review; no new accepted checkpoint.** The initial P9 entry is `scene/operational_command.tscn`; the cyber refinement below now supplies the F5 entry. It is a thin inherited Prototype 8 command scene enabling the operations extension. Existing Prototype 8/6 command entries and standalone tactical scene retain their baseline behavior for unchanged regressions. Three centers, eighteen contacts, original three official mission participants, original deadlines, movement, hover and deterministic outcomes remain intact.
+
+### Operational state is separate from assessment
+
+Only C-010..C-018 have the new operational state model. All start MONITORED regardless of intelligence or private truth. A MONITORED contact may be suspected hostile, WATCHLIST may be assessed nonhostile, and ESCALATED is a commander designation, never proof of hostility. No report or hidden affiliation automatically escalates/de-escalates a contact.
+
+`data/contact_operations.json` supplies investigation capacity/durations, the supported transition table, authored public follow-up reports and consequence descriptions. Schema validation pins supported action/state semantics and rejects incomplete/remapped transitions, duplicate/missing IDs, invalid durations/optional windows, malformed reports and incomplete consequences. Invalid configuration disables this extension with a readable diagnostic; accepted surveillance/encounters remain available.
+
+| State | Accepted command/event | Result |
+| --- | --- | --- |
+| MONITORED | Add to Watchlist | WATCHLIST |
+| MONITORED or WATCHLIST | Request Investigation, once per contact | INVESTIGATING; job active or queued |
+| INVESTIGATING | Investigation completes | WATCHLIST; completed report awaits review |
+| MONITORED, WATCHLIST or INVESTIGATING | Explicit confirmed escalation | ESCALATED |
+| ESCALATED | Continue tracking, once per escalation episode | ESCALATED; command recorded |
+| ESCALATED | Deliberate de-escalation | WATCHLIST; not a final disposition |
+| ESCALATED | Deploy interceptor, Hold fire, Resolve release | RESOLVED; one final disposition |
+| ESCALATED | Expiry, only if a window is configured | RESOLVED; distinct expired disposition |
+| Any eligible completed unreviewed job | Mark reviewed | Same state; review acknowledged once |
+| RESOLVED | Other commands | Rejected |
+
+Completion/expiry are internal events, not player commands. A completion while already ESCALATED keeps that state; changed intelligence does not undo orders. Final resolution cancels unfinished investigation and releases its slot; de-escalation alone retains pending work. No return-to-MONITORED or operational replay/reset button is added. Restarting the application begins a new session.
+
+### Investigation production and timing
+
+Two configurable simultaneous slots are a small scheduling model **separate from static demonstration staffing**. Configured delays are 12/18/10 seconds, repeated across each center's three new contacts. Each has one authored follow-up, independent of hidden truth: C-010 increases concern, C-011 favors survey activity, C-012 is a confidently wrong nonhostile assessment, and other examples remain ambiguous. Accepted timed reports may later supersede these results.
+
+One network session clock advances once per controller frame, independent of views. FIFO uses accepted request event order with contact-ID tie-breaking. Equal-time completions process in ascending contact ID, before expiry; freed slots start work at that exact timestamp. Large deltas are split at event boundaries, producing frame-partition-invariant scheduling. ETA includes queue wait plus work duration. Started-job queue delays, active/queued workload and completed/unreviewed reports are visible and audited. There are no charges or reading penalties.
+
+Learning strategic pause holds investigation progress with no catch-up. Challenge advances it offscreen. Hover preserves accepted contact-specific movement freeze, but does not pause analyst work; this difference is labeled. Prototype 8's movement-derived report release behavior is untouched. Completed investigation reports append once to that same contact's history, referencing the latest released report as superseded. Existing text, chronology, confidence, payload and recommendations are retained, not rewritten. No per-panel timer exists.
+
+### Escalation, responses and consequences
+
+A blocking confirmation shows contact ID, public assessment/confidence, latest relevant report, defensive options and a required 3-300 character reason. Confirmation saves the displayed evidence snapshot and reason in the append-only event ledger. Reports arriving later do not rewrite that order. Cancel performs no transition. Contact appearance remains neutral.
+
+Continue tracking is not final resolution. De-escalate returns to WATCHLIST. Resolve/release closes the case without engagement. Hold fire closes it with deliberate allowed departure. Intercept records authorization, immediate acknowledged **abstract deployment**, and an observation that effects, identity and condition remain unverified. It is not a confirmed kill, neutralization or damage result. Command-issued, action-executed and outcome-observed events remain separate even when timestamps coincide. No weapon physics, ammunition, combat outcomes inferred from hidden identity or diplomacy calculations are introduced.
+
+No new deadline is shipped; the UI says **No confirmed deadline.** A validated optional operational review window is supported for explicit fixtures. It starts at first escalation, uses the network clock and cannot be extended through de-escalation/re-escalation. An overdue re-escalation expires atomically before another response is possible. Expiry differs from hold fire. This is an authored operational opportunity, not an inferred attack arrival/collision. Hover does not pause this independent window; strategic pause does. Original three movement-derived deadlines remain untouched.
+
+### Interface and operational event ledger
+
+The existing tactical intelligence console and mission objectives remain. A lower-left operational card shows state, investigation/ETA, optional window, disposition and command entry. The right status label identifies operational state; the inherited passive defense buttons remain disabled because the dedicated operations console supplies the new commands.
+
+The dedicated operations view provides the nine-contact queue, state/awaiting-review filters, operational priority or ID sorting, contact-to-center navigation/highlight, network/per-center workload, current/source history, order-time evidence, consequences, audit history and enabled/disabled commands. The eighteen-contact strategic triage separately displays operational state without replacing public severity/urgency. Original command levels, mission scorecard and original encounter actions remain accessible by returning to command. Long histories scroll at readable font sizes; native text indicators do not encode affiliation.
+
+The separate P9 operational-performance section reports unique investigated/escalated/de-escalated contacts, completed investigations, deployments, intentional hold fire, resolved/open cases, started-job queue delays and rejected commands. These are **statistics, not points or correctness grades**. Monotonic event IDs and command request tokens make delivery idempotent. Duplicate delivered tokens add no events; a distinct invalid command attempt adds only a rejection count. No UI refresh/navigation/report arrival can farm successful metrics. Each contact has at most one final disposition and authored investigation per session.
+
+Prototype 7 mission weights, participants, event ledger and first-resolution-official replay policy are unchanged. New operations never emit original encounter resolution events or affect official points. Original tactical replay cannot reset operational records or their reports. Persistent save/replay of operational sessions is not implemented.
+
+### Public/private boundaries and deferred work
+
+Operations model/scheduler and UI never receive private fixture truth. They use explicit commands and authored public evidence. A peaceful contact may be escalated; a private hostile contact may remain monitored. No score or hidden outcome confirms whether the decision was right. Future modeled interception effects, independent verification, ammunition/costs, staffing allocation, report retries/cancellation controls, persistence, operational replay and possible scoring integration require separate approval. Future attacker architecture remains separate/inactive. Educational providers, databases and Prototype 10 are not implemented or authorized.
+
+
+### Prototype 9 acceptance corrections - action receipts and strategic header sorting
+
+The original three active encounters and newly escalated operations remain distinct. A controlled original-path probe confirmed that deployment just before the movement-derived deadline records one existing deterministic outcome; at zero or later expiry wins. This does not establish what happened in the owner's exact manual incident. Rejections previously had no visible acknowledgment, and outcomes shared long scrollable reports. Strategic pause could also replace the resolved clock caption with a pause notice.
+
+Original encounter resolution signals now project into public in-session receipts, not additional scoring events. A fixed summary card, persistent banner and After-action history control show contact ID, acceptance/rejection, exact time remaining at acceptance, executed command, disposition and the existing observable outcome/limitations. The original report auto-scroll remains intact; visible feedback no longer depends on it. The closed positive countdown is labeled TIME AT ACCEPTANCE and retains Decision recorded even during strategic pause; actual expiry retains DEADLINE EXPIRED. Movement passing the deadline after a valid decision cannot generate a second contradictory resolution. Replay retains prior receipts with attempt identifiers while clearing stale current-result display. Identical repeated rejections are coalesced. Receipt history is per tactical center and lasts for the application session.
+
+Prototype 9 operational feedback reuses its existing event ledger: command-issued/rejected events now include applicable configured time remaining. The immediate receipt explicitly says COMMAND ACCEPTED/REJECTED, shows contact/disposition and labels abstract response outcome UNVERIFIED. Existing command/execution/observation history remains available; no second operational scoring or resolution ledger is created. No new deadline, hidden-truth disclosure, neutralization claim or score rule is introduced.
+
+The main Operations Commander contact table supports clickable header sorting for Contact, Center, Public intelligence assessment, Confidence, Severity, Time to act and Encounter/operational status. First click is ascending; another click on the same header reverses it. The active heading carries ^ or v plus an explicit direction label; the preset selector identifies header sorting. Choosing a preset restores its accepted ordering mode. Contact IDs, severity ordinal values, confidence and remaining seconds sort numerically; text uses case-insensitive ordering. Missing confidence/deadline values stay last in both directions. Equal keys use ascending numeric Contact ID regardless of direction. Only released public assessment/state and applicable configured deadlines are used, never private affiliation.
+
+Existing TreeItem objects are reordered in place when the population is unchanged, preserving selected contact, native scroll offset and row navigation as intelligence updates arrive. All eighteen contacts remain scroll-accessible at the existing readable font size. The dedicated operations queue retains its previous filters/priority semantics; no opaque combined score is introduced.
+
+
+## 24. Prototype 9 refinement ? cybersecurity defense integration
+
+**Local implementation, pending owner acceptance.** F5 now opens `scene/cyber_command.tscn`, a thin inherited operations scene enabling the cyber controller. The original operational, orbital-command and standalone tactical entries remain runnable. This extends Prototype 9; it does not begin Prototype 10 or supersede accepted Git checkpoints.
+
+### Authoritative catalog and schema
+
+The owner selected `C:/Users/azwam/Projects/cyber_defensev12/data/cyber.db` after comparison found older copies with the same counts but different content. The source is unchanged. `tools/export_cyber_catalog.py` opens SQLite in URI `mode=ro`, verifies integrity and relationships, and emits deterministic `data/cyber_catalog.json`. Godot needs no SQLite plugin or network connection. Re-export explicitly from the selected source after approved catalog changes; never maintain an independently invented attack/defense catalog.
+
+The actual schema is:
+
+| Table | Columns | Primary key |
+| --- | --- | --- |
+| attacks | ID INTEGER; attack_name TEXT NOT NULL; definition TEXT NOT NULL; difficulty TEXT NOT NULL; severity TEXT NOT NULL; priority_rank INTEGER NOT NULL | ID, autoincrement |
+| defenses | ID INTEGER; defense_name TEXT NOT NULL; definition TEXT NOT NULL | ID, autoincrement |
+| attack_defenses | ID INTEGER; attack_id INTEGER NOT NULL; defense_id INTEGER NOT NULL | ID, autoincrement |
+
+There are 100 attacks, 185 defenses and 211 relationship rows. SQLite declares **no foreign keys** or unique attack/defense pair constraint. The exporter and Godot loader explicitly reject missing referenced IDs, duplicate IDs/pairs, unmapped attacks and empty definitions. Source SQL schema and SHA256 provenance accompany the export. Catalog severity/priority are catalog metadata, not verified contact intent or an official scoring input. A relationship records applicability, not guaranteed defense success.
+
+### Five authored cyber encounters and reusable interfaces
+
+`data/cyber_scenarios.json` assigns cyber capabilities to C-010 through C-014, using exact database attack IDs/names: 77 VIRUS, 64 WORM, 59 RANSOM, 2 ROOTKIT and 78 DDoS. C-015..C-018 retain their abstract operational responses. C-001/C-004/C-007 retain their accepted deterministic encounter rules, clocks and official mission scoring. No new countdown or official scoring participant is introduced.
+
+A cyber capability does not rewrite P8 private affiliation or intentions. A peaceful probe can carry compromised software; observing containment does not prove deliberate hostile intent. Existing fallible reports, investigation follow-ups and supersession history remain intact. The cyber console distinguishes its initial cyber hypothesis and confidence from the latest released surveillance assessment. SIGINT, platform and trajectory observations are authored data; neither appearance nor investigation grants private truth.
+
+Each validated scenario has stable scenario/contact IDs, a private attack ID, public assessment/confidence, three public source observations, authored environmental conditions, and three explicit response rules. Each rule references a real defense ID, the actual attack it applies against, required conditions, an observable result, finality and an educational explanation. `cyber_data.gd` validates references and schemas; `cyber_session.gd` evaluates private rules and returns an allowlisted public view. UI receives choice names/purposes from the exported defense entries, never hidden effectiveness or actual capability IDs.
+
+Current outcomes are deterministic: contained, partial, ineffective, unverified/pending, or defensive disruption. These are fixture-specific results, not universal real-world product claims. Successful observed containment resolves the cyber operation; partial/failed/unverified/disruptive actions leave it escalated for further action. Each countermeasure can execute once per contact/session; redelivered request tokens return the same result. No random probability engine is implemented.
+
+### Cyber defense versus kinetic interception
+
+For the five cyber profiles, the tactical operations card opens three contextual database countermeasures and short purpose descriptions. Explicit operational escalation is required before execution. Continue monitoring and Hold fire remain separate decisions; operational confirmation/de-escalation remain available. The existing generic interceptor control routes to cyber choices for these profiles; direct attempts to use the wrong deployment channel are rejected and audited. Invalid cyber configuration produces an error rather than substituting generic catalog information.
+
+Containment changes operational status visibly while the same spacecraft continues along the same path. It does not claim destruction, successful kinetic interception, physical damage or verified affiliation. Other abstract operational contacts retain the earlier authorization/execution/unverified-observation semantics. Original active encounters continue using their protected outcome model. Cyber actions generate operational records, **no official points**, and cannot change the original three first-resolution-official results.
+
+### Timestamped accountability and stable identity
+
+Existing session events remain authoritative. The operational event source captures a local ISO date-time with UTC offset and wall epoch, simulation elapsed time and public contact context at creation. A stable simulation-only event projection is retained for deterministic scheduling comparisons. The network history projects original public resolution receipts and canonical operational events once using source event IDs; screen refreshes do not emit actions.
+
+History is accessible from both command levels and records contact, center, stable circular/elliptical path ID, assessment at decision, response, acceptance/rejection, disposition, observed outcome and remaining time when applicable. Wall decision time is distinct from paused simulation time. Original replay retains history and official scoring protections; new operational contacts remain session-final once resolved. Histories are in-session, not persistent save files.
+
+Deadline synchronization still runs before original decisions: strictly positive remaining time permits an otherwise valid action; zero or negative expires first. Valid pre-expiry resolutions cannot subsequently become expiry outcomes. Closed clocks show time at acceptance. No new clock or orbital mechanics is introduced. Controlled tests preserve the same Node/contact/path across action and navigation; they do not reproduce the owner's original manual plane-change observation. Original discrete inward jumps remain intentional.
+
+### Sorting, presentation and deferred work
+
+The seven existing clickable strategic headers remain: contact ID, center, public assessment, confidence, ordinal severity, remaining deadline and operational state. First click ascending, second descending; missing confidence/deadlines last in either direction; ascending numeric ID breaks ties. Existing row objects retain selection/scroll/navigation. Sorting never uses hidden truth or catalog severity as a contact classification.
+
+The 1600 ? 900 cyber detail view uses a scrollable evidence/history column and three readable purpose/response blocks, a prominent immediate receipt and separate operational controls. The orbit scene, mission panel, stationary console and DATA target are unchanged. A network history modal provides the audit record without crowding orbital input.
+
+Deferred: balancing and expert review of authored efficacy, additional attack profiles, formal independent verification/disclosure policy, persistent event storage, cyber replay controls, real financial/resource/damage effects and any integration with official scoring. These require separate approval. No combat physics, ammunition system, staffing redesign, database technology choice for learning systems or educational-provider integration is implemented here.
+
+
+## 25. Prototype 9 ? four command pages and multi-threat assessment
+
+**Implemented locally for owner review, not checkpointed.** F5 now uses `scene/decision_command.tscn`, a thin inherited cyber-command scene with the four-page presentation enabled. Earlier command entries and the standalone tactical scene remain available for compatibility. Sections 23?24 describe the preceding P9 layers; this section supplies the current information architecture without changing their simulation rules.
+
+### Command pages and navigation
+
+1. **Command Overview** retains the original eighteen-contact table, seven clickable sort keys and stable row identity. A concise attention column distinguishes imminent deadline review, assessed concern and routine monitoring; it is not an opaque combined threat score. Selecting a row opens that contact's decision page. Center cards still open the orbiting tactical view.
+2. **Threat Assessment & Response** is the principal decision page: physical-weapon suspicion, three separate cyber hypotheses, a public advisory recommendation, and fixed action controls. Detailed reports are not duplicated here. The selected hypothesis opens its applicable database defenses. Orbital view, existing operational escalation controls and detailed analysis remain accessible.
+3. **Intelligence Analysis** retains complete source text, initial encounter/cyber briefs, follow-ups, confidence, payload estimates, advisory options, supersession links and the investigation/evidence-at-escalation snapshot. Sources are grouped by type, with receipt chronology within each group. A source filter reduces reading without deleting records.
+4. **After-Action & Decision History** projects the existing canonical events plus received public reports and issued advisory recommendations. Filters select one contact or the entire network. Report supersession is annotated from current public history; the original receipt event is not rewritten.
+
+The persistent navigation preserves contact/center/path selection. Top-level role, Learning/Challenge controls and scorecard remain accessible. Detailed pages replace the crowded side-panel view while open, rather than permanently obscuring the orbital display; the orbital tactical view remains available. Each long-information area has a single scroll container, with actions outside the scroll. Simulation continues according to the accepted mode; navigation does not pause or reset it.
+
+### Public multi-threat model
+
+`data/decision_assessments.json` is a separate, validated **public assessment** configuration covering all eighteen contacts. It contains one physical assessment (suspected, not currently suspected, or unknown), three unique v12 attack references, independent likelihood estimates or null/Unknown, supporting evidence, asset at risk, and an advisory recommendation/rationale/confidence. All numerical values in this file are explicit authored analyst estimates, not calculated probabilities or confidence inferred from severity. Background comparisons with no supporting evidence use Unknown. A contact can have multiple suspected capabilities; the estimates are not normalized and may exceed 100% in total.
+
+Examples: C-011 has a 55% physical-weapon suspicion based on an ambiguous instrument boom, while WORM (60%), DDoS (35%) and VIRUS (Unknown) coexist as cyber hypotheses. This does **not** add a real weapon to the hidden scenario. C-010 has VIRUS 72%, WORM 46%, RANSOM 28%, demonstrating nonexclusive estimates. C-012's physical assessment is currently negative at 65% confidence, not proof that no weapon exists. Authored recommendations use public observations only and execute nothing automatically.
+
+Attack names, definitions and severity-if-present come from the unchanged v12 export. Catalog severity is not evidence of possession or a likelihood estimate. The five private cyber capabilities, their authored conditions/effectiveness rules, original encounter truths and P8 affiliations remain unchanged. No hidden multi-payload or physical-weapon simulation is added.
+
+### Response availability and confirmation
+
+Three suspected attacks are distinct from three defensive responses. The decision model joins the selected public attack ID through exported `attack_defenses` to exact database defense names/purposes. Mapped defenses not in the contact's existing validated scenario response list are **INFORMATIONAL ONLY**. Validated options explicitly show whether escalation is required, execution is available, or the response was already issued. Inspection explains purpose, suspected attack addressed, uncertainty, possible consequence classes and limitations before confirmation. No database mapping creates a new effectiveness rule. All fifteen original validated choices remain reachable through the five contacts' public hypotheses, including ROOTKIT's authored Antivirus alternative via its VIRUS hypothesis.
+
+Only the existing evaluator may execute a cyber response. Original active encounters retain their accepted abstract signal-interference defense and authoritative deadline check; the confirmation labels that legacy response honestly rather than pretending it is a new database choice. Existing abstract interception remains available only where the operational model already supports it; authorization/execution does not claim verified interception. Physical or coordinated defense without a matching existing evaluator is a non-executable proposal. Continue monitoring and request-more-intelligence remain deliberate alternatives, with the accepted investigation capacity and timing. Hold-fire/release/replay remain in their existing operational/tactical controls.
+
+### Intelligence timestamps and auditable receipt history
+
+The previous action ledger already timestamped decisions, but source intelligence records did not capture receipt wall times. In the new normal entry, `intelligence_session.gd` captures actual local receipt time with UTC offset, wall epoch, authoritative network simulation elapsed time and contact movement progression where available, then emits a public report-received event. Metadata is allowlisted; hidden fixtures remain excluded. Observation timestamps are shown only when supplied, otherwise explicitly unavailable. Receipt time is not misrepresented as the time of observation or original authorship.
+
+New operational reports receive their own current receipt timestamp, even if derived from an earlier report. Superseded records retain their original receipt metadata and text; views show newer report ID/time separately. Initial static briefs and historical records without wall time are labeled unavailable. Original immediate follow-up receipt time is taken from its existing timestamped investigation receipt, not invented. Learning strategic pause holds simulation time, not the host wall clock. It prevents autonomous scheduled release as before; explicit authored follow-up behavior remains accepted. Active Challenge continues timing across pages and centers.
+
+Report events and recommendations are recorded once at receipt/issuance, not page opening. Stable report-event sequence IDs distinguish replayed receipt episodes without duplicate UI-generated events. The network journal remains a projection of authoritative report/action sources. Chronological append sequence breaks ties; recommendations, accepted/rejected commands, cyber results, unresolved dispositions and expirations do not generate new points. All accepted mission scoring, replay protection, movement, hover-freeze, contact counts and deadline rules remain unchanged.
+
+Deferred review: owner validation of authored public confidence/evidence and recommendation wording; whether a later dynamic assessment should revise the public multi-threat briefing; richer report filters; any future real multi-payload/coordinated-defense simulation. These are not implemented by this presentation refinement. No Prototype 10, combat engine, physical weapon, extra private payload, scoring redesign or educational-provider integration is authorized here.

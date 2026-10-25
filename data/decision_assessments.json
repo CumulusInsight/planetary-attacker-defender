@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "contacts": [
+    {
+      "contact_id": 1,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 2,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 3,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 4,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 5,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 6,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 7,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 8,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 9,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 10,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": 72,
+          "evidence": "Initial public cyber hypothesis; check the latest supporting and conflicting intelligence.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": 46,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 59,
+          "likelihood": 28,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Prioritize review of possible cyber containment.",
+        "confidence": 60,
+        "rationale": "Public reports describe digital anomalies; capability and intent remain uncertain. A recommendation is not an authorization."
+      }
+    },
+    {
+      "contact_id": 11,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "Suspected physical weapon",
+        "confidence": 55,
+        "evidence": "A protruding instrument assembly could be a launcher or a scientific boom. No weapon discharge has been observed."
+      },
+      "cyber": [
+        {
+          "attack_id": 64,
+          "likelihood": 60,
+          "evidence": "Initial public cyber hypothesis; check the latest supporting and conflicting intelligence.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": 35,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Prioritize review of possible cyber containment.",
+        "confidence": 60,
+        "rationale": "Public reports describe digital anomalies; capability and intent remain uncertain. A recommendation is not an authorization."
+      }
+    },
+    {
+      "contact_id": 12,
+      "center_id": "DC-01",
+      "physical": {
+        "state": "No physical weapon currently suspected",
+        "confidence": 65,
+        "evidence": "The available survey-platform profile reports no identified weapon. Incomplete observation cannot rule one out."
+      },
+      "cyber": [
+        {
+          "attack_id": 59,
+          "likelihood": 35,
+          "evidence": "Initial public cyber hypothesis; check the latest supporting and conflicting intelligence.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 2,
+          "likelihood": 20,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-01 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Prioritize review of possible cyber containment.",
+        "confidence": 60,
+        "rationale": "Public reports describe digital anomalies; capability and intent remain uncertain. A recommendation is not an authorization."
+      }
+    },
+    {
+      "contact_id": 13,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 2,
+          "likelihood": 63,
+          "evidence": "Initial public cyber hypothesis; check the latest supporting and conflicting intelligence.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 59,
+          "likelihood": 25,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Prioritize review of possible cyber containment.",
+        "confidence": 60,
+        "rationale": "Public reports describe digital anomalies; capability and intent remain uncertain. A recommendation is not an authorization."
+      }
+    },
+    {
+      "contact_id": 14,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 78,
+          "likelihood": 68,
+          "evidence": "Initial public cyber hypothesis; check the latest supporting and conflicting intelligence.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": 30,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 2,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Prioritize review of possible cyber containment.",
+        "confidence": 60,
+        "rationale": "Public reports describe digital anomalies; capability and intent remain uncertain. A recommendation is not an authorization."
+      }
+    },
+    {
+      "contact_id": 15,
+      "center_id": "DC-02",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-02 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 16,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 17,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    },
+    {
+      "contact_id": 18,
+      "center_id": "DC-03",
+      "physical": {
+        "state": "Unknown / insufficient evidence",
+        "confidence": null,
+        "evidence": "No authored weapon-identification evidence is available. Unknown does not mean hostile."
+      },
+      "cyber": [
+        {
+          "attack_id": 77,
+          "likelihood": null,
+          "evidence": "No capability-specific evidence has been supplied; catalog hypothesis for review only.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 64,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        },
+        {
+          "attack_id": 78,
+          "likelihood": null,
+          "evidence": "Authored alternative hypothesis for ambiguous digital telemetry; not an observed or confirmed capability.",
+          "asset_at_risk": "DC-03 / DATA",
+          "estimate_source": "Authored public decision-assessment fixture; independent likelihood, not normalized and not derived from severity."
+        }
+      ],
+      "recommendation": {
+        "text": "Gather more intelligence before acting.",
+        "confidence": null,
+        "rationale": "Available public observations do not verify intent or exclude simultaneous capabilities. Review conflicting source reports."
+      }
+    }
+  ]
+}

@@ -114,3 +114,43 @@ One new annotated tag: `planetary-prototype8-orbital-intelligence-v1`, pointing 
 Normal push of `feature/prototype8-orbital-intelligence` and only this new tag; atomic push if supported. No main merge/push, force-push, deletion, amend or history rewrite.
 
 The new commit SHA does not exist yet and is intentionally not invented here. Actual commit/tag/remote verification will be appended locally after publication, without amending or adding another commit solely to record its own SHA.
+
+## Final local post-publication verification
+
+Verified: 2026-10-24T15:50:26-07:00 - America/Los_Angeles, Pacific Daylight Time, UTC offset -0700.
+
+- Ending branch: `feature/prototype8-orbital-intelligence`.
+- Exact commit SHA: `a532946cfc2a22a503263eaf07cd2825590615c2`.
+- Parent commit SHA: `4af29a9c2f73bcd0830b1dfea364138deb02f1f7` (accepted Prototype 7).
+- Annotated tag: `planetary-prototype8-orbital-intelligence-v1`.
+- Annotated tag object SHA: `bcfbae6d2a6b1ecb8ef381367979ff7ec47b72ce`.
+- Local and remote peeled tag target: `a532946cfc2a22a503263eaf07cd2825590615c2`.
+- Atomic normal push succeeded: one new branch and one new annotated tag; upstream configured. Local HEAD, remote branch and tracking ref match. Tracking is 0 ahead / 0 behind.
+- Local and remote main remain `16dc097421e4f2b1159ab3f5095db408e115b11e`. No merge into main.
+- Prototype 7 commit, annotated tag object and target remain unchanged. All recorded Prototype 2/3/4/6/7 tag objects and peeled commits are preserved locally/remotely. Remote Prototype 6 and Prototype 7 branches remain unchanged.
+- Exact 19-file changed manifest matches the published commit. Every source/test/report/UID blob matches its reviewed pre-commit content, including the preserved Prototype 7 report addendum. No unrelated files, screenshots, caches, executables, build outputs, temporary files or credential patterns were included.
+- Regression results: Prototype 3 PASS; Prototype 4 PASS (13,040 checks); Prototype 5 PASS (992); Prototype 6 PASS (229); Prototype 7 PASS (241); Prototype 8 PASS (1,748). All exit 0 with zero assertion failures. Editor import and both startup checks exit 0. Whitespace check passes.
+- Working tree was clean after push and verification. After writing this authorized local addendum, only this checkpoint report is modified; staging area empty, no untracked files. No amend or extra commit was created for post-publication results.
+
+### Verified remote references
+
+```text
+4dccf04644a213932570923f655ea745407d8cba	refs/heads/feature/prototype6-strategic-overview
+4af29a9c2f73bcd0830b1dfea364138deb02f1f7	refs/heads/feature/prototype7-command-mission-scoring
+a532946cfc2a22a503263eaf07cd2825590615c2	refs/heads/feature/prototype8-orbital-intelligence
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/heads/main
+0c17496e620fdf2a326a520ee27ed66d15a9d47a	refs/tags/planetary-prototype2-data-driven-attackers-v1
+c9e0bfd93884dfc0c63a9e54655ced2b758db649	refs/tags/planetary-prototype2-data-driven-attackers-v1^{}
+8c9295c1c3bb0d921791b92dc7c799dcdd6f03b4	refs/tags/planetary-prototype3-json-attack-data-v1
+85424c035801bb50f5f894614d53ca2512123dbc	refs/tags/planetary-prototype3-json-attack-data-v1^{}
+26fb021dcc78fd64ab398d7d767a24e0b3ea539a	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1
+16dc097421e4f2b1159ab3f5095db408e115b11e	refs/tags/planetary-prototype4-stationary-panel-hover-freeze-v1^{}
+8794458b611a426ffc43226ce4f468c8853398d0	refs/tags/planetary-prototype6-strategic-command-v1
+4dccf04644a213932570923f655ea745407d8cba	refs/tags/planetary-prototype6-strategic-command-v1^{}
+590661bd4d8857eb98f831aaaa262679873b5208	refs/tags/planetary-prototype7-command-scoring-v1
+4af29a9c2f73bcd0830b1dfea364138deb02f1f7	refs/tags/planetary-prototype7-command-scoring-v1^{}
+bcfbae6d2a6b1ecb8ef381367979ff7ec47b72ce	refs/tags/planetary-prototype8-orbital-intelligence-v1
+a532946cfc2a22a503263eaf07cd2825590615c2	refs/tags/planetary-prototype8-orbital-intelligence-v1^{}
+```
+
+Publication is complete. No gameplay edits, main merge or Prototype 9 work occurred. Await owner authorization.

@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "scenario_id": "CYBER-10",
+      "contact_id": 10,
+      "private_attack_id": 77,
+      "public_assessment": "File-attached executable signatures suggest VIRUS; attribution remains uncertain.",
+      "confidence": 72,
+      "conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "file_delivered_not_executed",
+        "telemetry_delivery_not_browser"
+      ],
+      "required_conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "file_delivered_not_executed",
+        "telemetry_delivery_not_browser"
+      ],
+      "sources": [
+        {
+          "source": "SIGINT",
+          "text": "Intercepted telemetry contains suspicious digital activity; source attribution is uncertain."
+        },
+        {
+          "source": "Platform Profile",
+          "text": "Communications and onboard computing equipment could support research or interference."
+        },
+        {
+          "source": "Trajectory Assessment",
+          "text": "The surveillance trajectory alone does not establish intent or payload."
+        }
+      ],
+      "responses": [
+        {
+          "defense_id": 138,
+          "outcome": "contained",
+          "final": true,
+          "observation": "Antivirus isolates the observed file before execution. No spacecraft destruction is claimed.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 77,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "file_delivered_not_executed",
+            "telemetry_delivery_not_browser"
+          ]
+        },
+        {
+          "defense_id": 129,
+          "outcome": "partial",
+          "final": false,
+          "observation": "Updates close an entry weakness, but an already delivered file remains quarantined pending review.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 77,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "file_delivered_not_executed",
+            "telemetry_delivery_not_browser"
+          ]
+        },
+        {
+          "defense_id": 139,
+          "outcome": "ineffective",
+          "final": false,
+          "observation": "Safe browsing guidance does not remove a file already delivered through this authored telemetry channel.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 77,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "file_delivered_not_executed",
+            "telemetry_delivery_not_browser"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "CYBER-11",
+      "contact_id": 11,
+      "private_attack_id": 64,
+      "public_assessment": "Network replication patterns suggest WORM, although legitimate research traffic can resemble propagation.",
+      "confidence": 100,
+      "conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "replication_started",
+        "encrypted_internal_traffic"
+      ],
+      "required_conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "replication_started",
+        "encrypted_internal_traffic"
+      ],
+      "sources": [
+        {
+          "source": "SIGINT",
+          "text": "Intercepted telemetry contains suspicious digital activity; source attribution is uncertain."
+        },
+        {
+          "source": "Platform Profile",
+          "text": "Communications and onboard computing equipment could support research or interference."
+        },
+        {
+          "source": "Trajectory Assessment",
+          "text": "The surveillance trajectory alone does not establish intent or payload."
+        }
+      ],
+      "responses": [
+        {
+          "defense_id": 111,
+          "outcome": "contained",
+          "final": true,
+          "observation": "Segmentation contains the observed propagation within a test segment. Intent remains unverified.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 64,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "replication_started",
+            "encrypted_internal_traffic"
+          ]
+        },
+        {
+          "defense_id": 112,
+          "outcome": "partial",
+          "final": false,
+          "observation": "Firewalls reduce incoming replication, but internal traffic requires additional containment.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 64,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "replication_started",
+            "encrypted_internal_traffic"
+          ]
+        },
+        {
+          "defense_id": 113,
+          "outcome": "unverified",
+          "final": false,
+          "observation": "IPS alerts are inconclusive in encrypted test traffic; outcome remains unverified.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 64,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "replication_started",
+            "encrypted_internal_traffic"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "CYBER-12",
+      "contact_id": 12,
+      "private_attack_id": 59,
+      "public_assessment": "Encrypted file bursts may be routine survey compression or RANSOM activity. Analysts currently favor routine activity.",
+      "confidence": 91,
+      "conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "encryption_already_started",
+        "isolated_verified_backup_available"
+      ],
+      "required_conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "encryption_already_started",
+        "isolated_verified_backup_available"
+      ],
+      "sources": [
+        {
+          "source": "SIGINT",
+          "text": "Intercepted telemetry contains suspicious digital activity; source attribution is uncertain."
+        },
+        {
+          "source": "Platform Profile",
+          "text": "Communications and onboard computing equipment could support research or interference."
+        },
+        {
+          "source": "Trajectory Assessment",
+          "text": "The surveillance trajectory alone does not establish intent or payload."
+        }
+      ],
+      "responses": [
+        {
+          "defense_id": 19,
+          "outcome": "contained",
+          "final": true,
+          "observation": "Isolated verified backups restore the affected test dataset; no assertion about the craft identity is made.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 59,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "encryption_already_started",
+            "isolated_verified_backup_available"
+          ]
+        },
+        {
+          "defense_id": 103,
+          "outcome": "disruption",
+          "final": false,
+          "observation": "Gateway isolation interrupts authorized telemetry as well as suspicious traffic; containment remains incomplete.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 59,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "encryption_already_started",
+            "isolated_verified_backup_available"
+          ]
+        },
+        {
+          "defense_id": 104,
+          "outcome": "ineffective",
+          "final": false,
+          "observation": "Patching prevents this entry route in future but does not undo encryption already underway in this authored encounter.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 59,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "encryption_already_started",
+            "isolated_verified_backup_available"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "CYBER-13",
+      "contact_id": 13,
+      "private_attack_id": 2,
+      "public_assessment": "Boot configuration anomalies resemble ROOTKIT persistence; physical configuration is not proof of malicious intent.",
+      "confidence": 63,
+      "conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "unsigned_boot_component",
+        "controlled_restart_available"
+      ],
+      "required_conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "unsigned_boot_component",
+        "controlled_restart_available"
+      ],
+      "sources": [
+        {
+          "source": "SIGINT",
+          "text": "Intercepted telemetry contains suspicious digital activity; source attribution is uncertain."
+        },
+        {
+          "source": "Platform Profile",
+          "text": "Communications and onboard computing equipment could support research or interference."
+        },
+        {
+          "source": "Trajectory Assessment",
+          "text": "The surveillance trajectory alone does not establish intent or payload."
+        }
+      ],
+      "responses": [
+        {
+          "defense_id": 2,
+          "outcome": "partial",
+          "final": false,
+          "observation": "Integrity monitoring identifies altered boot files; removal is still pending.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 2,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "unsigned_boot_component",
+            "controlled_restart_available"
+          ]
+        },
+        {
+          "defense_id": 3,
+          "outcome": "contained",
+          "final": true,
+          "observation": "Secure Boot rejects the unsigned boot component after a controlled restart in this authored fixture.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 2,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "unsigned_boot_component",
+            "controlled_restart_available"
+          ]
+        },
+        {
+          "defense_id": 138,
+          "outcome": "ineffective",
+          "final": false,
+          "observation": "The selected file scanner does not detect this fixture?s boot component. Threat remains unresolved.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 2,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "unsigned_boot_component",
+            "controlled_restart_available"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_id": "CYBER-14",
+      "contact_id": 14,
+      "private_attack_id": 78,
+      "public_assessment": "Traffic saturation resembles DDoS; a scientific downlink surge is a competing explanation.",
+      "confidence": 68,
+      "conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "upstream_saturation",
+        "scrubbing_route_available"
+      ],
+      "required_conditions": [
+        "isolated_test_service",
+        "telemetry_observed",
+        "upstream_saturation",
+        "scrubbing_route_available"
+      ],
+      "sources": [
+        {
+          "source": "SIGINT",
+          "text": "Intercepted telemetry contains suspicious digital activity; source attribution is uncertain."
+        },
+        {
+          "source": "Platform Profile",
+          "text": "Communications and onboard computing equipment could support research or interference."
+        },
+        {
+          "source": "Trajectory Assessment",
+          "text": "The surveillance trajectory alone does not establish intent or payload."
+        }
+      ],
+      "responses": [
+        {
+          "defense_id": 140,
+          "outcome": "contained",
+          "final": true,
+          "observation": "Scrubbing filters the observed saturation traffic and restores the test service.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 78,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "upstream_saturation",
+            "scrubbing_route_available"
+          ]
+        },
+        {
+          "defense_id": 141,
+          "outcome": "unverified",
+          "final": false,
+          "observation": "Traffic analysis identifies a flood pattern but does not itself block traffic. Outcome remains pending.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 78,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "upstream_saturation",
+            "scrubbing_route_available"
+          ]
+        },
+        {
+          "defense_id": 142,
+          "outcome": "partial",
+          "final": false,
+          "observation": "ISP coordination reduces upstream traffic; residual service degradation remains.",
+          "education": "Context matters: a database mapping indicates applicability, not guaranteed effectiveness. This result depends on the authored conditions, not a universal rule.",
+          "against_attack_id": 78,
+          "requires": [
+            "isolated_test_service",
+            "telemetry_observed",
+            "upstream_saturation",
+            "scrubbing_route_available"
+          ]
+        }
+      ]
+    }
+  ]
+}

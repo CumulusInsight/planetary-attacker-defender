@@ -1,0 +1,204 @@
+{
+  "investigation_capacity": 2,
+  "transitions": {
+    "MONITORED": {
+      "watch": "WATCHLIST",
+      "investigate": "INVESTIGATING",
+      "escalate": "ESCALATED"
+    },
+    "WATCHLIST": {
+      "investigate": "INVESTIGATING",
+      "escalate": "ESCALATED"
+    },
+    "INVESTIGATING": {
+      "investigation_complete": "WATCHLIST",
+      "escalate": "ESCALATED"
+    },
+    "ESCALATED": {
+      "continue": "ESCALATED",
+      "stand_down": "WATCHLIST",
+      "intercept": "RESOLVED",
+      "hold_fire": "RESOLVED",
+      "release": "RESOLVED",
+      "expire": "RESOLVED"
+    },
+    "RESOLVED": {}
+  },
+  "contacts": [
+    {
+      "contact_id": 10,
+      "investigation_seconds": 12,
+      "report": {
+        "report_id": "P9-INV-010",
+        "contact_id": 10,
+        "source_type": "Follow-up Analysis",
+        "text": "Cross-checked emissions increase concern about interference equipment. Attribution remains uncertain; preparation is advisory.",
+        "assessment": "Suspected hostile",
+        "confidence": 80,
+        "severity": 3,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 11,
+      "investigation_seconds": 18,
+      "report": {
+        "report_id": "P9-INV-011",
+        "contact_id": 11,
+        "source_type": "Follow-up Analysis",
+        "text": "Instrument cadence favors a scientific survey. Earlier hostile interpretation may have been a false positive; ownership is not verified.",
+        "assessment": "Assessed nonhostile",
+        "confidence": 80,
+        "severity": 1,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 12,
+      "investigation_seconds": 10,
+      "report": {
+        "report_id": "P9-INV-012",
+        "contact_id": 12,
+        "source_type": "Follow-up Analysis",
+        "text": "An officer favors routine mapping with high confidence. This is a fallible assessment; no independent identity verification is available.",
+        "assessment": "Assessed nonhostile",
+        "confidence": 100,
+        "severity": 1,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 13,
+      "investigation_seconds": 12,
+      "report": {
+        "report_id": "P9-INV-013",
+        "contact_id": 13,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Uncertain",
+        "confidence": 50,
+        "severity": 2,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 14,
+      "investigation_seconds": 18,
+      "report": {
+        "report_id": "P9-INV-014",
+        "contact_id": 14,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Suspected hostile",
+        "confidence": 50,
+        "severity": 3,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 15,
+      "investigation_seconds": 10,
+      "report": {
+        "report_id": "P9-INV-015",
+        "contact_id": 15,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Uncertain",
+        "confidence": 50,
+        "severity": 2,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 16,
+      "investigation_seconds": 12,
+      "report": {
+        "report_id": "P9-INV-016",
+        "contact_id": 16,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Uncertain",
+        "confidence": 50,
+        "severity": 2,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 17,
+      "investigation_seconds": 18,
+      "report": {
+        "report_id": "P9-INV-017",
+        "contact_id": 17,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Uncertain",
+        "confidence": 50,
+        "severity": 2,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    },
+    {
+      "contact_id": 18,
+      "investigation_seconds": 10,
+      "report": {
+        "report_id": "P9-INV-018",
+        "contact_id": 18,
+        "source_type": "Follow-up Analysis",
+        "text": "Additional tracking remains inconclusive. Nearby signals cannot be securely attributed; continued surveillance is recommended.",
+        "assessment": "Uncertain",
+        "confidence": 50,
+        "severity": 2,
+        "recommendations": [
+          "Review current evidence before choosing an operational response."
+        ],
+        "suspected_payload": "Not independently established."
+      }
+    }
+  ],
+  "consequences": {
+    "intercept": {
+      "issued": "Intercept authorized",
+      "executed": "Abstract interceptor deployment recorded.",
+      "observation": "No independently verified interception effect is available. Contact identity and condition remain uncertain."
+    },
+    "hold_fire": {
+      "issued": "Contact allowed to depart",
+      "executed": "No interceptor dispatched; deliberate hold-fire disposition recorded.",
+      "observation": "Passage remains under observation. No conclusion about intent follows from this decision."
+    },
+    "release": {
+      "issued": "Contact released / stood down",
+      "executed": "Operational case closed without interceptor deployment.",
+      "observation": "Further effects are not modeled; the decision does not verify identity."
+    },
+    "expire": {
+      "issued": "Encounter expired",
+      "executed": "Configured operational opportunity expired without a final command.",
+      "observation": "No intervention outcome is independently established."
+    }
+  }
+}

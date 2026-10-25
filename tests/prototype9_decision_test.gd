@@ -1,0 +1,140 @@
+extends "res://tests/prototype4_test.gd"
+var command: Node
+func run() -> void:
+	command=load("res://scene/decision_command.tscn").instantiate()
+	game=command
+	test_viewport.add_child(command)
+	pointer_at(Vector2(10,880))
+	await frames()
+	var pages=command.decision_pages
+	check(pages.error.is_empty(),"Public decision data loads for all eighteen")
+	command.set_strategic_pause(true)
+	var official: Dictionary=command.mission.public_snapshot()
+	for id in range(10,15):
+		var accessible := []
+		for hypothesis in pages.model.view(id).cyber: accessible.append_array(pages.model.mappings[int(hypothesis.attack_id)])
+		for choice in command.cyber.session.public_view(id).choices: check(accessible.has(choice.defense_id),"Every existing validated cyber response remains reachable via catalog hypotheses")
+	for id in range(1,19):
+		pages.open_page(1,id)
+		check(pages.selected==id and command.registry.contacts.has(id),"All contacts accessible by stable ID")
+		var profile: Dictionary=pages.model.view(id)
+		check(profile.cyber.size()==3,"Three independent hypotheses per contact")
+		for hypothesis in profile.cyber:
+			check(pages.model.attacks.has(int(hypothesis.attack_id)),"All public attack references are v12 IDs")
+		for index in [2,3,1,0]:
+			pages.open_page(index)
+			check(pages.selected==id,"Selection stable across four pages")
+	pages.open_page(0)
+	await capture("p9_decision_overview")
+	for column in range(7):
+		for ascending in [true,false]:
+			var left: float=command.queue.global_position.x
+			for previous in range(column): left+=command.queue.get_column_width(previous)
+			await click_at(Vector2(left+command.queue.get_column_width(column)*0.5,command.queue.global_position.y+12))
+			check(command.header_sort_column==column and command.header_sort_ascending==ascending,"Refined overview retains seven actual clickable sorting headers")
+	command.queue.scroll_to_item(command.queue_rows[18])
+	await frames()
+	await click_at(command.queue.global_position+command.queue.get_item_area_rect(command.queue_rows[18]).get_center())
+	check(pages.selected==18 and pages.page==1,"Sorted row opens correct contact decision page")
+	pages.open_page(1,11)
+	await frames()
+	check(pages.physical.text.contains("Suspected physical weapon") and pages.physical.text.contains(pages.model.percent(55.0)),"Authored physical confidence, not inferred hostility")
+	check(pages.hypotheses.size()==3 and pages.hypotheses[0].text.contains("WORM"),"Three capability hypotheses separate from responses")
+	await capture("p9_decision_multithreat")
+	pages.decision(2)
+	check(pages.confirmation.get_ok_button().disabled and pages.confirmation.dialog_text.contains("UNAVAILABLE"),"Coordinated defense is a proposal only")
+	pages.confirmation.hide()
+	pages.decision(0)
+	check(pages.confirmation.get_ok_button().disabled,"No invented physical weapon evaluator for cyber profile")
+	pages.confirmation.hide()
+	pages.open_page(1,10)
+	check(pages.model.view(10).cyber.reduce(func(total,h):return total+(0 if h.likelihood==null else h.likelihood),0)>100,"Nonexclusive hypotheses not normalized to 100 percent")
+	await click_at(command.mission_ui.scorecard_button.get_global_rect().get_center())
+	check(command.scorecard_open and not pages.body.visible,"Scorecard remains accessible above page presentation")
+	await click_at(command.mission_ui.close_button.get_global_rect().get_center())
+	check(not command.scorecard_open and pages.body.visible,"Scorecard returns to same decision page")
+	var model=pages.model
+	var executable: Array=command.cyber.session.public_view(10).choices.map(func(c): return c.defense_id)
+	var options: Array=model.options(77,executable)
+	check(options.size()==3 and options.all(func(o):return o.executable),"Original validated virus defenses executable candidates")
+	var informational: Array=model.options(64,executable)
+	check(informational.all(func(o):return not o.executable),"Other mapped defenses informational only")
+	pages.inspect_defense(informational[0])
+	check(pages.confirmation.get_ok_button().disabled and pages.confirmation.dialog_text.contains("NOT CURRENTLY EXECUTABLE"),"Informational option never pretends to deploy")
+	pages.confirmation.hide()
+	pages.inspect_defense(options.filter(func(o):return o.defense_id==138)[0])
+	check(pages.confirmation.get_ok_button().disabled,"No execution before explicit escalation")
+	pages.confirmation.hide()
+	var escalated: Dictionary=command.operations.execute(10,"escalate","Public digital anomaly",command.operations.evidence(10))
+	check(escalated.ok,"Existing operational escalation preserved")
+	pages.inspect_defense(options.filter(func(o):return o.defense_id==138)[0])
+	check(not pages.confirmation.get_ok_button().disabled,"Validated unused defense available after escalation")
+	pages.confirmation.hide()
+	var before: int=command.cyber.journal.size()
+	pages.confirm_action()
+	check(command.cyber.journal.size()==before+2,"Only canonical cyber execution and resolution events")
+	check(command.operations.session.view(10).state=="RESOLVED","Existing cyber evaluator executes unchanged")
+	check(command.mission.public_snapshot()==official,"Official mission scoring unchanged")
+	pages.open_page(2,10)
+	check(pages.analysis.text.contains("Receipt:") and pages.analysis.text.contains("-07:00"),"Visible real report timestamps and offset")
+	check(pages.analysis.text.contains("historical issue timestamp unavailable"),"No invented issue times for old authored briefs")
+	var tactical=command.registry.contacts[10].tactical
+	var initial: Array=tactical.intelligence.history(10)
+	check(initial[0].has("simulation_elapsed") and initial[0].has("local_datetime"),"New report captures wall and simulation clock")
+	var now: float=command.operations.session.now
+	await create_timer(1.1).timeout
+	check(command.operations.session.now==now,"Reading pause does not advance authoritative simulation")
+	var report: Dictionary=initial[0].duplicate(true)
+	report.report_id="TEST-PUBLIC-REVISION"
+	report.source_type="Follow-up Analysis"
+	report.text="Contradictory public evidence; identity remains uncertain."
+	report.erase("local_datetime"); report.erase("report_event_id")
+	var count: int=command.cyber.journal.size()
+	check(tactical.intelligence.append_operational_report(report),"New authored report appends once")
+	check(not tactical.intelligence.append_operational_report(report),"Duplicate report ID rejected")
+	check(command.cyber.journal.size()==count+1,"Single received-intelligence event")
+	check(command.operations.session.now==now,"Strategic pause holds simulation time at receipt")
+	var latest: Dictionary=tactical.intelligence.latest(10)
+	check(latest.wall_unix>initial[0].wall_unix and latest.local_datetime.contains("T") and latest.simulation_elapsed==now,"Receipt wall time captured even while simulation paused")
+	pages._signature=""; pages.render()
+	check(pages.analysis.text.contains("SUPERSEDED") and pages.analysis.text.contains("TEST-PUBLIC-REVISION"),"Old/new report links and times retained")
+	await capture("p9_decision_intelligence")
+	pages.open_page(3)
+	check(pages.history_text.text.contains("Intelligence received") and pages.history_text.text.contains("Receipt:") and pages.history_text.text.contains("SUPERSEDED"),"History shows received times and updated supersession annotations")
+	await capture("p9_decision_history")
+	pages.history_filter.select(1)
+	pages._signature=""; pages.render()
+	check(pages.history_text.text.contains("C-011") and pages.history_text.text.contains("C-010"),"Entire-network history filter includes other contacts")
+	pages.history_filter.select(0)
+	pages._signature=""; pages.render()
+	check(not pages.history_text.text.contains("C-011"),"Selected-contact history filter excludes unrelated contacts")
+	var history_count: int=command.cyber.journal.size()
+	for i in range(3):
+		for button in pages.nav:
+			await click_at(button.get_global_rect().get_center())
+	check(command.cyber.journal.size()==history_count,"Actual page navigation creates no duplicate events")
+	var historical={"report_id":"OLD","source_type":"SIGINT","text":"Existing preserved report.","assessment":"Uncertain"}
+	check(preload("res://script/report_presentation.gd").full(historical).contains("Timestamp unavailable"),"Unknown historical wall/simulation time explicit")
+	var invalid: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://data/decision_assessments.json"))
+	invalid.contacts[0].cyber[0].attack_id=999999
+	check(not model.validate(invalid,command.registry.contacts).is_empty(),"Invalid v12 reference rejected")
+	invalid=JSON.parse_string(FileAccess.get_file_as_string("res://data/decision_assessments.json"))
+	invalid.contacts[0].physical.confidence=150
+	check(not model.validate(invalid,command.registry.contacts).is_empty(),"Invalid confidence rejected")
+	var public_json: String=JSON.stringify(model.contacts)
+	for secret in ["private_attack_id","covert_relay","peaceful_survey_probe","against_attack_id"]: check(not public_json.contains(secret),"No hidden truth in public multi-threat data")
+	command.set_learning_mode(false)
+	await frames(10)
+	check(command.operations.session.now>now,"Challenge continues with new pages open")
+	check(command.registry.contacts.size()==18,"No contact counts changed")
+	command.set_strategic_pause(true)
+	pages.open_page(1,1)
+	var original=command.tactical_centers["DC-01"]
+	original.active_contact.total_orbit_travel=original.deadline.initial.travel+original.deadline.budget
+	pages.decision(1)
+	pages.confirmation.hide()
+	pages.confirm_action()
+	check(pages.notice.text.contains("COMMAND REJECTED") and original.encounter.resolved,"Exact deadline expiry cannot be mislabeled accepted by page projection")
+	await close_game()
+	print("PROTOTYPE 9 DECISION: ","PASS" if failures==0 else "FAIL"," (",failures," failures; ",checks," checks)")
+	quit(0 if failures==0 else 1)

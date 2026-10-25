@@ -4,6 +4,15 @@ const Loader = preload("res://script/strategic_data_loader.gd")
 const Registry = preload("res://script/strategic_registry.gd")
 const Tactical = preload("res://scene/game.tscn")
 @export_file("*.json") var strategic_data_path := "res://data/strategic_centers.json"
+@export var decision_pages_enabled := false
+var decision_pages: CanvasLayer
+@export var cyber_defense_enabled := false
+var cyber: Node
+@export var contact_operations_enabled := false
+@export_file("*.json") var operations_data_path := "res://data/contact_operations.json"
+var operations: Node
+var queue_heading: Label
+
 @export var orbital_intelligence_enabled := false
 @export_file("*.json") var intelligence_data_path := "res://data/orbital_intelligence.json"
 var intelligence_error := ""
@@ -23,6 +32,10 @@ var data_error := ""
 var focused_center := ""
 var learning_mode := true
 var strategic_paused := false
+var header_sort_column := -1
+var header_sort_ascending := true
+const TABLE_HEADINGS = ["Contact", "Center", "Public intelligence assessment", "Confidence", "Severity", "Time to act", "Operational state / status"]
+
 var sort_mode := 0
 var sort_control: OptionButton
 var overview: Control
@@ -47,6 +60,8 @@ func _ready() -> void:
 		return
 	for definition in result.centers:
 		var tactical = Tactical.instantiate()
+		tactical.report_timestamps_enabled = decision_pages_enabled
+		tactical.center_identifier = definition.center_id
 		tactical.strategic_managed = true
 		tactical.developer_fixture = definition.developer_fixture
 		tactical.decision_window_seconds = definition.get("decision_window_seconds", 300.0)
@@ -73,6 +88,18 @@ func _ready() -> void:
 	_build_center_cards()
 	_initialize_mission()
 	show_overview()
+	if contact_operations_enabled:
+		operations = preload("res://script/contact_operations.gd").new()
+		operations.command = self
+		add_child(operations)
+	if cyber_defense_enabled and operations != null:
+		cyber = preload("res://script/cyber_command.gd").new()
+		cyber.command = self
+		add_child(cyber)
+	if decision_pages_enabled and cyber != null:
+		decision_pages = preload("res://script/decision_pages.gd").new()
+		decision_pages.command = self
+		add_child(decision_pages)
 
 func _build_ui() -> void:
 	var hud := CanvasLayer.new()
@@ -120,6 +147,7 @@ func _build_ui() -> void:
 	caption.text = "Public assessments only. Unknown is not hostile. Select a center or contact for tactical focus."
 	place(overview, caption, Rect2(32, 50, 1536, 30))
 	var queue_title := Label.new()
+	queue_heading = queue_title
 	queue_title.text = "CONTACT TRIAGE / click a row; scroll for more contacts"
 	place(overview, queue_title, Rect2(32, 306, 900, 40))
 	sort_control = OptionButton.new()
@@ -127,7 +155,7 @@ func _build_ui() -> void:
 	sorting.add_item("Earliest applicable deadline")
 	sorting.add_item("Highest assessed threat")
 	place(overview, sorting, Rect2(1040, 306, 528, 40))
-	sorting.item_selected.connect(func(index): sort_mode = index; _sort_signature = ""; refresh())
+	sorting.item_selected.connect(func(index): sort_mode = index; header_sort_column = -1; _sort_signature = ""; _update_header_titles(); refresh())
 	queue = Tree.new()
 	queue.columns = 7
 	queue.hide_root = true
@@ -136,7 +164,7 @@ func _build_ui() -> void:
 	queue.allow_reselect = true
 	queue.add_theme_font_size_override("font_size", 16)
 	queue.add_theme_constant_override("v_separation", 10)
-	var headings := ["Contact", "Center", "Public intelligence assessment", "Confidence", "Severity", "Time to act", "Encounter status"]
+	var headings := TABLE_HEADINGS
 	var widths := [100, 90, 455, 145, 155, 160, 270]
 	for column in range(7):
 		queue.set_column_title(column, headings[column])
@@ -144,6 +172,7 @@ func _build_ui() -> void:
 		queue.set_column_custom_minimum_width(column, widths[column])
 	place(overview, queue, Rect2(32, 358, 1536, 400))
 	queue.item_selected.connect(_on_queue_selected)
+	queue.column_title_clicked.connect(_on_column_title_clicked)
 	var note := Label.new()
 	note.text = "Severity = assessed impact, not urgency or proof. Confidence = officer opinion. No combined threat score.\nFixture windows: 5 min default; DC-02 6 min / DC-03 4 min demonstration overrides.\nLearning pause holds encounters and all intelligence delivery; background traffic continues. Hover holds only the tactical contact."
 	note.add_theme_font_size_override("font_size", 16)
@@ -176,16 +205,28 @@ func refresh() -> void:
 		var summary: Dictionary = registry.center_summary(id)
 		center_buttons[id].text = "%s / TACTICAL VIEW\n%d monitored | %d active deadlines\nMost urgent: %s / %s\nHighest assessed: %s\n%s" % [id, summary.count, summary.active, summary.urgent_id, Registry.time_text(summary.remaining), Registry.SEVERITY[summary.highest], summary.attention]
 		center_buttons[id].modulate = Color(1, 0.87, 0.6) if summary.attention != "MONITOR" else Color.WHITE
-	var rows: Array[Dictionary] = registry.triage(sort_mode)
+	var rows: Array = strategic_table_rows()
 	var signature := str(rows.map(func(row): return row.contact_id))
 	if signature != _sort_signature:
-		queue.clear()
-		queue_rows.clear()
-		var tree_root := queue.create_item()
-		for row in rows:
-			var item := queue.create_item(tree_root)
-			item.set_metadata(0, row.contact_id)
-			queue_rows[row.contact_id] = item
+		var same_population: bool = rows.size() == queue_rows.size() and rows.all(func(row): return queue_rows.has(row.contact_id))
+		if same_population:
+			# Reorder existing items: native selection and scroll are retained.
+			var previous: TreeItem = null
+			for row in rows:
+				var current: TreeItem = queue_rows[row.contact_id]
+				if previous == null:
+					var first := queue.get_root().get_first_child()
+					if first != current: current.move_before(first)
+				elif previous.get_next() != current: current.move_after(previous)
+				previous = current
+		else:
+			queue.clear()
+			queue_rows.clear()
+			var tree_root := queue.create_item()
+			for row in rows:
+				var item := queue.create_item(tree_root)
+				item.set_metadata(0, row.contact_id)
+				queue_rows[row.contact_id] = item
 		_sort_signature = signature
 	for row in rows:
 		var item: TreeItem = queue_rows[row.contact_id]
@@ -197,7 +238,10 @@ func refresh() -> void:
 		item.set_text(3, "Not given" if row.confidence == null else "%s%%" % str(row.confidence))
 		item.set_text(4, Registry.SEVERITY[row.severity])
 		item.set_text(5, Registry.time_text(row.remaining))
-		item.set_text(6, row.status)
+		var operational_status: String = row.status
+		if operations != null and operations.session.has_contact(row.contact_id):
+			operational_status = operations.session.view(row.contact_id).state
+		item.set_text(6, operational_status)
 	var location := "Strategic Overview" if focused_center.is_empty() else "Tactical / " + focused_center
 	context_label.text = location + (" | PAUSED: all encounters" if strategic_paused else " | Simulation running")
 	context_label.hide() # Role/pause context is presented by MissionUI.
@@ -237,6 +281,7 @@ func _on_queue_selected() -> void:
 	if item != null:
 		var id: int = item.get_metadata(0)
 		focus_center(registry.contacts[id].center_id, id)
+		if decision_pages != null: decision_pages.open_page(1,id)
 
 func set_learning_mode(enabled: bool) -> void:
 	learning_mode = enabled
@@ -324,3 +369,36 @@ func _initialize_orbital_intelligence(definitions: Array) -> void:
 		tactical.install_surveillance(traffic, result.data.reports, result.data.private_fixtures)
 		for contact in traffic:
 			registry.contacts[int(contact.contact_id)] = {"center_id": definition.center_id, "metadata": contact.duplicate(true), "tactical": tactical}
+
+
+func strategic_table_rows() -> Array:
+	var rows: Array = registry.triage(sort_mode)
+	for row in rows:
+		row.operational_status = row.status
+		if operations != null and operations.session.has_contact(row.contact_id):
+			var operation: Dictionary = operations.session.view(row.contact_id)
+			row.operational_status = operation.state
+			if operation.remaining != null: row.remaining = operation.remaining
+	if header_sort_column >= 0:
+		return preload("res://script/contact_table_sort.gd").sorted_rows(rows,header_sort_column,header_sort_ascending)
+	return rows
+func _on_column_title_clicked(column: int, _mouse_button: int = MOUSE_BUTTON_LEFT) -> void:
+	if _mouse_button != MOUSE_BUTTON_LEFT or column >= 7: return
+	if header_sort_column == column: header_sort_ascending = not header_sort_ascending
+	else:
+		header_sort_column = column
+		header_sort_ascending = true
+	_update_header_titles()
+	refresh()
+func _update_header_titles() -> void:
+	for column in range(TABLE_HEADINGS.size()):
+		var marker := ""
+		if column == header_sort_column: marker = " ^" if header_sort_ascending else " v"
+		queue.set_column_title(column,TABLE_HEADINGS[column] + marker)
+	if header_sort_column >= 0:
+		sort_control.select(-1)
+		sort_control.text = "Header: %s (%s)" % [TABLE_HEADINGS[header_sort_column],"ascending" if header_sort_ascending else "descending"]
+		queue_heading.text = "%s: %s | missing last" % [TABLE_HEADINGS[header_sort_column],"ascending ^" if header_sort_ascending else "descending v"]
+	else:
+		sort_control.select(sort_mode)
+		queue_heading.text = "CONTACT TRIAGE / select or scroll"

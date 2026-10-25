@@ -1,0 +1,5 @@
+extends RefCounted
+static func times(report: Dictionary) -> String:
+	return "Observation: %s | Receipt: %s\nSimulation receipt: %s | Contact progression: %s" % [report.get("observation_datetime","Timestamp unavailable"),report.get("local_datetime","Timestamp unavailable (historical record)"),"%.3fs" % report.simulation_elapsed if report.has("simulation_elapsed") else "Unavailable","%.3fs" % report.contact_elapsed if report.has("contact_elapsed") else "Unavailable"]
+static func full(report: Dictionary, newer: String = "") -> String:
+	return "%s / %s / %s\n%s\nSupersedes: %s | Superseded by: %s\n%s\nAssessment: %s\nConfidence: %s (analyst opinion)\nPayload: %s\nAdvisory options: %s" % [report.report_id,report.source_type,"SUPERSEDED" if not newer.is_empty() else "CURRENT / no superseding report recorded",times(report),report.get("supersedes","") if not report.get("supersedes","").is_empty() else "None",newer if not newer.is_empty() else "None",report.text,report.assessment,"Unknown" if report.get("confidence")==null else str(report.confidence)+"%",report.get("suspected_payload","Not supplied"),"; ".join(report.get("recommendations",[]))]

@@ -52,13 +52,15 @@ func show_contact(view: Dictionary, reveal_update: bool = false) -> void:
 	var sources: Array = view.get("source_reports", [])
 	if not sources.is_empty():
 		sections = _source_sections(sources) + sections
+	if view.has("feedback_text"):
+		sections.push_front("AFTER ACTION / PUBLIC RECEIPT\n" + view.feedback_text)
 	reports_label.text = "\n\n".join(sections)
 	investigate_button.disabled = not view.can_investigate
 	deploy_button.disabled = not view.can_deploy
 	hold_button.disabled = not view.can_hold_fire
 	replay_button.disabled = not view.can_reset
 	reports_scroll.scroll_vertical = 0
-	if reveal_update:
+	if _reveal_update:
 		_scroll_to_update.call_deferred()
 
 
@@ -98,6 +100,7 @@ func set_status_data(data: Dictionary) -> void:
 
 
 func show_clock(seconds: float, closed: bool = false) -> void:
+	$Content/ClockHeading.text = "TIME AT ACCEPTANCE" if closed and seconds > 0.0 else "TIME REMAINING TO ACT"
 	%Countdown.text = CommandStatus.format_time(ceil(seconds)) if seconds >= 0.0 else "--:--:--"
 	var state := "No active deadline"
 	if seconds >= 0.0:
@@ -137,6 +140,7 @@ static func _source_sections(reports: Array) -> Array[String]:
 	for report in reports:
 		var state := "PRIOR / newer assessment exists" if superseded.has(report.report_id) else "LATEST"
 		var text := "%s %s / %s\n%s\nAssessment: %s\nConfidence: %s (opinion, not fact)" % [marks[report.source_type], report.source_type, state, report.text, report.assessment, "Not supplied" if report.get("confidence") == null else str(report.confidence) + "%"]
+		if report.has("local_datetime"): text += "\nReport ID: " + report.report_id + "\n" + preload("res://script/report_presentation.gd").times(report)
 		text += "\nPossible payload: " + report.get("suspected_payload", "Not reported")
 		var options: Array = report.get("recommendations", [])
 		text += "\nADVISORY ONLY: " + ("; ".join(options) if not options.is_empty() else "No recommendation supplied")
