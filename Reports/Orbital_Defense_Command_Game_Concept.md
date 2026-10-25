@@ -740,3 +740,36 @@ New operational reports receive their own current receipt timestamp, even if der
 Report events and recommendations are recorded once at receipt/issuance, not page opening. Stable report-event sequence IDs distinguish replayed receipt episodes without duplicate UI-generated events. The network journal remains a projection of authoritative report/action sources. Chronological append sequence breaks ties; recommendations, accepted/rejected commands, cyber results, unresolved dispositions and expirations do not generate new points. All accepted mission scoring, replay protection, movement, hover-freeze, contact counts and deadline rules remain unchanged.
 
 Deferred review: owner validation of authored public confidence/evidence and recommendation wording; whether a later dynamic assessment should revise the public multi-threat briefing; richer report filters; any future real multi-payload/coordinated-defense simulation. These are not implemented by this presentation refinement. No Prototype 10, combat engine, physical weapon, extra private payload, scoring redesign or educational-provider integration is authorized here.
+
+
+## 26. Prototype 10, Stage 1 ? sliding command interface
+
+**Implemented locally for owner visual review; no new checkpoint.** The accepted Prototype 9 commit/tag remains `1e9700b4de32d583fbcd41c329d394797f8e91d9` / `planetary-prototype9-cyber-command-v1`. Development is on `feature/prototype10-sliding-command-ui`. The two local P9 Git checkpoint audit reports remain unchanged and untracked. Stage 1 is presentation only; it is not authorization for Stage 2.
+
+### Orbital centerpiece and reusable presentation
+
+F5 opens `scene/sliding_command.tscn`, a thin inherited P9 decision-command scene. The optional `sliding_command_enabled` switch installs `sliding_command_ui.gd`, a presentation adapter inheriting the accepted P9 public assessment/report/history and confirmation behavior. Earlier scene entries keep their accepted presentation for regression compatibility. There is still one reusable tactical scene per center, eighteen monitored contacts and the same three official mission participants.
+
+The initial view shows orbital traffic, the unchanged DATA asset/value, a compact top command strip, applicable deadline labels at the upper-right margin and a bottom quick-action strip. The large permanent mission/operations/intelligence cards are suppressed after their controllers refresh, without disabling those controllers or removing records. Center, contact Nodes, transforms, ring geometry, angular speeds, hover/click signals and countdown state are never resized, reparented or recreated by panel navigation.
+
+### Compact controls and sliding overlays
+
+Native text-symbol command icons provide Overview, Contacts, Threat Assessment, Intelligence, History, Mission Status and Alerts with readable tooltips and active-state indication. Center selection, Learning/Challenge mode, explicit strategic pause and command responsibility remain available. Overview resets display filters to the full network; it does not reset contacts or encounter state. Mission Status opens the existing confirmed scorecard, not a new scoring model. Alerts use only applicable public deadline urgency/expiry, never private affiliation or an invented combined threat score.
+
+The left Contacts panel supports all eighteen contacts, center/status display filters, stable selection, and the original seven sorting keys (ID, center, public assessment, confidence, ordinal severity, remaining deadline and operational state). Column order puts severity/confidence/deadline first; horizontal scrolling exposes longer assessment/state details at readable type size. Missing confidence/deadlines retain the accepted explicit handling. The filters affect only which rows are displayed. No confidence slider or confidence mutation is added.
+
+The right Threat Assessment panel shows selected ID/center, operational status, physical suspicion/confidence, all three independent cyber hypotheses with catalog severity and concise supporting evidence, and the existing advisory recommendation/rationale/confidence. Long text is summarized for the panel; full originals and full public hypothesis details remain in Intelligence. Assessment and Countermeasures views separate suspected capabilities from response choices. Fixed action controls open existing investigation, cyber-response, physical-review, monitoring, coordinated-proposal and operational-confirmation workflows. Original active encounters retain explicit hold-fire and practice-replay review controls. Unsupported proposals remain non-executable; opening a view never authorizes a response.
+
+The bottom drawer provides Intelligence and History tabs, source or contact/network filters, real date-time and simulation metadata, complete report/brief contents, supersession history and original after-action results. Its maximum height is 380 reference pixels, with one internal scrolling region. No source report is rewritten or deleted to simplify the display. The quick-action strip opens these same workflows rather than bypassing validation or escalation.
+
+### Overlay, pin and timing policy
+
+Panels animate for 0.18 seconds with a short ease-out slide. Normally opening one large panel closes the previous unpinned panel. There is at most **one pinned panel**; pinning another replaces the previous pin and closes the no-longer-protected panel when needed. A pinned side panel and opposite side panel use separate edge regions. A drawer sharing the view with a side panel narrows to the remaining region, avoiding overlapping command controls. The orbital viewport and simulation transform remain unchanged. Top controls, deadlines, bottom quick actions, pin and close controls remain accessible.
+
+Close explicitly closes/unpins its panel. Escape closes the active unpinned panel; a pinned panel stays open. Escape cancels an active confirmation before closing a panel. Selection, investigations, ledger history and applicable deadlines survive every open/close. Panel animations do not create timers for the simulation, pause it, or add catch-up. Accepted Learning strategic pause and contact-specific hover-freeze continue to govern their original state. Challenge continues while reading panels or viewing another center.
+
+### Preserved rules and review limits
+
+The v12 database/export, existing public assessments, five private cyber capabilities/effectiveness rules, abstract physical response semantics, original encounter outcomes, official scoring, timestamps and event deduplication are unchanged. Stage 1 adds no combat, staffing, resource, score or probability model. Temporary native letter/symbol icons and the written dark blue-gray design direction are used; no external dependencies or unlicensed artwork are added. Approved mockup files were not available in the project during this implementation; visual fidelity to those specific images remains an owner-review item.
+
+Remaining review items: preferred final icon artwork, panel density and contact-table column widths, the single-pin policy, whether additional compact mission summaries are desirable, and further adaptation beyond the 1600 ? 900 reference viewport. These are UI refinement proposals only, not Stage 2 authorization.
