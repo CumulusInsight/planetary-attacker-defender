@@ -4,6 +4,9 @@ const Loader = preload("res://script/strategic_data_loader.gd")
 const Registry = preload("res://script/strategic_registry.gd")
 const Tactical = preload("res://scene/game.tscn")
 @export_file("*.json") var strategic_data_path := "res://data/strategic_centers.json"
+@export var direct_response_enabled := false
+@export var refined_command_enabled := false
+@export var visual_command_enabled := false
 @export var sliding_command_enabled := false
 @export var decision_pages_enabled := false
 var decision_pages: CanvasLayer
@@ -98,7 +101,7 @@ func _ready() -> void:
 		cyber.command = self
 		add_child(cyber)
 	if decision_pages_enabled and cyber != null:
-		decision_pages = preload("res://script/sliding_command_ui.gd").new() if sliding_command_enabled else preload("res://script/decision_pages.gd").new()
+		decision_pages = preload("res://script/direct_response_ui.gd").new() if direct_response_enabled else preload("res://script/refined_command_ui.gd").new() if refined_command_enabled else preload("res://script/visual_command_ui.gd").new() if visual_command_enabled else preload("res://script/sliding_command_ui.gd").new() if sliding_command_enabled else preload("res://script/decision_pages.gd").new()
 		decision_pages.command = self
 		add_child(decision_pages)
 
