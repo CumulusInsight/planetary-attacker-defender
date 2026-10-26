@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "scope": "Authored Prototype 11 learning suspicions only; not changes to P10 intelligence, actual payloads, operational deadlines or evaluator rules.",
+  "session_size": 5,
+  "questions": [
+    {
+      "question_id": "P11-BANK-VIRUS",
+      "attack_id": 77,
+      "correct_defense_id": 138,
+      "options": [
+        138,
+        111,
+        19,
+        3
+      ],
+      "learning_deadline_seconds": 300
+    },
+    {
+      "question_id": "P11-BANK-WORM",
+      "attack_id": 64,
+      "correct_defense_id": 111,
+      "options": [
+        138,
+        19,
+        111,
+        140
+      ],
+      "learning_deadline_seconds": 360
+    },
+    {
+      "question_id": "P11-BANK-RANSOM",
+      "attack_id": 59,
+      "correct_defense_id": 19,
+      "options": [
+        3,
+        19,
+        111,
+        140
+      ],
+      "learning_deadline_seconds": 420
+    },
+    {
+      "question_id": "P11-BANK-ROOTKIT",
+      "attack_id": 2,
+      "correct_defense_id": 3,
+      "options": [
+        19,
+        112,
+        140,
+        3
+      ],
+      "learning_deadline_seconds": 240
+    },
+    {
+      "question_id": "P11-BANK-DDOS",
+      "attack_id": 78,
+      "correct_defense_id": 140,
+      "options": [
+        140,
+        138,
+        3,
+        19
+      ],
+      "learning_deadline_seconds": 480
+    },
+    {
+      "question_id": "P11-BANK-PHISHING",
+      "attack_id": 83,
+      "correct_defense_id": 150,
+      "options": [
+        150,
+        138,
+        111,
+        3
+      ],
+      "learning_deadline_seconds": 330
+    },
+    {
+      "question_id": "P11-BANK-TROJAN",
+      "attack_id": 76,
+      "correct_defense_id": 136,
+      "options": [
+        136,
+        150,
+        19,
+        140
+      ],
+      "learning_deadline_seconds": 390
+    },
+    {
+      "question_id": "P11-BANK-SPYWARE",
+      "attack_id": 9,
+      "correct_defense_id": 13,
+      "options": [
+        13,
+        111,
+        3,
+        140
+      ],
+      "learning_deadline_seconds": 450
+    },
+    {
+      "question_id": "P11-BANK-SQL",
+      "attack_id": 27,
+      "correct_defense_id": 43,
+      "options": [
+        43,
+        138,
+        111,
+        19
+      ],
+      "learning_deadline_seconds": 270
+    },
+    {
+      "question_id": "P11-BANK-DOS",
+      "attack_id": 45,
+      "correct_defense_id": 77,
+      "options": [
+        77,
+        3,
+        138,
+        19
+      ],
+      "learning_deadline_seconds": 310
+    },
+    {
+      "question_id": "P11-BANK-XSS",
+      "attack_id": 87,
+      "correct_defense_id": 158,
+      "options": [
+        158,
+        138,
+        111,
+        19
+      ],
+      "learning_deadline_seconds": 350
+    },
+    {
+      "question_id": "P11-BANK-PRIVESC",
+      "attack_id": 70,
+      "correct_defense_id": 50,
+      "options": [
+        50,
+        138,
+        140,
+        3
+      ],
+      "learning_deadline_seconds": 400
+    }
+  ]
+}

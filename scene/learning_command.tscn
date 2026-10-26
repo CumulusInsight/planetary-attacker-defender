@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://script/learning_game.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scene/direct_command.tscn" id="2"]
+
+[node name="Prototype11" type="Node"]
+script = ExtResource("1")
+
+[node name="CommandCenter" parent="." instance=ExtResource("2")]

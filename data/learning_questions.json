@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "construction_rule": "One designated mapped defense and three distinct nonmapped catalog distractors. Other mapped defenses are excluded, never marked incorrect. Learning associations are not operational effectiveness rules.",
+  "questions": [
+    {
+      "question_id": "P11-VIRUS",
+      "contact_id": 10,
+      "center_id": "DC-01",
+      "attack_id": 77,
+      "correct_defense_id": 138,
+      "options": [
+        138,
+        111,
+        19,
+        3
+      ]
+    },
+    {
+      "question_id": "P11-WORM",
+      "contact_id": 11,
+      "center_id": "DC-01",
+      "attack_id": 64,
+      "correct_defense_id": 111,
+      "options": [
+        138,
+        19,
+        111,
+        140
+      ]
+    },
+    {
+      "question_id": "P11-RANSOM",
+      "contact_id": 12,
+      "center_id": "DC-01",
+      "attack_id": 59,
+      "correct_defense_id": 19,
+      "options": [
+        3,
+        19,
+        111,
+        140
+      ]
+    },
+    {
+      "question_id": "P11-ROOTKIT",
+      "contact_id": 13,
+      "center_id": "DC-02",
+      "attack_id": 2,
+      "correct_defense_id": 3,
+      "options": [
+        19,
+        112,
+        140,
+        3
+      ]
+    },
+    {
+      "question_id": "P11-DDOS",
+      "contact_id": 14,
+      "center_id": "DC-02",
+      "attack_id": 78,
+      "correct_defense_id": 140,
+      "options": [
+        140,
+        138,
+        3,
+        19
+      ]
+    }
+  ]
+}
