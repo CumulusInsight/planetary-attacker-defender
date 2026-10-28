@@ -13,6 +13,7 @@ var shade: ColorRect
 var old_focus: WeakRef
 var lesson_scroll: ScrollContainer
 var attack_body: RichTextLabel
+var preview_defense: Variant=null
 func configure(owner: Node) -> void:
 	game=owner;shade=ColorRect.new();shade.color=Color(0,0,0,0.82);game.place(game.shell,shade,Rect2(0,50,1600,850));shade.z_index=49
 	game.place(game.shell,self,Rect2(100,75,1400,750));z_index=50
@@ -28,6 +29,7 @@ func configure(owner: Node) -> void:
 	var grid:=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",12);grid.add_theme_constant_override("v_separation",8);column.add_child(grid)
 	for i in range(4):
 		var control:=Button.new();grid.add_child(control);control.custom_minimum_size=Vector2(658,68);control.size_flags_horizontal=Control.SIZE_EXPAND_FILL;control.pressed.connect(func():choose(i))
+		var info=preload("res://script/learning_action_icon.gd").new();info.kind="book";info.tooltip_text="Read this control without selecting";info.flat=true;info.position=Vector2(630,2);info.size=Vector2(30,28);control.add_child(info);info.pressed.connect(func():preview_choice(i))
 		control.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;control.toggle_mode=true;choices.append(control)
 	body=RichTextLabel.new();column.add_child(body);prepare_text(body)
 	shade.hide();hide()
@@ -37,7 +39,7 @@ func prepare_text(control: RichTextLabel) -> void:
 func safe(value: String) -> String:return value.replace("[","[lb]")
 func section(heading: String,text: String) -> String:return "[b][u]"+safe(heading)+"[/u][/b]\n"+safe(text)+"\n\n"
 func open_question(q: Dictionary,history: bool=false,review: bool=false) -> void:
-	question=q;historical=history;review_mode=review
+	question=q;historical=history;review_mode=review;preview_defense=null
 	var focus=get_viewport().gui_get_focus_owner();old_focus=weakref(focus) if focus!=null else null
 	# GUI hit-testing follows sibling order, not just z_index; review is created later.
 	shade.get_parent().move_child(shade,-1);get_parent().move_child(self,-1)
@@ -55,19 +57,28 @@ func render_content() -> void:
 	if matches.is_empty():dismiss();return
 	var row: Dictionary=matches[0];var selected: Variant=row.result.get("answer",row.selected)
 	var submitted: bool=row.answered or (not historical and not review_mode and (game.session.is_pending(int(question.contact_id)) or game.session.flights.has(int(question.contact_id))))
+	var evaluated: bool=row.answered
 	for i in range(4):
 		var id:=int(question.options[i]);var defense: Dictionary=game.loader.rich_defenses[id]
-		choices[i].text=defense.display_name;choices[i].set_pressed_no_signal(selected!=null and int(selected)==id)
+		choices[i].text=("This is the correct answer\n" if evaluated and id==int(lesson.correct_defense_id) else "Your incorrect answer\n" if evaluated and selected!=null and int(selected)==id else "")+defense.display_name;choices[i].set_pressed_no_signal(selected!=null and int(selected)==id)
 		choices[i].disabled=historical or submitted or (not review_mode and game.session.submitted_questions.has(question.learning_id))
 		choices[i].tooltip_text=defense.display_name+"\n"+defense.definition
+		choices[i].add_theme_color_override("font_disabled_color",Color("9de3ac") if evaluated and id==int(lesson.correct_defense_id) else Color.WHITE)
+		if evaluated:
+			var style:=StyleBoxFlat.new();style.bg_color=Color("163b2b") if id==int(lesson.correct_defense_id) else Color("482d34") if selected!=null and int(selected)==id else Color("182632")
+			if id==int(lesson.correct_defense_id):style.border_color=Color("64e692");style.set_border_width_all(2)
+			choices[i].add_theme_stylebox_override("disabled",style)
+		else:choices[i].remove_theme_stylebox_override("disabled")
 	var attack_text:=section("Definition",lesson.definition)+section("Realistic Example",lesson.example)
 	if attack_body.text!=attack_text:attack_body.text=attack_text
 	var text:=""
-	if selected!=null:
-		var defense: Dictionary=game.loader.rich_defenses[int(selected)]
+	var shown: Variant=preview_defense if preview_defense!=null else selected
+	if shown!=null:
+		var defense: Dictionary=game.loader.rich_defenses[int(shown)]
 		text+="[b]Defense lesson: "+safe(defense.display_name)+"[/b]\n\n"+section("Definition",defense.definition)+section("How It Works",defense.mechanism)+section("When It Applies",defense.conditions)+section("Limitations",defense.limitations)+section("Realistic Example",defense.example)
 	else:text+=section("Choose a control", "Select one of the four controls above. You can read its complete mechanism and limitations before submitting through Report or D. No selection fires a missile.")
-	if submitted:
+	if evaluated:
+		if shown!=null and int(shown)!=int(lesson.correct_defense_id):text+=section("Why this offered option does not meet the scenario",lesson.distractor_reasoning)
 		var correct: Dictionary=game.loader.rich_defenses[int(lesson.correct_defense_id)]
 		text+=section("Answer reasoning — "+correct.display_name,lesson.explanation)+section("Why the other offered controls do not meet this scenario",lesson.distractor_reasoning)
 		var mapped: Array=game.loader.rich_mappings.values().filter(func(r):return int(r.attack_id)==int(question.attack_id))
@@ -81,7 +92,9 @@ func choose(index: int) -> void:
 	if historical:return
 	if review_mode:
 		game.review_panel.evaluate(question.learning_id,int(question.options[index]));render_content();return
-	game.select_answer(int(question.contact_id),int(question.options[index]));render_content();call_deferred("show_defense")
+	preview_defense=question.options[index];game.select_answer(int(question.contact_id),int(question.options[index]));render_content()
+func preview_choice(index: int) -> void:
+	preview_defense=question.options[index];render_content();call_deferred("show_defense")
 func show_defense() -> void:
 	# Allow wrapped text/container heights to settle before jumping to this defense.
 	await get_tree().process_frame

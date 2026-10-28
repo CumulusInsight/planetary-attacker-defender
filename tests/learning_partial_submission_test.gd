@@ -17,7 +17,7 @@ func run() -> void:
 	check(control.tooltip_text.contains(learning.loader.rich_defenses[int(q.options[0])].definition) and learning.session.answers.is_empty(),"Catalog-derived defense hover never selects or submits")
 	learning.show_attack_explanation(learning.report_grid.get_child(11),int(q.attack_id))
 	check(learning.session.answers.is_empty(),"Attack hover never selects an answer")
-	learning.select_answer(id,int(q.correct_defense_id));await frames();await capture("partial_defense_lesson")
+	learning.select_answer(id,int(q.correct_defense_id));check(not panel.visible,"Selecting an answer does not open details");learning.open_answer_lesson(q,int(q.correct_defense_id));await frames();await capture("partial_defense_lesson")
 	var defense: Dictionary=learning.loader.rich_defenses[int(q.correct_defense_id)]
 	check(panel.body.text.contains(defense.definition) and panel.body.text.contains(defense.mechanism) and panel.body.text.contains(defense.conditions) and panel.body.text.contains(defense.limitations) and panel.body.text.contains(defense.example),"Chosen defense's own five teaching fields")
 	check(panel.body.text.find("How It Works")<panel.body.text.find("When It Applies") and panel.body.text.find("When It Applies")<panel.body.text.find("Limitations") and panel.body.text.find("Limitations")<panel.body.text.find("Realistic Example"),"Defense lesson ordering")

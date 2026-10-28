@@ -4,6 +4,12 @@ var pursuits: Dictionary={}
 var departed: Dictionary={}
 var reentries: Dictionary={}
 var seen_generation:=-1
+var internal_warning_labels: Dictionary={}
+class ArrivalWarning extends Label:
+	func _draw() -> void:
+		draw_colored_polygon(PackedVector2Array([Vector2(6,17),Vector2(14,3),Vector2(22,17)]),Color("ff5e66"))
+		draw_line(Vector2(14,7),Vector2(14,11),Color("ffffff"),1.5,true)
+		draw_circle(Vector2(14,14),0.9,Color("ffffff"))
 func configure(game: Node) -> void:
 	owner_game=game
 	if seen_generation!=game.session.generation and game.session.round_index==0:departed.clear();reentries.clear()
@@ -82,4 +88,27 @@ func sync(enabled: bool) -> void:
 				var status: String=owner_game.session.live_status(int(q.contact_id))
 				if not status.is_empty():lines.append("C-%03d: %s" % [q.contact_id,status])
 		text.text="\n".join(lines);text.tooltip_text=text.text
+	refresh_internal_warnings(enabled)
 	queue_redraw()
+
+func draw_selection_marker() -> void:
+	# The learning weapon overlay draws the selected scope, without a second unrelated ring.
+	pass
+
+func refresh_internal_warnings(enabled: bool) -> void:
+	for center in centers:
+		if not internal_warning_labels.has(center):
+			var warning:=ArrivalWarning.new();warning.mouse_filter=Control.MOUSE_FILTER_IGNORE;warning.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;warning.add_theme_font_override("font",ThemeDB.fallback_font);warning.add_theme_font_size_override("font_size",13);warning.add_theme_constant_override("line_spacing",0);warning.add_theme_color_override("font_color",Color("ff8e8e"))
+			var box:=StyleBoxFlat.new();box.bg_color=Color(0.13,0.015,0.02,0.95);box.border_color=Color("e85e66");box.set_border_width_all(1);box.content_margin_left=6;box.content_margin_right=6;box.content_margin_top=3
+			warning.add_theme_stylebox_override("normal",box);add_child(warning);warning.z_index=10;internal_warning_labels[center]=warning
+	for center in internal_warning_labels:
+		var warning: Label=internal_warning_labels[center];var rows: Array=owner_game.session.internal_for_center(center)
+		warning.visible=enabled and center in centers and not rows.is_empty()
+		if not warning.visible:continue
+		var names: PackedStringArray=[];var detail: PackedStringArray=[]
+		for row in rows:
+			names.append("C-%03d/P%d" % [row.contact_id,owner_game.session.physical_targets.get(row.physical_id,{}).get("version",1)])
+			detail.append(row.physical_id+" / "+row.learning_attack_name+" / "+row.get("arrival_cause","EVADED_INTERCEPTION"))
+		warning.position=tiles[center].position+Vector2(6,30);warning.size=Vector2(tiles[center].size.x-12,88)
+		warning.text="      "+center+" / "+", ".join(names)+"\nThreat has migrated inside your data center infrastructure.\nArrival only; compromise not confirmed."
+		warning.tooltip_text="\n".join(detail)+"\nArrival only. Successful compromise is not confirmed."

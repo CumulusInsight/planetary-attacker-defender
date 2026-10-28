@@ -75,4 +75,6 @@ func _draw() -> void:
 	for slot in trails:
 		if markers.has(slot) and markers[slot].visible and trails[slot].size()>1:draw_polyline(trails[slot],Color(1,0.7,0.2,0.6),2,true)
 
+	draw_selection_marker()
+func draw_selection_marker() -> void:
 	if markers.has(owner_game.learning_selected) and markers[owner_game.learning_selected].visible:draw_arc(markers[owner_game.learning_selected].position,17,0,TAU,32,Color("fff09e"),2,true)

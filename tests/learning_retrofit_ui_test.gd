@@ -69,6 +69,7 @@ func run() -> void:
 	panel.lesson_scroll.ensure_control_visible(panel.choices[review_q.options.find(int(review_q.correct_defense_id))]);await frames();await press(panel.choices[review_q.options.find(int(review_q.correct_defense_id))]);await frames()
 	await capture("retrofit_review_after")
 	check(panel.body.text.contains(learning.loader.rich_attacks[int(review_q.attack_id)].explanation),"Rich review reveals full answer reasoning only after review choice")
+	check(learning.review_panel.buttons[review_q.learning_id][review_q.options.find(int(review_q.correct_defense_id))].get_node("CorrectDesignator").visible,"Reviewed correct answer has a distinct green marker")
 	check(learning.projectiles.is_empty() and learning.session.all_results==original and learning.session.evasion_rng.state==rng_state,"Review remains noncombat and cannot change original score/history/RNG")
 	check(command.mission.public_snapshot()==official and command.operations.session.events()==canonical_events and command.registry.contacts.keys()==actors,"Accepted canonical scoring, ledger and actors unchanged")
 	await close_game();print("LEARNING RETROFIT UI: ","PASS" if failures==0 else "FAIL"," (",failures," failures; ",checks," checks)");quit(0 if failures==0 else 1)

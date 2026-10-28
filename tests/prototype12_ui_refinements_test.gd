@@ -1,0 +1,56 @@
+extends "res://tests/prototype12_live_status_test.gd"
+func run() -> void:
+	learning=load("res://scene/learning_retrofit_command.tscn").instantiate();learning.session_seed=12345;game=learning;test_viewport.add_child(learning);await frames();command=learning.command;command.set_strategic_pause(true)
+	var ui=command.decision_pages
+	var official: Dictionary=command.mission.public_snapshot();var events: Array=command.operations.session.events()
+	var controls: Array=[]
+	for key in ["overview","contacts","threat","intelligence","history","mission","alerts"]:controls.append(ui.top_buttons[key])
+	controls.append_array([learning.nav.analyze,learning.nav.report,learning.nav.decide,ui.center_control,ui.mode_select,ui.role_select,learning.war_room_button,ui.pause_button])
+	for i in range(controls.size()):
+		check(controls[i].get_global_rect().position.x>=0 and controls[i].get_global_rect().end.x<=1600,"Toolbar inside viewport")
+		if i>0:check(controls[i-1].get_global_rect().end.x<=controls[i].get_global_rect().position.x,"Toolbar order without overlap: %s %s / %s %s" % [controls[i-1].name,controls[i-1].get_global_rect(),controls[i].name,controls[i].get_global_rect()])
+	check(ui.pause_button.text=="PAUSE" and ui.pause_button.get_global_rect().position.x>learning.war_room_button.get_global_rect().end.x,"PAUSE far right")
+	check(learning.war_room_button.get_parent()==ui.role_select.get_parent(),"War Room beside role on same toolbar")
+	ui.role_select.select(1);await frames()
+	check(ui.role_select.get_minimum_size().x<=ui.role_select.size.x,"Operations Commander label fits")
+	await capture("ui_refinements_toolbar");ui.role_select.select(0)
+	await press(learning.nav.analyze);await press(learning.yes_button);await frames()
+	var q: Dictionary=learning.loader.questions[0];var id: int=q.contact_id;var b: Button=learning.option_buttons[id][0]
+	check(b.get_node("AnswerCheck").kind=="check" and b.get_node("AnswerInfo").kind=="book","Native distinct vector check and book icons")
+	check(b.get_node("AnswerCheck").focus_mode==Control.FOCUS_ALL and b.get_node("AnswerInfo").focus_mode==Control.FOCUS_ALL,"Keyboard-focusable answer actions")
+	await press(b.get_node("AnswerCheck"));check(learning.session.answers[id]==q.options[0] and not learning.detail_panel.visible,"Check selects only")
+	var keyboard_choice: Button=learning.option_buttons[id][1].get_node("AnswerCheck");keyboard_choice.grab_focus()
+	var key:=InputEventKey.new();key.keycode=KEY_SPACE;key.pressed=true;test_viewport.push_input(key);await frames();key=InputEventKey.new();key.keycode=KEY_SPACE;key.pressed=false;test_viewport.push_input(key);await frames()
+	check(learning.session.answers[id]==q.options[1] and not learning.detail_panel.visible,"Keyboard Space selects without explanation")
+	var answers: Dictionary=learning.session.answers.duplicate(true)
+	await press(b.get_node("AnswerInfo"));check(learning.detail_panel.visible and learning.session.answers==answers,"Book explains only")
+	learning.detail_panel.dismiss();await frames();check(not b.get_node("CorrectDesignator").visible,"No pre-evaluation correct key")
+	await capture("ui_refinements_answer_icons")
+	learning.change_fire_mode(1);check(learning.session.firing_mode=="AUTO-FIRE" and learning.requested_fire_mode=="PLAYER FIRE","Report defers requested mode")
+	await press(learning.closes.report);await frames();check(learning.session.firing_mode=="PLAYER FIRE" and learning.requested_fire_mode.is_empty(),"Report close applies requested mode")
+	learning.show_page("report");choose(5);await press(learning.submit_answers_button);await frames()
+	check(learning.session.authorized_targets().size()==5 and learning.projectiles.is_empty(),"Five pending manual authorizations")
+	var pending: Dictionary=learning.session.pending.duplicate(true);var rng: int=learning.session.evasion_rng.state
+	learning.change_fire_mode(0);await frames();check(learning.projectiles.size()==1 and learning.session.pending.shots.size()==4,"Active pending PLAYER to AUTO launches exactly one ready shot")
+	var first: int=learning.projectiles[0].contact_id;var launch_at: float=learning.session.flights[first].launched_at
+	learning.change_fire_mode(1);await frames();check(learning.session.authorized_targets().size()==4 and learning.projectiles.size()==1,"Airborne shot survives AUTO to PLAYER")
+	check(learning.session.pending.shots==pending.shots.slice(1) and learning.session.evasion_rng.state==rng,"Pending IDs/readiness and RNG preserved")
+	await sim(14.999);learning.change_fire_mode(0);await frames();check(learning.projectiles.size()==1,"Mode switch cannot fire early")
+	await sim(0.001);check(learning.projectiles.size()==2,"Exact next 15-second launch")
+	var second: int=learning.projectiles[1].contact_id;check(is_equal_approx(learning.session.flights[second].launched_at-launch_at,15),"Actual launch interval unchanged")
+	learning.change_fire_mode(1);await frames();await press(learning.war_room_button);learning.change_fire_mode(0)
+	check(learning.session.firing_mode=="PLAYER FIRE" and learning.requested_fire_mode=="AUTO-FIRE","War Room defers mode request")
+	await sim(30);check(learning.projectiles.size()<=2 and learning.session.pending.shots.size()==3,"Modal request does not prematurely drain manual queue")
+	await press(learning.war_room.back_button);await frames();check(learning.session.firing_mode=="AUTO-FIRE" and learning.session.pending.shots.size()==2,"War Room close resumes same pending authority")
+	var third: int=learning.projectiles[-1].contact_id;var third_at: float=learning.session.flights[third].launched_at
+	await sim(14.999);check(learning.session.pending.shots.size()==2,"Overdue queue still waits actual 15 seconds")
+	await sim(0.001);check(learning.session.pending.shots.size()==1,"Fourth shot once at boundary")
+	await sim(15);check(learning.session.pending.is_empty(),"No lost final authorization")
+	await sim(38);check(learning.session.metrics().correct==5 and learning.session.metrics().incorrect==0,"Switching preserves five grades without duplicates")
+	check(third_at>=launch_at+30,"Delayed return to AUTO preserves readiness")
+	check(command.mission.public_snapshot()==official and command.operations.session.events()==events,"Mode transitions preserve canonical score and event ledger")
+	var clock: float=learning.session.now;await frames(12);check(learning.session.now==clock,"Learning strategic pause holds authoritative clock")
+	command.set_learning_mode(false);await frames(12);check(not command.strategic_paused and ui.pause_button.disabled and learning.session.now>clock,"Active Challenge clears/disables pause and continues clock")
+	command.set_learning_mode(true);command.set_strategic_pause(true);await frames();clock=learning.session.now;await frames(12);check(learning.session.now==clock and not ui.pause_button.disabled,"Learning pause resumes unchanged")
+
+	await close_game();print("P12 UI REFINEMENTS: ","PASS" if failures==0 else "FAIL"," (",failures," failures)");quit(0 if failures==0 else 1)

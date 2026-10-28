@@ -1,0 +1,68 @@
+extends "res://tests/prototype12_live_status_test.gd"
+func run() -> void:
+	learning=load("res://scene/learning_retrofit_command.tscn").instantiate();learning.session_seed=12345;game=learning;test_viewport.add_child(learning);await frames();command=learning.command;command.set_strategic_pause(true)
+	var official: Dictionary=command.mission.public_snapshot();var events: Array=command.operations.session.events()
+	await press(learning.nav.analyze);await press(learning.yes_button);await frames()
+	var q: Dictionary=learning.loader.questions[0];var id: int=q.contact_id;var wrong: int=q.options.filter(func(d):return d!=q.correct_defense_id)[0]
+	var button: Button=learning.option_buttons[id][q.options.find(wrong)];var mark=button.get_node("AnswerCheck")
+	check(mark.icon_color()==Color("e6eef8") and mark.check_width()==1.5,"Unselected white thin check")
+	check(learning.option_buttons[id].all(func(b):return not b.get_node("CorrectDesignator").visible),"No early result labels")
+	await press(mark);check(mark.icon_color()==Color("70ee94") and mark.check_width()==3.0,"Selected existing green check")
+	check(not learning.detail_panel.visible,"Selection never opens explanation")
+	await capture("last_white_green_checks")
+	await press(learning.submit_answers_button);learning.show_page("report");await frames()
+	button=learning.option_buttons[id][q.options.find(wrong)]
+	check(button.get_node("CorrectDesignator").text=="Your incorrect answer" and button.get_node("CorrectDesignator").visible,"Incorrect selected answer label")
+	var correct: Button=learning.option_buttons[id][q.options.find(int(q.correct_defense_id))]
+	check(correct.get_node("CorrectDesignator").text=="This is the correct answer" and correct.get_node("CorrectDesignator").visible,"Correct answer label")
+	check(button.button_pressed and not correct.button_pressed,"Original wrong selection preserved")
+	for tag in [button.get_node("CorrectDesignator"),correct.get_node("CorrectDesignator")]:check(tag.get_theme_font("font").get_string_size(tag.text,HORIZONTAL_ALIGNMENT_LEFT,-1,tag.get_theme_font_size("font_size")).x<=tag.size.x,"Result label fits block")
+	await capture("last_review_labels")
+	learning.close_page();learning.restart_learning();learning.close_page();choose(5);learning.request_fire(0);await frames()
+	# Use the real seeded Bernoulli stream until both physical cases are present.
+	await sim(15);await sim(15)
+	var incoming: Array=learning.session.flights.keys();incoming.sort()
+	for target in incoming:learning.session.evade_shot(target,learning.session.generation)
+	check(learning.session.internal_threats.is_empty(),"No internal arrival while airborne")
+	await sim(15);await sim(15)
+	for target in learning.session.flights.keys():
+		if not learning.session.flights[target].get("evasion_attempted",false):learning.session.evade_shot(target,learning.session.generation)
+	await sim(38);await sim(2)
+	var evaded:=0;var hits:=0
+	for r in learning.session.results.values():
+		if r.projectile_outcome=="EVADED":
+			evaded+=1;check(learning.session.internal_threats.has(r.physical_id),"EVADED creates stable physical identity record")
+			var record: Dictionary=learning.session.internal_threats[r.physical_id]
+			check(record.center_id==r.center_id and record.contact_id==r.contact_id and not record.compromise_confirmed,"Correct threat/center; no claimed compromise")
+			var warning: Label=learning.orbital_display.internal_warning_labels[r.center_id]
+			check(warning.visible and warning.text.contains("Threat has migrated inside your data center infrastructure.") and warning.text.contains("C-%03d" % r.contact_id),"Specific persistent tile warning")
+			check(warning.get_line_count()*warning.get_theme_font("font").get_height(13)<=warning.size.y,"Warning fits tile")
+		else:hits+=1;check(not learning.session.internal_threats.has(r.physical_id),"HIT creates no internal arrival")
+	check(evaded>0 and hits>0 and learning.session.internal_threats.size()==evaded,"Mixed authoritative outcomes with independent records")
+	var saved: Dictionary=learning.session.internal_threats.duplicate(true)
+	for r in learning.session.results.values():check(learning.session.finish_shot(r.contact_id,learning.session.generation).is_empty(),"Repeated completion rejected")
+	await frames(20);check(learning.session.internal_threats==saved,"No refresh/completion duplicates")
+	await capture("last_internal_warnings")
+	learning.show_page("report");await frames()
+	for choices in learning.option_buttons.values():check(choices.all(func(b):return not b.get_node("CorrectDesignator").visible or b.get_node("CorrectDesignator").text=="This is the correct answer"),"Correct selections have no incorrect label")
+	learning.close_page();learning.change_fire_mode(1);learning.change_fire_mode(0);learning.next_round();await frames();learning.close_page()
+	check(learning.session.round_index==1 and learning.session.internal_threats==saved,"Navigation, modes and next round preserve internal arrivals")
+	learning.show_page("report");learning.select_report_round(1);await frames()
+	for choices in learning.option_buttons.values():check(choices.all(func(b):return not b.get_node("CorrectDesignator").visible or b.get_node("CorrectDesignator").text=="This is the correct answer"),"Historical result wording preserved")
+	await capture("last_historical_labels");learning.select_report_round(0);learning.close_page()
+	await press(learning.war_room_button);var room=learning.war_room;await frames()
+	check(room.attack_picker.item_count==100 and room.cards.size()==6,"Canonical 100-attack planning; six-center overview retained")
+	room.target_checks["DC-01"].button_pressed=true;room.attack_picker.select(20);var attack_id: int=room.attack_picker.get_item_metadata(20);room.apply_plan()
+	check(room.selected_centers()==["DC-01"] and room.planned_attacks["DC-01"]==attack_id and room.planned_attacks.size()==1,"Single-center attack planning")
+	room.target_checks["DC-03"].button_pressed=true;room.apply_plan();check(room.selected_centers().size()==2 and room.planned_attacks.size()==2,"Multiple-center planning")
+	room.select_all();room.apply_plan();check(room.selected_centers().size()==6 and room.planned_attacks.size()==6,"All-six planning")
+	for card in room.cards:check(card.get_line_count()*card.get_theme_font("font").get_height(16)<=card.size.y,"Planning card text fits")
+	await capture("last_war_room_planning")
+	await press(room.detail_buttons["DC-03"]);await frames()
+	check(room.details.visible and room.detail_center=="DC-03" and room.detail_text.text.contains(learning.loader.attacks[attack_id].attack_name) and room.detail_text.text.contains(learning.loader.attacks[attack_id].definition),"Individual selected-center canonical detail")
+	check(room.detail_text.text.contains("UNCONFIRMED") and room.detail_text.text.contains("Reconnaissance questions") and room.detail_text.text.contains("NO ORDERS ISSUED"),"Perceptions/questions; no invented reconnaissance or execution")
+	await capture("last_war_room_details")
+	await press(room.overview_button);check(not room.details.visible and room.visible,"Back restores six-center overview");await press(room.back_button);await frames();check(not room.visible and learning.session.internal_threats==saved,"Return to Earth preserves arrivals")
+	check(learning.session.pending.is_empty() and learning.session.flights.is_empty() and command.mission.public_snapshot()==official and command.operations.session.events()==events,"Planning executes nothing and changes no canonical score/ledger")
+	learning.restart_learning();await frames();check(learning.session.internal_threats.is_empty(),"Explicit learning restart clears arrival registry")
+	await close_game();print("P12 FINAL REFINEMENTS: ","PASS" if failures==0 else "FAIL"," (",failures," failures)");quit(0 if failures==0 else 1)
