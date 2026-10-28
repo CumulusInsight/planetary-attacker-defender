@@ -1,0 +1,4198 @@
+{
+  "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+  "owner_accepted": false,
+  "production_eligible": false,
+  "independent_sme_approval": false,
+  "counts": {
+    "attacks": 100,
+    "defenses": 185,
+    "mapping_reviews": 211
+  },
+  "mapping_decisions": {
+    "QUALIFY": 133,
+    "CORRECT": 15,
+    "RETAIN": 60,
+    "REMOVE_PROPOSED": 3
+  },
+  "control_roles": {
+    "PARTIAL": 93,
+    "DETECTION": 27,
+    "DIRECT": 72,
+    "INDIRECT_SUPPORT": 19
+  },
+  "topic_types": {
+    "attack": 76,
+    "weakness": 4,
+    "analysis_model": 4,
+    "category": 11,
+    "environmental_threat": 1,
+    "unwanted_software": 2,
+    "potentially_legitimate_activity": 2
+  },
+  "remaining_placeholders": [],
+  "owner_review_required": "All 496 candidate entries; all question choices; all proposed mapping qualifications/corrections/removals.",
+  "attack_checks": [
+    {
+      "canonical_attack_id": 1,
+      "draft_attack_id": 8,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 2,
+      "draft_attack_id": 17,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 3,
+      "draft_attack_id": 18,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 4,
+      "draft_attack_id": 1,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 5,
+      "draft_attack_id": 15,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 6,
+      "draft_attack_id": 22,
+      "kind": "weakness",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 7,
+      "draft_attack_id": 7,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 8,
+      "draft_attack_id": 21,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 9,
+      "draft_attack_id": 14,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 10,
+      "draft_attack_id": 6,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 11,
+      "draft_attack_id": 2,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 12,
+      "draft_attack_id": 3,
+      "kind": "analysis_model",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 13,
+      "draft_attack_id": 19,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 14,
+      "draft_attack_id": 4,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 15,
+      "draft_attack_id": 10,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 16,
+      "draft_attack_id": 11,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 17,
+      "draft_attack_id": 25,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 18,
+      "draft_attack_id": 24,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 19,
+      "draft_attack_id": 12,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 20,
+      "draft_attack_id": 13,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 21,
+      "draft_attack_id": 20,
+      "kind": "environmental_threat",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 22,
+      "draft_attack_id": 23,
+      "kind": "unwanted_software",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 23,
+      "draft_attack_id": 9,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 24,
+      "draft_attack_id": 5,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 25,
+      "draft_attack_id": 16,
+      "kind": "unwanted_software",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 26,
+      "draft_attack_id": 35,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 27,
+      "draft_attack_id": 45,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 28,
+      "draft_attack_id": 40,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 29,
+      "draft_attack_id": 37,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 30,
+      "draft_attack_id": 39,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 31,
+      "draft_attack_id": 43,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 32,
+      "draft_attack_id": 30,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 33,
+      "draft_attack_id": 34,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 34,
+      "draft_attack_id": 33,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 35,
+      "draft_attack_id": 32,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 36,
+      "draft_attack_id": 57,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 37,
+      "draft_attack_id": 28,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 38,
+      "draft_attack_id": 36,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 39,
+      "draft_attack_id": 41,
+      "kind": "weakness",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 40,
+      "draft_attack_id": 51,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 41,
+      "draft_attack_id": 49,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 42,
+      "draft_attack_id": 53,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 43,
+      "draft_attack_id": 54,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 44,
+      "draft_attack_id": 42,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 45,
+      "draft_attack_id": 29,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 46,
+      "draft_attack_id": 47,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 47,
+      "draft_attack_id": 58,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 48,
+      "draft_attack_id": 38,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 49,
+      "draft_attack_id": 46,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 50,
+      "draft_attack_id": 56,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 51,
+      "draft_attack_id": 48,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 52,
+      "draft_attack_id": 50,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 53,
+      "draft_attack_id": 52,
+      "kind": "weakness",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 54,
+      "draft_attack_id": 31,
+      "kind": "analysis_model",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 55,
+      "draft_attack_id": 26,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 56,
+      "draft_attack_id": 27,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 57,
+      "draft_attack_id": 55,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 58,
+      "draft_attack_id": 44,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 59,
+      "draft_attack_id": 73,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 60,
+      "draft_attack_id": 94,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 61,
+      "draft_attack_id": 96,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 62,
+      "draft_attack_id": 93,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 63,
+      "draft_attack_id": 100,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 64,
+      "draft_attack_id": 71,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 65,
+      "draft_attack_id": 91,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 66,
+      "draft_attack_id": 63,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 67,
+      "draft_attack_id": 61,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 68,
+      "draft_attack_id": 74,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 69,
+      "draft_attack_id": 75,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 70,
+      "draft_attack_id": 81,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 71,
+      "draft_attack_id": 82,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 72,
+      "draft_attack_id": 95,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 73,
+      "draft_attack_id": 92,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 74,
+      "draft_attack_id": 60,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 75,
+      "draft_attack_id": 66,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 76,
+      "draft_attack_id": 72,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 77,
+      "draft_attack_id": 70,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 78,
+      "draft_attack_id": 76,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 79,
+      "draft_attack_id": 77,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 80,
+      "draft_attack_id": 80,
+      "kind": "weakness",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 81,
+      "draft_attack_id": 98,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 82,
+      "draft_attack_id": 97,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 83,
+      "draft_attack_id": 59,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 84,
+      "draft_attack_id": 62,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 85,
+      "draft_attack_id": 87,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 86,
+      "draft_attack_id": 89,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 87,
+      "draft_attack_id": 78,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 88,
+      "draft_attack_id": 79,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 89,
+      "draft_attack_id": 88,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 90,
+      "draft_attack_id": 84,
+      "kind": "potentially_legitimate_activity",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 91,
+      "draft_attack_id": 65,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 92,
+      "draft_attack_id": 68,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 93,
+      "draft_attack_id": 69,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 94,
+      "draft_attack_id": 67,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 95,
+      "draft_attack_id": 83,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 96,
+      "draft_attack_id": 90,
+      "kind": "attack",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 97,
+      "draft_attack_id": 99,
+      "kind": "potentially_legitimate_activity",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 98,
+      "draft_attack_id": 64,
+      "kind": "category",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 99,
+      "draft_attack_id": 85,
+      "kind": "analysis_model",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_attack_id": 100,
+      "draft_attack_id": 86,
+      "kind": "analysis_model",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "option_count": 4,
+      "owner_acceptance_pending": true
+    }
+  ],
+  "defense_checks": [
+    {
+      "canonical_defense_id": 1,
+      "draft_defense_id": 8,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 2,
+      "draft_defense_id": 24,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 3,
+      "draft_defense_id": 25,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 4,
+      "draft_defense_id": 26,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 5,
+      "draft_defense_id": 27,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 6,
+      "draft_defense_id": 1,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 7,
+      "draft_defense_id": 20,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 8,
+      "draft_defense_id": 21,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 9,
+      "draft_defense_id": 33,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 10,
+      "draft_defense_id": 34,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 11,
+      "draft_defense_id": 7,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 12,
+      "draft_defense_id": 32,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 13,
+      "draft_defense_id": 19,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 14,
+      "draft_defense_id": 18,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 15,
+      "draft_defense_id": 6,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 16,
+      "draft_defense_id": 2,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 17,
+      "draft_defense_id": 3,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 18,
+      "draft_defense_id": 28,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 19,
+      "draft_defense_id": 29,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 20,
+      "draft_defense_id": 4,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 21,
+      "draft_defense_id": 11,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 22,
+      "draft_defense_id": 10,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 23,
+      "draft_defense_id": 12,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 24,
+      "draft_defense_id": 13,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 25,
+      "draft_defense_id": 39,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 26,
+      "draft_defense_id": 40,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 27,
+      "draft_defense_id": 37,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 28,
+      "draft_defense_id": 38,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 29,
+      "draft_defense_id": 14,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 30,
+      "draft_defense_id": 15,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 31,
+      "draft_defense_id": 16,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 32,
+      "draft_defense_id": 17,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 33,
+      "draft_defense_id": 30,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 34,
+      "draft_defense_id": 31,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 35,
+      "draft_defense_id": 35,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 36,
+      "draft_defense_id": 36,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 37,
+      "draft_defense_id": 9,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 38,
+      "draft_defense_id": 5,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 39,
+      "draft_defense_id": 23,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 40,
+      "draft_defense_id": 22,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 41,
+      "draft_defense_id": 57,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 42,
+      "draft_defense_id": 58,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 43,
+      "draft_defense_id": 76,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 44,
+      "draft_defense_id": 77,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 45,
+      "draft_defense_id": 66,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 46,
+      "draft_defense_id": 67,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 47,
+      "draft_defense_id": 61,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 48,
+      "draft_defense_id": 62,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 49,
+      "draft_defense_id": 64,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 50,
+      "draft_defense_id": 65,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 51,
+      "draft_defense_id": 72,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 52,
+      "draft_defense_id": 73,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 53,
+      "draft_defense_id": 48,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 54,
+      "draft_defense_id": 55,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 55,
+      "draft_defense_id": 56,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 56,
+      "draft_defense_id": 53,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 57,
+      "draft_defense_id": 54,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 58,
+      "draft_defense_id": 51,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 59,
+      "draft_defense_id": 52,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 60,
+      "draft_defense_id": 100,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 61,
+      "draft_defense_id": 44,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 62,
+      "draft_defense_id": 45,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 63,
+      "draft_defense_id": 59,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 64,
+      "draft_defense_id": 60,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 65,
+      "draft_defense_id": 68,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 66,
+      "draft_defense_id": 69,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 67,
+      "draft_defense_id": 88,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 68,
+      "draft_defense_id": 89,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 69,
+      "draft_defense_id": 84,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 70,
+      "draft_defense_id": 85,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 71,
+      "draft_defense_id": 92,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 72,
+      "draft_defense_id": 93,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 73,
+      "draft_defense_id": 94,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 74,
+      "draft_defense_id": 95,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 75,
+      "draft_defense_id": 71,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 76,
+      "draft_defense_id": 70,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 77,
+      "draft_defense_id": 46,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 78,
+      "draft_defense_id": 47,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 79,
+      "draft_defense_id": 80,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 80,
+      "draft_defense_id": 81,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 81,
+      "draft_defense_id": 101,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 82,
+      "draft_defense_id": 102,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 83,
+      "draft_defense_id": 63,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 84,
+      "draft_defense_id": 78,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 85,
+      "draft_defense_id": 79,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 86,
+      "draft_defense_id": 98,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 87,
+      "draft_defense_id": 99,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 88,
+      "draft_defense_id": 82,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 89,
+      "draft_defense_id": 83,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 90,
+      "draft_defense_id": 86,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 91,
+      "draft_defense_id": 87,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 92,
+      "draft_defense_id": 90,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 93,
+      "draft_defense_id": 91,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 94,
+      "draft_defense_id": 49,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 95,
+      "draft_defense_id": 50,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 96,
+      "draft_defense_id": 41,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 97,
+      "draft_defense_id": 42,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 98,
+      "draft_defense_id": 43,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 99,
+      "draft_defense_id": 96,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 100,
+      "draft_defense_id": 97,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 101,
+      "draft_defense_id": 74,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 102,
+      "draft_defense_id": 75,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 103,
+      "draft_defense_id": 139,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 104,
+      "draft_defense_id": 140,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 105,
+      "draft_defense_id": 178,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 106,
+      "draft_defense_id": 179,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 107,
+      "draft_defense_id": 181,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 108,
+      "draft_defense_id": 182,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 109,
+      "draft_defense_id": 176,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 110,
+      "draft_defense_id": 177,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 111,
+      "draft_defense_id": 135,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 112,
+      "draft_defense_id": 134,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 113,
+      "draft_defense_id": 136,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 114,
+      "draft_defense_id": 174,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 115,
+      "draft_defense_id": 175,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 116,
+      "draft_defense_id": 114,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 117,
+      "draft_defense_id": 115,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 118,
+      "draft_defense_id": 108,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 119,
+      "draft_defense_id": 109,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 120,
+      "draft_defense_id": 110,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 121,
+      "draft_defense_id": 141,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 122,
+      "draft_defense_id": 142,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 123,
+      "draft_defense_id": 143,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 124,
+      "draft_defense_id": 144,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 125,
+      "draft_defense_id": 158,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 126,
+      "draft_defense_id": 159,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 127,
+      "draft_defense_id": 120,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 128,
+      "draft_defense_id": 180,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 129,
+      "draft_defense_id": 132,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 130,
+      "draft_defense_id": 105,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 131,
+      "draft_defense_id": 106,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 132,
+      "draft_defense_id": 107,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 133,
+      "draft_defense_id": 121,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 134,
+      "draft_defense_id": 122,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 135,
+      "draft_defense_id": 123,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 136,
+      "draft_defense_id": 137,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 137,
+      "draft_defense_id": 138,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 138,
+      "draft_defense_id": 131,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 139,
+      "draft_defense_id": 133,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 140,
+      "draft_defense_id": 145,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 141,
+      "draft_defense_id": 146,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 142,
+      "draft_defense_id": 147,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 143,
+      "draft_defense_id": 148,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 144,
+      "draft_defense_id": 149,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 145,
+      "draft_defense_id": 150,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 146,
+      "draft_defense_id": 156,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 147,
+      "draft_defense_id": 157,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 148,
+      "draft_defense_id": 184,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 149,
+      "draft_defense_id": 183,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 150,
+      "draft_defense_id": 103,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 151,
+      "draft_defense_id": 104,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 152,
+      "draft_defense_id": 111,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 153,
+      "draft_defense_id": 112,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 154,
+      "draft_defense_id": 113,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 155,
+      "draft_defense_id": 167,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 156,
+      "draft_defense_id": 168,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 157,
+      "draft_defense_id": 171,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 158,
+      "draft_defense_id": 151,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 159,
+      "draft_defense_id": 152,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 160,
+      "draft_defense_id": 153,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 161,
+      "draft_defense_id": 154,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 162,
+      "draft_defense_id": 155,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 163,
+      "draft_defense_id": 169,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 164,
+      "draft_defense_id": 170,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 165,
+      "draft_defense_id": 162,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 166,
+      "draft_defense_id": 119,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 167,
+      "draft_defense_id": 118,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 168,
+      "draft_defense_id": 126,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 169,
+      "draft_defense_id": 127,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 170,
+      "draft_defense_id": 128,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 171,
+      "draft_defense_id": 129,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 172,
+      "draft_defense_id": 130,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 173,
+      "draft_defense_id": 124,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 174,
+      "draft_defense_id": 125,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 175,
+      "draft_defense_id": 160,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 176,
+      "draft_defense_id": 161,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 177,
+      "draft_defense_id": 172,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 178,
+      "draft_defense_id": 173,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 179,
+      "draft_defense_id": 185,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 180,
+      "draft_defense_id": 116,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 181,
+      "draft_defense_id": 117,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 182,
+      "draft_defense_id": 163,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 183,
+      "draft_defense_id": 164,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 184,
+      "draft_defense_id": 165,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    },
+    {
+      "canonical_defense_id": 185,
+      "draft_defense_id": 166,
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "required_fields_present": true,
+      "owner_acceptance_pending": true
+    }
+  ],
+  "mapping_exceptions": [
+    {
+      "mapping_id": 1,
+      "attack_id": 1,
+      "defense_id": 1,
+      "draft_attack_id": 8,
+      "draft_defense_id": 8,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Hypervisor patching, minimized virtual devices and restricted management reduce known guest-escape attack paths.",
+      "limitations": "Hardening cannot prove the absence of unknown host or firmware vulnerabilities.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 2,
+      "attack_id": 2,
+      "defense_id": 2,
+      "draft_attack_id": 17,
+      "draft_defense_id": 24,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Protected integrity baselines can reveal altered boot or system components associated with a rootkit.",
+      "limitations": "A compromised kernel can deceive in-guest tools; baseline and measurement trust must be independent where needed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 3,
+      "attack_id": 2,
+      "defense_id": 3,
+      "draft_attack_id": 17,
+      "draft_defense_id": 25,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Verified boot-chain policy can reject unauthorized startup components and reduce some bootkit persistence.",
+      "limitations": "Signed vulnerable components, compromised firmware and post-boot rootkits remain possible.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 4,
+      "attack_id": 3,
+      "defense_id": 4,
+      "draft_attack_id": 18,
+      "draft_defense_id": 26,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Process memory inspection can find injected or memory-resident code not represented by a malicious executable file.",
+      "limitations": "Visibility and rapid execution limit coverage; fileless activity can still leave other artifacts.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 5,
+      "attack_id": 3,
+      "defense_id": 5,
+      "draft_attack_id": 18,
+      "draft_defense_id": 27,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Behavior analytics can identify suspicious use of interpreters and legitimate utilities in a fileless execution chain.",
+      "limitations": "Legitimate automation can look unusual; alerts need context and response rather than automatic certainty.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 6,
+      "attack_id": 4,
+      "defense_id": 6,
+      "draft_attack_id": 1,
+      "draft_defense_id": 1,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Interpret source verification here as source-network IP anti-spoofing to reject forged reflection requests.",
+      "limitations": "Checking an email sender does not stop reflection; victim-side filtering alone cannot control other originating networks.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 7,
+      "attack_id": 5,
+      "defense_id": 7,
+      "draft_attack_id": 15,
+      "draft_defense_id": 20,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Time-limited codes narrow the useful lifetime of captured authentication values when the verifier enforces appropriate checks.",
+      "limitations": "Codes can be relayed or reused inside a window without single-use enforcement; they do not protect arbitrary messages.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 9,
+      "attack_id": 6,
+      "defense_id": 9,
+      "draft_attack_id": 22,
+      "draft_defense_id": 33,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Configuration and access audits can discover public permissions and verify their remediation.",
+      "limitations": "An audit does not itself remove an exposed bucket policy and can miss changes between checks.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 10,
+      "attack_id": 6,
+      "defense_id": 10,
+      "draft_attack_id": 22,
+      "draft_defense_id": 34,
+      "decision": "CORRECT",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Encryption protects some storage or transport exposure under appropriate key and access arrangements.",
+      "limitations": "It does not fix anonymous authorized reads when the service decrypts objects for public users; remove public permissions instead.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 12,
+      "attack_id": 8,
+      "defense_id": 12,
+      "draft_attack_id": 21,
+      "draft_defense_id": 32,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Use a cost-tuned salted password KDF to increase the work required per offline password guess.",
+      "limitations": "A fast general-purpose hash, even a modern one, is not adequate password storage merely because it is called strong.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 13,
+      "attack_id": 9,
+      "defense_id": 13,
+      "draft_attack_id": 14,
+      "draft_defense_id": 19,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Anti-spyware detection and remediation can identify and remove supported surveillance software.",
+      "limitations": "Novel or privileged surveillance may evade detection, and prior data theft cannot be undone by removal.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 14,
+      "attack_id": 9,
+      "defense_id": 14,
+      "draft_attack_id": 14,
+      "draft_defense_id": 18,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Restricting application permissions can reduce accessible sensors and personal data before a low-privilege spyware program collects them.",
+      "limitations": "Privileged malware may bypass settings; permission review does not reliably remove an active infection.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 15,
+      "attack_id": 10,
+      "defense_id": 15,
+      "draft_attack_id": 6,
+      "draft_defense_id": 6,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Verified dedicated physical resources can reduce a co-tenant's access to the shared resource causing a leak.",
+      "limitations": "Provider terminology differs; dedicated virtual placement may still share hardware, and same-host leakage can remain.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 17,
+      "attack_id": 12,
+      "defense_id": 17,
+      "draft_attack_id": 3,
+      "draft_defense_id": 3,
+      "decision": "CORRECT",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "A controlled change process supports replacement of a cryptographically broken scheme after review and testing.",
+      "limitations": "Change management is not chosen-plaintext security. The mapping needs explicit migration context rather than a prevention claim.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 18,
+      "attack_id": 13,
+      "defense_id": 18,
+      "draft_attack_id": 19,
+      "draft_defense_id": 28,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Compatible frequency-agile radios may tolerate some narrow-band interference by using other permitted channels.",
+      "limitations": "Wideband or powerful jamming can affect all channels; this is not universal anti-jamming protection.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 19,
+      "attack_id": 13,
+      "defense_id": 19,
+      "draft_attack_id": 19,
+      "draft_defense_id": 29,
+      "decision": "REMOVE_PROPOSED",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Backups may support recovery if a disruption coincides with data loss.",
+      "limitations": "They do not restore radio availability or counter interference; do not teach backups as a jamming defense.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 20,
+      "attack_id": 14,
+      "defense_id": 20,
+      "draft_attack_id": 4,
+      "draft_defense_id": 4,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Reduced Bluetooth discovery can lower casual exposure while approved connections remain necessary.",
+      "limitations": "Known device addresses and exploitable services can remain reachable; patching or radio shutdown addresses different risks.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 22,
+      "attack_id": 15,
+      "defense_id": 22,
+      "draft_attack_id": 10,
+      "draft_defense_id": 10,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A trusted authenticated support channel can reduce exposure of sensitive information during verified assistance.",
+      "limitations": "An encrypted call can still be fraudulent; transport security alone does not defeat a convincing voice pretext.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 23,
+      "attack_id": 16,
+      "defense_id": 23,
+      "draft_attack_id": 11,
+      "draft_defense_id": 12,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "An approved challenge-response identity process can test a pretexting requester's claimed identity.",
+      "limitations": "Public biographical questions are weak, and proof of identity does not authorize every requested disclosure.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 24,
+      "attack_id": 16,
+      "defense_id": 24,
+      "draft_attack_id": 11,
+      "draft_defense_id": 13,
+      "decision": "CORRECT",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Enforced handling procedures can define which information staff may disclose to a verified requester.",
+      "limitations": "A privacy notice alone does not authenticate anyone or technically prevent pretexting.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 25,
+      "attack_id": 17,
+      "defense_id": 25,
+      "draft_attack_id": 25,
+      "draft_defense_id": 39,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Schema validation rejects malformed authentication messages before protocol processing.",
+      "limitations": "Well-formed forged assertions remain possible without signature, issuer and freshness checks.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 27,
+      "attack_id": 18,
+      "defense_id": 27,
+      "draft_attack_id": 24,
+      "draft_defense_id": 37,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Monitoring domains, ads and abuse reports can discover impersonating content and support response.",
+      "limitations": "Detection is not authentication of every message and does not automatically remove a fraudulent site.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 28,
+      "attack_id": 18,
+      "defense_id": 28,
+      "draft_attack_id": 24,
+      "draft_defense_id": 38,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Education helps users check trusted routes rather than trusting logos or familiar branding.",
+      "limitations": "People cannot reliably identify every impersonation; usable verification and technical controls remain necessary.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 30,
+      "attack_id": 19,
+      "defense_id": 30,
+      "draft_attack_id": 12,
+      "draft_defense_id": 15,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Locked collection containers reduce access before controlled removal and destruction.",
+      "limitations": "They leave the contents recoverable if the lock or collection chain is bypassed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 31,
+      "attack_id": 20,
+      "defense_id": 31,
+      "draft_attack_id": 13,
+      "draft_defense_id": 16,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A screen privacy filter reduces off-axis observation of displayed information.",
+      "limitations": "It does not stop a camera directly behind the user or observation of keyboard input.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 32,
+      "attack_id": 20,
+      "defense_id": 32,
+      "draft_attack_id": 13,
+      "draft_defense_id": 17,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A suitable biometric sign-in can reduce typing of reusable secrets that an observer could record.",
+      "limitations": "It does not conceal an unlocked screen, prevent screen capture or solve every authentication-recovery path.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 34,
+      "attack_id": 21,
+      "defense_id": 34,
+      "draft_attack_id": 20,
+      "draft_defense_id": 31,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Independent power, cooling or service paths can preserve operation when an environmental component fails.",
+      "limitations": "Shared failure domains and untested failover can defeat redundancy; backups and redundancy are different controls.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 36,
+      "attack_id": 22,
+      "defense_id": 36,
+      "draft_attack_id": 23,
+      "draft_defense_id": 36,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "A verified clean image can remove accumulated unwanted software when rebuilding is appropriate.",
+      "limitations": "Rebuilding is disruptive and may reinstall the same bundled programs if the image is not corrected.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 37,
+      "attack_id": 23,
+      "defense_id": 37,
+      "draft_attack_id": 9,
+      "draft_defense_id": 9,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Appropriate standardized post-quantum public-key mechanisms address identified quantum-vulnerable public-key operations.",
+      "limitations": "Do not imply current quantum computers break every cipher, or that algorithm migration alone secures the whole protocol.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 39,
+      "attack_id": 25,
+      "defense_id": 39,
+      "draft_attack_id": 16,
+      "draft_defense_id": 23,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Browser ad-request filtering reduces unwanted advertisements and some malvertising exposure.",
+      "limitations": "It does not uninstall all adware or establish that all permitted content is safe.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 40,
+      "attack_id": 25,
+      "defense_id": 40,
+      "draft_attack_id": 16,
+      "draft_defense_id": 22,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Verified distribution sources reduce deceptive or bundled software acquisition.",
+      "limitations": "Legitimate publishers can distribute unwanted software or suffer compromise; reputation is not an integrity guarantee.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 41,
+      "attack_id": 26,
+      "defense_id": 41,
+      "draft_attack_id": 35,
+      "draft_defense_id": 57,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Correct context-specific escaping can reduce unsafe shell interpretation in constrained legacy paths.",
+      "limitations": "Prefer avoiding a shell; quoting errors and argument injection can remain even when some metacharacters are escaped.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 42,
+      "attack_id": 26,
+      "defense_id": 42,
+      "draft_attack_id": 35,
+      "draft_defense_id": 58,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Explicit allowlists constrain permitted operations and inputs when combined with safe non-shell interfaces.",
+      "limitations": "An approved string can still be interpreted unsafely downstream; verify the complete command construction.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 44,
+      "attack_id": 27,
+      "defense_id": 44,
+      "draft_attack_id": 45,
+      "draft_defense_id": 77,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A WAF can block recognized SQL injection patterns while code remediation is arranged.",
+      "limitations": "Bypasses and false positives remain; it is not a replacement for separating SQL instructions and data.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 45,
+      "attack_id": 28,
+      "defense_id": 45,
+      "draft_attack_id": 40,
+      "draft_defense_id": 66,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Non-executable data pages obstruct injection that depends on executing bytes in those pages.",
+      "limitations": "Code reuse, executable mappings and other injection paths remain; DEP does not remove the vulnerability.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 47,
+      "attack_id": 29,
+      "defense_id": 47,
+      "draft_attack_id": 37,
+      "draft_defense_id": 61,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Independent source review can identify suspicious destructive triggers before acceptance.",
+      "limitations": "Review may miss obfuscation, dependencies or code introduced after review in the build process.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 48,
+      "attack_id": 29,
+      "defense_id": 48,
+      "draft_attack_id": 37,
+      "draft_defense_id": 62,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Restricting changes to sensitive code and scheduled jobs reduces opportunities to plant destructive triggers.",
+      "limitations": "An already authorized maintainer may still abuse permitted access; access controls need separation of duties and oversight.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 49,
+      "attack_id": 30,
+      "defense_id": 49,
+      "draft_attack_id": 39,
+      "draft_defense_id": 64,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "User behavior analytics can flag unusual access or exports for investigation.",
+      "limitations": "Intent cannot be inferred reliably from anomaly alone; privacy and legitimate role changes require context.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 52,
+      "attack_id": 31,
+      "defense_id": 52,
+      "draft_attack_id": 43,
+      "draft_defense_id": 73,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Server-enforced idle and absolute lifetime limits reduce the usable window of a stolen session.",
+      "limitations": "An attacker can act before expiration or keep some sessions active; invalidation and reauthentication need additional design.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 53,
+      "attack_id": 32,
+      "defense_id": 10,
+      "draft_attack_id": 30,
+      "draft_defense_id": 34,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Authenticated encryption protects data across a path where an intermediary could observe or alter it.",
+      "limitations": "Unauthenticated encryption does not establish peer identity, and compromised endpoints remain outside that guarantee.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 56,
+      "attack_id": 33,
+      "defense_id": 55,
+      "draft_attack_id": 34,
+      "draft_defense_id": 56,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Hardened resolvers with appropriate validation and controlled access reduce cache-poisoning exposure.",
+      "limitations": "A resolver's reputation alone does not establish that every response is authenticated.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 58,
+      "attack_id": 34,
+      "defense_id": 57,
+      "draft_attack_id": 33,
+      "draft_defense_id": 54,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Managed fixed ARP bindings prevent unwanted dynamic replacement for selected stable peers.",
+      "limitations": "Manual drift and compromised legitimate devices remain concerns; this does not scale automatically.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 60,
+      "attack_id": 35,
+      "defense_id": 59,
+      "draft_attack_id": 32,
+      "draft_defense_id": 52,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Relevant boundary rules can close exposed amplifiers or block identifiable abusive service traffic.",
+      "limitations": "The rule must be on an effective path; victim-side filtering cannot restore bandwidth already saturated upstream.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 61,
+      "attack_id": 36,
+      "defense_id": 25,
+      "draft_attack_id": 57,
+      "draft_defense_id": 39,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Validate function events and inputs before they influence resource selection or execution.",
+      "limitations": "Valid input can still invoke an overprivileged function, and dependency flaws require additional controls.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 63,
+      "attack_id": 37,
+      "defense_id": 61,
+      "draft_attack_id": 28,
+      "draft_defense_id": 44,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A correctly configured modern Wi-Fi deployment removes weaknesses associated with obsolete protocol modes.",
+      "limitations": "WPA3 does not repair every access-point implementation flaw or make transition configurations uniformly safe.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 66,
+      "attack_id": 38,
+      "defense_id": 64,
+      "draft_attack_id": 36,
+      "draft_defense_id": 60,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "An assessed HSM can confine keys and sensitive operations within a hardened boundary.",
+      "limitations": "Not every HSM or operation is free of side channels, and authorized misuse of the key can still occur.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 69,
+      "attack_id": 40,
+      "defense_id": 67,
+      "draft_attack_id": 51,
+      "draft_defense_id": 88,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Confirmed exposure reports can trigger credential invalidation and investigation before further stuffing attempts.",
+      "limitations": "Breach intelligence is incomplete and delayed; observing exposure does not itself prevent a login.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 72,
+      "attack_id": 41,
+      "defense_id": 70,
+      "draft_attack_id": 49,
+      "draft_defense_id": 85,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Appropriate additional authentication factors reduce takeover with a guessed password alone.",
+      "limitations": "Phishable factors, weak recovery and already stolen sessions can undermine protection; prefer phishing-resistant methods.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 74,
+      "attack_id": 42,
+      "defense_id": 72,
+      "draft_attack_id": 53,
+      "draft_defense_id": 93,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "HSTS reduces browser HTTP fallback for the protected origin after valid policy learning or appropriate preload.",
+      "limitations": "It does not prevent every TLS protocol downgrade and does not authenticate an unrelated look-alike domain.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 75,
+      "attack_id": 43,
+      "defense_id": 73,
+      "draft_attack_id": 54,
+      "draft_defense_id": 94,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Wireless sensors and inventory comparison can find unapproved access points and support assessed response.",
+      "limitations": "Detection can miss radios or misclassify legitimate equipment; automated disruption needs legal and operational review.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 76,
+      "attack_id": 43,
+      "defense_id": 74,
+      "draft_attack_id": 54,
+      "draft_defense_id": 95,
+      "decision": "REMOVE_PROPOSED",
+      "role": "PARTIAL",
+      "applicability": "MAC lists can assist limited local device administration.",
+      "limitations": "Spoofable MAC addresses do not authenticate an access point or reliably prevent unauthorized AP deployment; do not teach this as rogue-AP prevention.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 77,
+      "attack_id": 44,
+      "defense_id": 75,
+      "draft_attack_id": 42,
+      "draft_defense_id": 71,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "An on-screen keyboard may bypass a logger that observes only physical key events.",
+      "limitations": "Screen capture, pointer capture and browser hooks can still collect the input; do not present it as endpoint security.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 78,
+      "attack_id": 44,
+      "defense_id": 76,
+      "draft_attack_id": 42,
+      "draft_defense_id": 70,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Anti-malware detection can find and quarantine supported software keyloggers.",
+      "limitations": "Hardware loggers and privileged or novel software require different inspection and recovery steps.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 79,
+      "attack_id": 45,
+      "defense_id": 77,
+      "draft_attack_id": 29,
+      "draft_defense_id": 46,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Enforced quotas before expensive work reduce request-exhaustion paths within the service's control.",
+      "limitations": "Distributed sources and constrained upstream links can defeat local request-based protection.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 80,
+      "attack_id": 45,
+      "defense_id": 78,
+      "draft_attack_id": 29,
+      "draft_defense_id": 47,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Additional independently provisioned service instances can tolerate some workload pressure or instance failures.",
+      "limitations": "Shared dependencies and total capacity remain finite; balancing is not a complete DoS prevention mechanism.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 81,
+      "attack_id": 46,
+      "defense_id": 79,
+      "draft_attack_id": 47,
+      "draft_defense_id": 80,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Lockouts or progressive restrictions slow online guesses on the protected authentication path.",
+      "limitations": "Rigid lockouts can be abused for denial of service and do not stop offline cracking or all distributed spraying.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 82,
+      "attack_id": 46,
+      "defense_id": 80,
+      "draft_attack_id": 47,
+      "draft_defense_id": 81,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Automation challenges can add friction to some online guessing tools.",
+      "limitations": "Solvers, relays and bypasses exist; CAPTCHA alone is not a sufficient authentication or guessing defense.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 84,
+      "attack_id": 47,
+      "defense_id": 82,
+      "draft_attack_id": 58,
+      "draft_defense_id": 102,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A genuinely one-time code can prevent reuse of a particular authentication value when it is bound and checked correctly.",
+      "limitations": "It does not provide replay protection for arbitrary application commands or prevent live relay before use.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 86,
+      "attack_id": 48,
+      "defense_id": 83,
+      "draft_attack_id": 38,
+      "draft_defense_id": 63,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Authenticated timestamps restrict the age of accepted commands with a defined time window.",
+      "limitations": "Repeated messages inside the window remain possible without additional replay tracking; clock rollback must be handled.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 87,
+      "attack_id": 49,
+      "defense_id": 84,
+      "draft_attack_id": 46,
+      "draft_defense_id": 78,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Interpret Tokens specifically as server-validated request-bound anti-CSRF values in this mapping.",
+      "limitations": "Generic session or bearer tokens are not automatically anti-CSRF protection; XSS or leaked tokens can defeat it.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 88,
+      "attack_id": 49,
+      "defense_id": 85,
+      "draft_attack_id": 46,
+      "draft_defense_id": 79,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Appropriate SameSite policy reduces cookie sending in selected cross-site contexts.",
+      "limitations": "It is not sufficient for every CSRF situation; unsafe endpoints and same-site attacks remain concerns.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 89,
+      "attack_id": 50,
+      "defense_id": 86,
+      "draft_attack_id": 56,
+      "draft_defense_id": 98,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Use cryptographic tag authentication with protected keys and fresh challenges, rather than static identifier acceptance.",
+      "limitations": "Encrypted stored data alone does not prevent cloning or relay; reader and protocol design must be assessed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 90,
+      "attack_id": 50,
+      "defense_id": 87,
+      "draft_attack_id": 56,
+      "draft_defense_id": 99,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Appropriate shielding limits opportunities for unauthorized radio reading while the credential is enclosed.",
+      "limitations": "It does not protect a credential during legitimate use or invalidate a copy already obtained.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 91,
+      "attack_id": 51,
+      "defense_id": 88,
+      "draft_attack_id": 48,
+      "draft_defense_id": 82,
+      "decision": "CORRECT",
+      "role": "PARTIAL",
+      "applicability": "Prefer long unique passwords and common-value blocklists over the legacy idea of predictable complexity recipes.",
+      "limitations": "Composition rules alone can produce guessable patterns; phishing and credential theft are different attack paths.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 92,
+      "attack_id": 51,
+      "defense_id": 89,
+      "draft_attack_id": 48,
+      "draft_defense_id": 83,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Unique salts prevent shared offline precomputation against stored verifiers.",
+      "limitations": "Salts do not block online dictionary guesses or eliminate offline guessing of an individual weak password.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 94,
+      "attack_id": 52,
+      "defense_id": 91,
+      "draft_attack_id": 50,
+      "draft_defense_id": 87,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Cost-tuned password derivation increases the cost of computing candidates or tables.",
+      "limitations": "Cost alone does not diversify records; unique salts are needed to prevent shared precomputation.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 95,
+      "attack_id": 53,
+      "defense_id": 92,
+      "draft_attack_id": 52,
+      "draft_defense_id": 90,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Require removal of shared factory defaults during secure provisioning or after confirmed exposure.",
+      "limitations": "Do not reinterpret this as arbitrary periodic password changes without evidence; predictable replacement patterns can remain weak.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 96,
+      "attack_id": 53,
+      "defense_id": 93,
+      "draft_attack_id": 52,
+      "draft_defense_id": 91,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Hardening removes unused default accounts and restricts reachable management interfaces.",
+      "limitations": "A baseline must actually check credentials and effective access; generic hardening does not prove every default is gone.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 97,
+      "attack_id": 54,
+      "defense_id": 94,
+      "draft_attack_id": 31,
+      "draft_defense_id": 49,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "An appropriately chosen SHA-3 variant supplies modern collision resistance for suitable designs.",
+      "limitations": "Output size and intended use matter; it is not a generic password-storage or message-authentication replacement.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 99,
+      "attack_id": 55,
+      "defense_id": 96,
+      "draft_attack_id": 26,
+      "draft_defense_id": 41,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Independent verification of a support or reward offer checks authority before the requested disclosure or installation.",
+      "limitations": "A vague instruction to verify is insufficient without a trusted evidence route and authorization check.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 100,
+      "attack_id": 55,
+      "defense_id": 97,
+      "draft_attack_id": 26,
+      "draft_defense_id": 42,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Practice recognizing exchanges of benefits for secrets can improve refusal and reporting decisions.",
+      "limitations": "Training does not prove the actual requester is legitimate or prevent malware execution by itself.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 101,
+      "attack_id": 56,
+      "defense_id": 27,
+      "draft_attack_id": 27,
+      "draft_defense_id": 37,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Physical-access monitoring can reveal unexpected accompaniment or movement after entry.",
+      "limitations": "It does not necessarily stop an unauthorized visitor at the door; observation needs a safe response process.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 104,
+      "attack_id": 57,
+      "defense_id": 100,
+      "draft_attack_id": 55,
+      "draft_defense_id": 97,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Electronic access monitoring can detect an unexpected opening or add independent entry verification.",
+      "limitations": "An electronic label does not imply mechanical pick resistance and an alert may occur after entry.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 106,
+      "attack_id": 58,
+      "defense_id": 102,
+      "draft_attack_id": 44,
+      "draft_defense_id": 75,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "An exercised response plan gives staff a safe route to triage questionable incident claims.",
+      "limitations": "A plan alone does not establish that the claim is true or block harmful instructions.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 108,
+      "attack_id": 59,
+      "defense_id": 103,
+      "draft_attack_id": 73,
+      "draft_defense_id": 139,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A specified mail or web gateway can reduce ransomware delivery through its inspected channel.",
+      "limitations": "The broad gateway label is not a universal barrier; direct access, stolen credentials and unknown payloads can bypass it.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 109,
+      "attack_id": 59,
+      "defense_id": 104,
+      "draft_attack_id": 73,
+      "draft_defense_id": 140,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Applicable patching removes known exploitation paths used by some ransomware intrusions.",
+      "limitations": "Credential abuse and social engineering can remain, and patching does not reverse existing compromise.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 110,
+      "attack_id": 60,
+      "defense_id": 105,
+      "draft_attack_id": 94,
+      "draft_defense_id": 178,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Supplier and build-practice assessments identify risks and enforceable requirements before reliance on a dependency.",
+      "limitations": "A favorable assessment cannot guarantee future publisher or build integrity.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 111,
+      "attack_id": 60,
+      "defense_id": 106,
+      "draft_attack_id": 94,
+      "draft_defense_id": 179,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Trusted signature verification detects tampering after signing and binds a release to an accepted publisher key.",
+      "limitations": "A compromised build or signing key can produce a validly signed malicious release; signatures do not prove benign code.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 112,
+      "attack_id": 61,
+      "defense_id": 107,
+      "draft_attack_id": 96,
+      "draft_defense_id": 181,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Heuristic or behavior-based detection can identify exploit-like actions before a precise signature exists.",
+      "limitations": "False positives and unseen techniques remain; do not claim that heuristics detect every zero-day.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 113,
+      "attack_id": 61,
+      "defense_id": 108,
+      "draft_attack_id": 96,
+      "draft_defense_id": 182,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Assessed intelligence guides hunting and protective priorities as new exploit evidence emerges.",
+      "limitations": "Intelligence can be incomplete or stale and does not itself block an unknown vulnerability.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 114,
+      "attack_id": 62,
+      "defense_id": 109,
+      "draft_attack_id": 93,
+      "draft_defense_id": 176,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Strong verified network isolation removes direct remote paths where the operational design permits it.",
+      "limitations": "Media, maintenance laptops and supply-chain routes can cross the boundary; a claimed air gap is not immunity.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 115,
+      "attack_id": 62,
+      "defense_id": 110,
+      "draft_attack_id": 93,
+      "draft_defense_id": 177,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Industrial boundary policy restricts approved control-system paths and supported protocol operations.",
+      "limitations": "Unsafe filtering can cause physical-process disruption; safety engineering and operational validation are necessary.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 116,
+      "attack_id": 63,
+      "defense_id": 96,
+      "draft_attack_id": 100,
+      "draft_defense_id": 41,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Independent release and publisher verification supports a trustworthy update decision.",
+      "limitations": "A generic verification instruction needs concrete evidence and cannot certify that an authentic publisher was not compromised.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 117,
+      "attack_id": 63,
+      "defense_id": 106,
+      "draft_attack_id": 100,
+      "draft_defense_id": 179,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Signature verification with an independently trusted key detects package tampering after signing.",
+      "limitations": "A correctly signed update can still be malicious if the publisher or signing pipeline was compromised.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 119,
+      "attack_id": 64,
+      "defense_id": 112,
+      "draft_attack_id": 71,
+      "draft_defense_id": 134,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Service-access rules reduce reachable propagation paths used by a worm.",
+      "limitations": "Allowed vulnerable services and internal paths may still permit spread; firewall policy does not patch hosts.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 120,
+      "attack_id": 64,
+      "defense_id": 113,
+      "draft_attack_id": 71,
+      "draft_defense_id": 136,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "IPS signatures or protocol checks can block recognized worm exploit traffic.",
+      "limitations": "Novel exploits, encryption and evasion reduce coverage; false positives can disrupt legitimate service.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 121,
+      "attack_id": 65,
+      "defense_id": 114,
+      "draft_attack_id": 91,
+      "draft_defense_id": 174,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Enforcing appropriate SELinux policy restricts resources a container process can access beyond ordinary permissions.",
+      "limitations": "Permissive mode, broad policy and kernel vulnerabilities can undermine confinement.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 122,
+      "attack_id": 65,
+      "defense_id": 115,
+      "draft_attack_id": 91,
+      "draft_defense_id": 175,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Namespaces reduce shared resource views as one component of container isolation.",
+      "limitations": "They are not a complete security boundary; host sockets, privileges and kernel defects can permit breakout.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 123,
+      "attack_id": 66,
+      "defense_id": 96,
+      "draft_attack_id": 63,
+      "draft_defense_id": 41,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Check changed payment or disclosure instructions through established business evidence and contacts.",
+      "limitations": "A generic instruction to verify must be turned into a defined independent process.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 124,
+      "attack_id": 66,
+      "defense_id": 116,
+      "draft_attack_id": 63,
+      "draft_defense_id": 114,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Enforced DMARC reduces certain unauthorized uses of a protected mail domain.",
+      "limitations": "It does not stop fraud through a compromised legitimate mailbox or a look-alike domain and does not validate invoice intent.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 126,
+      "attack_id": 67,
+      "defense_id": 118,
+      "draft_attack_id": 61,
+      "draft_defense_id": 108,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Role-specific practice helps executives and assistants recognize authority and confidentiality pretexts.",
+      "limitations": "Senior staff still need enforceable verification procedures and technical controls; training alone is insufficient.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 128,
+      "attack_id": 67,
+      "defense_id": 120,
+      "draft_attack_id": 61,
+      "draft_defense_id": 110,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Limiting sensitive-data access reduces what a compromised executive workflow can expose.",
+      "limitations": "It does not authenticate the incoming request and cannot prevent misuse of legitimately permitted data.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 129,
+      "attack_id": 68,
+      "defense_id": 70,
+      "draft_attack_id": 74,
+      "draft_defense_id": 85,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "MFA can reduce an attacker's ability to obtain remote access with a stolen password alone.",
+      "limitations": "It does not stop a Trojan already running or an attacker using an existing victim session or outbound tunnel.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 130,
+      "attack_id": 68,
+      "defense_id": 121,
+      "draft_attack_id": 74,
+      "draft_defense_id": 141,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Restrict unnecessary remote-control service exposure and assess outbound connection policy.",
+      "limitations": "A Trojan may use permitted protocols and destinations, so closing inbound ports is not sufficient.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 131,
+      "attack_id": 68,
+      "defense_id": 122,
+      "draft_attack_id": 74,
+      "draft_defense_id": 142,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Unusual process or connection behavior can indicate covert remote control for investigation.",
+      "limitations": "Legitimate remote administration may look unusual, and attackers can blend into permitted activity.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 132,
+      "attack_id": 69,
+      "defense_id": 27,
+      "draft_attack_id": 75,
+      "draft_defense_id": 37,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Correlated endpoint and network observations can identify devices contacting botnet infrastructure.",
+      "limitations": "Indicators can be stale and monitoring alone does not remove the bot or block every control route.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 134,
+      "attack_id": 69,
+      "defense_id": 124,
+      "draft_attack_id": 75,
+      "draft_defense_id": 144,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Authorized sinkholing can redirect supported command channels and identify infected clients.",
+      "limitations": "Alternative channels and embedded addresses may survive; authority and collateral effects must be assessed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 135,
+      "attack_id": 70,
+      "defense_id": 9,
+      "draft_attack_id": 81,
+      "draft_defense_id": 33,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Permission and configuration reviews can identify escalation paths and verify remediation.",
+      "limitations": "A periodic audit is not continuous enforcement or a patch for an unknown kernel vulnerability.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 138,
+      "attack_id": 71,
+      "defense_id": 126,
+      "draft_attack_id": 82,
+      "draft_defense_id": 159,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A correctly planned Kerberos migration can reduce reliance on NTLM when fallback is actually restricted.",
+      "limitations": "Kerberos alone is not a complete pass-the-hash defense and does not prevent stolen-key or stolen-ticket attacks.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 140,
+      "attack_id": 72,
+      "defense_id": 128,
+      "draft_attack_id": 95,
+      "draft_defense_id": 180,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Use supported workload admission controls such as Pod Security Admission and assessed admission policies.",
+      "limitations": "The removed PodSecurityPolicy API is not a current deployment recommendation; runtime and kernel risks remain.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 141,
+      "attack_id": 73,
+      "defense_id": 111,
+      "draft_attack_id": 92,
+      "draft_defense_id": 135,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Enforced network zones limit access to and movement from compromised IoT fleets.",
+      "limitations": "Segmentation does not remove bots and cannot automatically absorb traffic aimed at an external victim.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 142,
+      "attack_id": 73,
+      "defense_id": 129,
+      "draft_attack_id": 92,
+      "draft_defense_id": 132,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Applicable verified updates remove known device vulnerabilities used for bot recruitment.",
+      "limitations": "Default credentials, unsupported devices and persistence after compromise may still need separate treatment.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 143,
+      "attack_id": 74,
+      "defense_id": 130,
+      "draft_attack_id": 60,
+      "draft_defense_id": 105,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Independent verification of identity and intent can interrupt a tailored request before sensitive action.",
+      "limitations": "Familiar context and a genuine compromised mailbox can still mislead; domain authentication is not enough.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 144,
+      "attack_id": 74,
+      "defense_id": 131,
+      "draft_attack_id": 60,
+      "draft_defense_id": 106,
+      "decision": "CORRECT",
+      "role": "PARTIAL",
+      "applicability": "Specify the actual mail or endpoint capability used to inspect the spear-phishing delivery path.",
+      "limitations": "Threat Protection is too broad to imply a standardized or universally effective defense without a stated mechanism.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 145,
+      "attack_id": 74,
+      "defense_id": 132,
+      "draft_attack_id": 60,
+      "draft_defense_id": 107,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Authorized simulations rehearse response to tailored lures and expose workflow weaknesses.",
+      "limitations": "An exercise does not verify a real sender or block an actual payload.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 146,
+      "attack_id": 75,
+      "defense_id": 133,
+      "draft_attack_id": 66,
+      "draft_defense_id": 121,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Blocking a known compromised destination reduces visits while remediation and investigation proceed.",
+      "limitations": "Previously unclassified or selectively served content can evade filters, and legitimate workflow disruption must be managed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 147,
+      "attack_id": 75,
+      "defense_id": 134,
+      "draft_attack_id": 66,
+      "draft_defense_id": 122,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Endpoint telemetry can reveal exploitation following a visit to a trusted but compromised site.",
+      "limitations": "Detection may occur after execution and depends on sensor visibility and timely response.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 148,
+      "attack_id": 75,
+      "defense_id": 135,
+      "draft_attack_id": 66,
+      "draft_defense_id": 123,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Relevant web or endpoint scanning can identify recognized malicious content or exposed vulnerabilities.",
+      "limitations": "A clean scan is point-in-time evidence, not proof that selectively served or novel content is safe.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 149,
+      "attack_id": 76,
+      "defense_id": 28,
+      "draft_attack_id": 72,
+      "draft_defense_id": 38,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Education helps users avoid deceptive installers and report suspicious software offers.",
+      "limitations": "A convincing or trusted-source Trojan can still bypass human judgment.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 151,
+      "attack_id": 76,
+      "defense_id": 137,
+      "draft_attack_id": 72,
+      "draft_defense_id": 138,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Behavioral detections can reveal a Trojan's actions even when its file appears plausible.",
+      "limitations": "False positives and evasion remain, and detection needs containment and recovery follow-through.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 152,
+      "attack_id": 77,
+      "defense_id": 129,
+      "draft_attack_id": 70,
+      "draft_defense_id": 132,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Applicable updates remove known vulnerabilities that some infected content exploits.",
+      "limitations": "Viruses can also run through user authorization; updates do not guarantee removal of an existing infection.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 153,
+      "attack_id": 77,
+      "defense_id": 138,
+      "draft_attack_id": 70,
+      "draft_defense_id": 131,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Antivirus can recognize and quarantine supported infected files and execution behavior.",
+      "limitations": "Novel or concealed infection can be missed and prior compromise may require more than quarantine.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 154,
+      "attack_id": 77,
+      "defense_id": 139,
+      "draft_attack_id": 70,
+      "draft_defense_id": 133,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Safer navigation and download handling reduce some exposure to infected programs.",
+      "limitations": "Legitimate sites and publishers can be compromised; user caution is not a complete malware boundary.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 156,
+      "attack_id": 78,
+      "defense_id": 141,
+      "draft_attack_id": 76,
+      "draft_defense_id": 146,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Traffic measurements help distinguish attack patterns and select an appropriate mitigation.",
+      "limitations": "Analysis does not itself block traffic or restore exhausted network capacity.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 159,
+      "attack_id": 79,
+      "defense_id": 144,
+      "draft_attack_id": 77,
+      "draft_defense_id": 149,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Well-managed pins can narrow accepted service identities in controlled clients.",
+      "limitations": "Rollover errors can cause outages, and pinning does not make a compromised endpoint trustworthy.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 160,
+      "attack_id": 79,
+      "defense_id": 145,
+      "draft_attack_id": 77,
+      "draft_defense_id": 150,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A verified VPN protects traffic across the segment between its authenticated endpoints.",
+      "limitations": "It does not authenticate every destination after tunnel termination or make a deceptive Wi-Fi enrollment page safe.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 162,
+      "attack_id": 80,
+      "defense_id": 146,
+      "draft_attack_id": 80,
+      "draft_defense_id": 156,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "ASLR makes exploit addresses less predictable where sufficient randomization is available.",
+      "limitations": "Information leaks, low entropy and code reuse can reduce benefit; the overflow still exists.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 163,
+      "attack_id": 80,
+      "defense_id": 147,
+      "draft_attack_id": 80,
+      "draft_defense_id": 157,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Compiler canaries detect some protected stack overwrites before control returns.",
+      "limitations": "Not all writes or objects are covered, and leaked guard values can be bypassed.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 165,
+      "attack_id": 81,
+      "defense_id": 148,
+      "draft_attack_id": 98,
+      "draft_defense_id": 184,
+      "decision": "CORRECT",
+      "role": "PARTIAL",
+      "applicability": "Review and remove unapproved or excessive-permission extensions as a specific browser-hardening measure.",
+      "limitations": "Adding an arbitrary extension is not protection against a compromised browser, and extensions may be the attack source.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 166,
+      "attack_id": 82,
+      "defense_id": 27,
+      "draft_attack_id": 97,
+      "draft_defense_id": 37,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "DNS query, response and administration observations can reveal selected anomalous behavior or unauthorized changes.",
+      "limitations": "The broad DNS attack category needs a concrete threat; monitoring is not prevention of all DNS failures.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 167,
+      "attack_id": 82,
+      "defense_id": 149,
+      "draft_attack_id": 97,
+      "draft_defense_id": 183,
+      "decision": "CORRECT",
+      "role": "DIRECT",
+      "applicability": "Specify DNSSEC validation, encrypted transport, registrar security or resilience according to the actual threat scenario.",
+      "limitations": "Secure DNS is not one universal control; encryption and data authentication solve different problems.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 168,
+      "attack_id": 83,
+      "defense_id": 70,
+      "draft_attack_id": 59,
+      "draft_defense_id": 85,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Strong MFA can reduce takeover from a phished password alone.",
+      "limitations": "Some factors can be phished, and phishing can pursue payments or malware rather than authentication.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 169,
+      "attack_id": 83,
+      "defense_id": 150,
+      "draft_attack_id": 59,
+      "draft_defense_id": 103,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Mail inspection can quarantine supported malicious links, attachments and sender patterns before delivery.",
+      "limitations": "New lures and compromised legitimate senders can pass; false positives require managed handling.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 170,
+      "attack_id": 83,
+      "defense_id": 151,
+      "draft_attack_id": 59,
+      "draft_defense_id": 104,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Relevant training improves recognition, verification and reporting of phishing requests.",
+      "limitations": "It is a complementary human layer, not proof that every attack will be recognized.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 172,
+      "attack_id": 84,
+      "defense_id": 153,
+      "draft_attack_id": 62,
+      "draft_defense_id": 112,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Supported mobile protections can flag some malicious destinations, apps or unsafe device conditions.",
+      "limitations": "They cannot establish the truth of every text request and platform sandboxing limits visibility.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 173,
+      "attack_id": 84,
+      "defense_id": 154,
+      "draft_attack_id": 62,
+      "draft_defense_id": 113,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Text filtering reduces delivery of recognized spam or malicious-message patterns.",
+      "limitations": "Spoofed senders and novel wording can bypass filtering; a delivered message is not verified as safe.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 174,
+      "attack_id": 85,
+      "defense_id": 155,
+      "draft_attack_id": 87,
+      "draft_defense_id": 167,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Validating the expected enterprise authentication-server identity against appropriate CA trust resists a false network server.",
+      "limitations": "A certificate from any trusted issuer is not sufficient without the expected identity; user overrides can defeat validation.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 175,
+      "attack_id": 85,
+      "defense_id": 156,
+      "draft_attack_id": 87,
+      "draft_defense_id": 168,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Wireless observations and inventory checks can identify infrastructure imitating a trusted network.",
+      "limitations": "Detection can occur after association and does not itself guarantee credential protection.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 176,
+      "attack_id": 86,
+      "defense_id": 145,
+      "draft_attack_id": 89,
+      "draft_defense_id": 150,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A trusted VPN can protect subsequent traffic over an untrusted network segment.",
+      "limitations": "It does not prevent unsafe automatic association, authenticate the AP or protect credentials typed into a fake pre-tunnel page.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 179,
+      "attack_id": 87,
+      "defense_id": 159,
+      "draft_attack_id": 78,
+      "draft_defense_id": 152,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A restrictive correctly deployed CSP can reduce selected script-execution paths as defense in depth.",
+      "limitations": "Permissive policy or trusted-script abuse can bypass protection; unsafe output handling still needs repair.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 181,
+      "attack_id": 88,
+      "defense_id": 161,
+      "draft_attack_id": 79,
+      "draft_defense_id": 154,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "Resolve paths using platform-aware rules and verify confinement through safe APIs and appropriate authorization.",
+      "limitations": "Naive prefix tests, symbolic links and check/use races can defeat incomplete normalization-based designs.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 182,
+      "attack_id": 88,
+      "defense_id": 162,
+      "draft_attack_id": 79,
+      "draft_defense_id": 155,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "A correctly configured reduced-privilege chroot confines ordinary path resolution to a chosen tree.",
+      "limitations": "It is not a complete sandbox; privileged operations and unsafe descriptors can undermine it.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 184,
+      "attack_id": 89,
+      "defense_id": 164,
+      "draft_attack_id": 88,
+      "draft_defense_id": 170,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Wireless intrusion sensors can alert on suspicious disconnect patterns for investigation.",
+      "limitations": "An IDS does not automatically block frames, and interference or legitimate events can resemble an attack.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 186,
+      "attack_id": 90,
+      "defense_id": 165,
+      "draft_attack_id": 84,
+      "draft_defense_id": 162,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Correctly enforced VLAN boundaries reduce some local access to unrelated traffic.",
+      "limitations": "VLANs do not encrypt packets or replace authorization, and permitted routing or misconfiguration can expose traffic.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 187,
+      "attack_id": 91,
+      "defense_id": 127,
+      "draft_attack_id": 65,
+      "draft_defense_id": 120,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Role-scoped permissions limit what an impersonated or compromised identity can access.",
+      "limitations": "RBAC does not prove the identity is genuine; broad or stale role membership can still enable misuse.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 189,
+      "attack_id": 91,
+      "defense_id": 167,
+      "draft_attack_id": 65,
+      "draft_defense_id": 118,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Training helps staff challenge claimed authority and use approved verification routes.",
+      "limitations": "Awareness alone does not authenticate a person or enforce resource permissions.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 190,
+      "attack_id": 92,
+      "defense_id": 135,
+      "draft_attack_id": 68,
+      "draft_defense_id": 123,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Controlled scanning can detect supported malicious files before an approved media transfer.",
+      "limitations": "Unknown malware and USB devices emulating keyboards may not be detected by file scanning.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 192,
+      "attack_id": 92,
+      "defense_id": 169,
+      "draft_attack_id": 68,
+      "draft_defense_id": 127,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "A workable media policy defines approved devices, inspection and reporting routes.",
+      "limitations": "Written instructions alone do not stop a connected device; technical enforcement and usable alternatives matter.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 194,
+      "attack_id": 93,
+      "defense_id": 171,
+      "draft_attack_id": 69,
+      "draft_defense_id": 129,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Individual badge checks support controlled entry and revocation.",
+      "limitations": "A reader at one door does not necessarily stop someone following a badge holder through it.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 195,
+      "attack_id": 93,
+      "defense_id": 172,
+      "draft_attack_id": 69,
+      "draft_defense_id": 130,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Trained personnel can observe entry and safely challenge unverified accompaniment.",
+      "limitations": "Coverage, fatigue, social pressure and emergency conditions can limit effectiveness.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 196,
+      "attack_id": 94,
+      "defense_id": 28,
+      "draft_attack_id": 67,
+      "draft_defense_id": 38,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Education encourages trusted navigation and careful checking of domain names.",
+      "limitations": "Users cannot reliably detect every visual similarity or encoded hostname variation.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 198,
+      "attack_id": 94,
+      "defense_id": 174,
+      "draft_attack_id": 67,
+      "draft_defense_id": 125,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Browser look-alike warnings add a prompt to verify an unusual destination.",
+      "limitations": "Heuristics can miss new patterns or be ignored; they are not authoritative domain-ownership verification.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 199,
+      "attack_id": 95,
+      "defense_id": 175,
+      "draft_attack_id": 83,
+      "draft_defense_id": 160,
+      "decision": "CORRECT",
+      "role": "PARTIAL",
+      "applicability": "HMAC supplies shared-key message authentication for a protocol designed to use it.",
+      "limitations": "It is not a generic replacement for a collision-sensitive public signature or unkeyed integrity design; do not claim universal collision prevention.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 202,
+      "attack_id": 96,
+      "defense_id": 178,
+      "draft_attack_id": 90,
+      "draft_defense_id": 173,
+      "decision": "QUALIFY",
+      "role": "DETECTION",
+      "applicability": "Intrusion alarms can notify responders when a physical barrier is forced or opened unexpectedly.",
+      "limitations": "Detection may occur after entry and needs timely response; it does not strengthen the barrier itself.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 203,
+      "attack_id": 97,
+      "defense_id": 10,
+      "draft_attack_id": 99,
+      "draft_defense_id": 34,
+      "decision": "CORRECT",
+      "role": "PARTIAL",
+      "applicability": "Authenticated wireless encryption protects content against unauthorized reading even when network surveying is possible.",
+      "limitations": "It does not prevent detecting or mapping radio networks; authorized wardriving is not inherently malicious.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 204,
+      "attack_id": 97,
+      "defense_id": 179,
+      "draft_attack_id": 99,
+      "draft_defense_id": 185,
+      "decision": "REMOVE_PROPOSED",
+      "role": "PARTIAL",
+      "applicability": "Suppressing some SSID advertisements only changes simple discovery presentation.",
+      "limitations": "Management exchanges still reveal network identity; hiding SSID is not meaningful protection from surveying or unauthorized access.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 205,
+      "attack_id": 98,
+      "defense_id": 167,
+      "draft_attack_id": 64,
+      "draft_defense_id": 118,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Instruction can teach source assessment, uncertainty and responsible sharing.",
+      "limitations": "Training does not directly correct a false claim or establish the facts of a particular event.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 207,
+      "attack_id": 98,
+      "defense_id": 181,
+      "draft_attack_id": 64,
+      "draft_defense_id": 117,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Moderation can reduce circulation of material violating an organization's stated platform policy.",
+      "limitations": "Moderation is not a universal truth test and can remove legitimate speech if applied poorly.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 208,
+      "attack_id": 99,
+      "defense_id": 182,
+      "draft_attack_id": 85,
+      "draft_defense_id": 163,
+      "decision": "QUALIFY",
+      "role": "DIRECT",
+      "applicability": "AES in an appropriate reviewed construction is designed to tolerate known plaintext rather than relying on secret message formats.",
+      "limitations": "The mode, nonce and key use still matter; AES alone is not a complete encryption system.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 209,
+      "attack_id": 99,
+      "defense_id": 183,
+      "draft_attack_id": 85,
+      "draft_defense_id": 164,
+      "decision": "QUALIFY",
+      "role": "INDIRECT_SUPPORT",
+      "applicability": "Protected keys and appropriate lifecycles prevent weaknesses outside the cipher from exposing encrypted data.",
+      "limitations": "Key management does not repair a cryptanalytic flaw in the chosen construction.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    },
+    {
+      "mapping_id": 211,
+      "attack_id": 100,
+      "defense_id": 185,
+      "draft_attack_id": 86,
+      "draft_defense_id": 166,
+      "decision": "QUALIFY",
+      "role": "PARTIAL",
+      "applicability": "Appropriate key lifecycle controls can limit exposure after compromise or within a designed cryptoperiod.",
+      "limitations": "Rotation does not repair a broken cipher and arbitrary periodic password changes are not a universal defense.",
+      "status": "EDITORIAL_CANDIDATE_OWNER_REVIEW_REQUIRED",
+      "applied_to_authoritative_mapping": false
+    }
+  ]
+}

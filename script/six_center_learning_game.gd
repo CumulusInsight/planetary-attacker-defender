@@ -19,7 +19,7 @@ func _ready() -> void:
 			else:profile.angle=actor.orbit_angle;profile.progress=actor.orbit_progress;profile.ring=actor.current_ring;profile.speed=actor.move_speed
 		else:profile.angle=(id%100)*TAU/6;profile.progress=0.0;profile.ring=(id%100)%3;profile.speed=[0.49,0.63,0.77][(id%100)%3];profile.fixed_ring=true
 		learning_orbits[id]=profile
-	loader=preload("res://script/catalog_learning_loader.gd").new()
+	loader=create_learning_loader()
 	error=loader.load_questions(command.decision_pages.model)
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--odc-learning-seed="):session_seed=int(arg.get_slice("=",1))
@@ -138,3 +138,6 @@ func build_report() -> void:
 		for control in options:
 			control.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 			control.tooltip_text=control.text
+
+func create_learning_loader() -> RefCounted:
+	return preload("res://script/catalog_learning_loader.gd").new()

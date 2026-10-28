@@ -65,7 +65,7 @@ func refresh() -> void:
 			for control in option_buttons[id]:control.disabled=true;control.tooltip_text="Queued answer locked. Cancel the remaining launch queue to change it."
 	if is_instance_valid(submit_answers_button):
 		submit_answers_button.visible=review_index<0 and not session.review_locked and not session.round_complete()
-		submit_answers_button.disabled=not session.analyzed or session.review_locked or session.round_complete() or not session.pending.is_empty() or session.in_flight() or animations_active() or loader.questions.any(func(q):return session.submitted_questions.has(q.learning_id))
+		submit_answers_button.disabled=report_submission_disabled()
 		for q in loader.questions:
 			if session.submitted_questions.has(q.learning_id) and option_buttons.has(int(q.contact_id)):
 				for control in option_buttons[int(q.contact_id)]:control.disabled=true;control.tooltip_text="Submitted answer locked for this round."
@@ -116,3 +116,6 @@ func round_status() -> String:
 
 func select_report_round(index: int) -> void:
 	submission_notice="";super.select_report_round(index)
+
+func report_submission_disabled() -> bool:
+	return not session.analyzed or session.review_locked or session.round_complete() or not session.pending.is_empty() or session.in_flight() or animations_active() or loader.questions.any(func(q):return session.submitted_questions.has(q.learning_id))
