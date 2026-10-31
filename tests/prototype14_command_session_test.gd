@@ -1,0 +1,51 @@
+extends SceneTree
+const Session=preload("res://script/p14/command_session.gd")
+var checks:=0
+var failures:=0
+func check(ok: bool,message: String) -> void:
+	checks+=1
+	if not ok:failures+=1;push_error(message)
+func ready(value: String,mode: String) -> RefCounted:
+	var s:=Session.new();s.configure();s.start()
+	for id in ["mara","imani","eli"]:s.talk(id);s.follow_up(id)
+	s.brief_crew();s.inspect_module("core");s.health_check();s.choose_upgrade(value);s.commission(mode);return s
+func _initialize() -> void:
+	var original: Dictionary={}
+	for path in ["res://project.godot","res://data/cyber_catalog.json","res://data/learning_retrofit.json","res://script/player_fire_session.gd"]:original[path]=FileAccess.get_sha256(path)
+	var s:=ready("identity","delegate")
+	check(s.attack.attack_id==53 and s.attack.display_name=="Default credential exploitation","Canonical ID and full existing Report name")
+	check(s.standings().size()==15 and s.scenario.competitors.size()==14,"One player plus fourteen simulated competitors")
+	check(not s.choose_upgrade("network") and not s.commission("personal"),"One allocation and one task, no duplicates")
+	s.step(50);check(s.upgrade_ready and s.metrics["Infrastructure development"]==65,"Delegate commissions a real module")
+	s.step(40);check(s.incident=="SUSPICIOUS" and s.account_known and not s.connection_known,"Identity upgrade reveals account first")
+	check(not s.compromise_confirmed and not s.unauthorized,"Suspicion is not unauthorized access or compromise")
+	s.trace_connection();s.step(16);check(s.connection_known,"Evidence-gathering job identifies service path")
+	s.rotate_credential();s.step(18);check(s.credentials_retired and not s.unauthorized,"Prompt account repair prevents default-credential access")
+	check(not s.finish(),"Cannot finish without service verification")
+	s.review_evidence("identity");s.verify_service();s.step(25);check(s.ready_to_finish(),"Repaired service can be handed over")
+	var metrics: Dictionary=s.metrics.duplicate();s.set_route(false);s.set_route(true);s.verify_service();s.step(25)
+	check(s.metrics["Security effectiveness"]==metrics["Security effectiveness"] and s.metrics["Operational readiness"]==metrics["Operational readiness"],"Repeated verification cannot farm performance")
+	check(s.finish(),"Successful watch report")
+	var stamp: float=s.clock;s.step(100);check(s.clock==stamp and not s.choose_upgrade("network"),"Finished watch is immutable")
+	var n:=ready("network","personal");n.step(90)
+	check(not n.upgrade_ready,"Personal commissioning requires actual module inspections")
+	n.inspect_module("identity");n.inspect_module("network");n.step(0)
+	check(n.upgrade_ready and n.connection_known and not n.account_known,"Personal sign-off and useful network visibility")
+	check(n.set_route(false),"Operator can isolate a specific route")
+	n.step(100);check(not n.unauthorized and not n.credentials_retired,"Isolation buys time without repairing credentials")
+	n.audit_account();n.step(22);n.review_evidence("identity");n.rotate_credential();n.step(18);n.set_route(true);n.verify_service();n.step(25)
+	check(n.ready_to_finish() and not n.compromise_confirmed,"Network-first route is also a viable recovery")
+	var r:=ready("network","delegate");r.step(90);r.step(65)
+	check(r.unauthorized and not r.compromise_confirmed,"Delayed response confirms unauthorized session, not data compromise")
+	r.audit_account();r.step(22);r.rotate_credential();r.step(18)
+	check(not r.verify_service() and not r.ready_to_finish(),"New credentials do not revoke a previously accepted session")
+	check(r.revoke_session() and not r.revoke_session(),"Revocation is independent and idempotent")
+	r.review_evidence("identity");r.verify_service();r.step(25);check(r.ready_to_finish(),"Ineffective/delayed response is recoverable")
+	var p:=ready("identity","delegate");p.paused=true;p.step(500);check(p.clock==0 and not p.upgrade_ready,"Explicit P14 pause holds jobs and scenario time")
+	p.paused=false;p.step(50);check(p.upgrade_ready,"Resume continues the same task")
+	var leadership: int=p.metrics["Leadership & personnel"];p.talk("mara");p.follow_up("eli");p.brief_crew();check(p.metrics["Leadership & personnel"]==leadership,"Repeated dialogue does not farm leadership")
+	var a:=ready("identity","delegate");var b:=ready("identity","delegate")
+	for dt in [25,25,40,20]:a.step(dt);b.step(dt)
+	check(a.events==b.events and a.metrics==b.metrics,"Fixed actions and clocks reproduce outcomes without random scoring")
+	for path in original:check(FileAccess.get_sha256(path)==original[path],"Protected existing file unchanged: "+path)
+	print("PROTOTYPE 14 SESSION: ","PASS" if failures==0 else "FAIL"," (",failures," failures / ",checks," checks)");quit(0 if failures==0 else 1)

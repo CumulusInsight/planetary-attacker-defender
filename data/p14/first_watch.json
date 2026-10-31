@@ -1,0 +1,115 @@
+{
+  "title": "The First Watch",
+  "operator": "Meridian Orbital",
+  "attack_id": 53,
+  "evidence_label": "SIMULATED EXERCISE EVIDENCE",
+  "commission_seconds": {
+    "delegate": 50.0,
+    "personal": 35.0
+  },
+  "crew": [
+    {
+      "id": "mara",
+      "name": "Mara Voss",
+      "role": "Operations",
+      "initials": "MV",
+      "color": "e8b47b",
+      "line": "Customer traffic is climbing. Give me the commissioning job; you should meet the watch before maintenance opens.",
+      "followup": "Reliable systems and a trusted crew. You need both. I'll flag anything that threatens the service window.",
+      "rank": "Chief Petty Officer"
+    },
+    {
+      "id": "imani",
+      "name": "Imani Rao",
+      "role": "Security",
+      "initials": "IR",
+      "color": "81cfc8",
+      "line": "Chief Petty Officer Mara Voss is right about continuity. But the vendor left a shared service account behind. Visibility is not the same as fixing access.",
+      "followup": "Watch the account AND the connection. Cutting a route buys time; changing a password doesn't revoke a session that already exists.",
+      "rank": "Lieutenant Junior Grade"
+    },
+    {
+      "id": "eli",
+      "name": "Eli Chen",
+      "role": "Junior Watch Officer",
+      "initials": "EC",
+      "color": "a9b2e9",
+      "line": "Four days until leave on Lumen. Someone at the travel lounge asked who covers our late watch. I thought they were just making conversation.",
+      "followup": "They also asked whether the vendor works unattended. I didn't give names. Should I keep the messages?",
+      "rank": "Ensign"
+    }
+  ],
+  "competitors": [
+    {
+      "center": "DC-02",
+      "name": "Lt. Okafor",
+      "score": 84
+    },
+    {
+      "center": "DC-03",
+      "name": "Lt. Sato",
+      "score": 78
+    },
+    {
+      "center": "DC-04",
+      "name": "Lt. Reyes",
+      "score": 73
+    },
+    {
+      "center": "DC-05",
+      "name": "Lt. Novak",
+      "score": 81
+    },
+    {
+      "center": "DC-06",
+      "name": "Lt. Mensah",
+      "score": 67
+    },
+    {
+      "center": "DC-07",
+      "name": "Lt. Farah",
+      "score": 76
+    },
+    {
+      "center": "DC-08",
+      "name": "Lt. Bell",
+      "score": 71
+    },
+    {
+      "center": "DC-09",
+      "name": "Lt. Park",
+      "score": 86
+    },
+    {
+      "center": "DC-10",
+      "name": "Lt. Almeida",
+      "score": 69
+    },
+    {
+      "center": "DC-11",
+      "name": "Lt. Singh",
+      "score": 80
+    },
+    {
+      "center": "DC-12",
+      "name": "Lt. Haddad",
+      "score": 75
+    },
+    {
+      "center": "DC-13",
+      "name": "Lt. Anders",
+      "score": 65
+    },
+    {
+      "center": "DC-14",
+      "name": "Lt. Diallo",
+      "score": 82
+    },
+    {
+      "center": "DC-15",
+      "name": "Lt. Chen",
+      "score": 72
+    }
+  ],
+  "adversary_objective": "Establish the late-watch maintenance pattern. Use casual questions about leave cover to identify a quiet window, then test the legacy vendor service. Coverage and vulnerabilities are perceived opportunities, not confirmed reconnaissance results."
+}

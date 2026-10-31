@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="planetary-attacker-defender"
-run/main_scene="res://scene/learning_retrofit_command.tscn"
+run/main_scene="res://scene/odc_entry.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://images/icon.svg"
 
